@@ -28,7 +28,7 @@ public class ControlVistas {
 	@RequestMapping("/publicacion")
 	public ModelAndView cargarPublicacion(){
 		ModelMap model = new ModelMap();
-		model.put("usuario", new Usuario());
+		model.put("Usuario", new Usuario());
 		return new ModelAndView("publicacion", model);
 	}
 
