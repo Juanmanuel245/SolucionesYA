@@ -47,7 +47,7 @@
               <div class="col-lg-3 col-md-3 col-xs-3"></div>
               </div>
               
-              <div class="col-sm-12"><a href="irRegistro" class="btn btn-success btn-lg btn-block">Registrarse</a></div>
+              <div class="col-sm-12"><a  href="irRegistro" class="btn btn-success btn-lg btn-block">Registrarse</a></div>
               <br><br><br>
               <div class="col-sm-12"><a href="irLogin" class="btn btn-success btn-lg btn-block">Iniciar Sesion</a></div>
               <br><br><br>
