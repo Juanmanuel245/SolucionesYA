@@ -15,11 +15,11 @@
 	     			<div class="container">
 	          			<div class="row">
 	              			<div class="box">
-	                  			<form:form method="post" action="validarLogin" modelAttribute="Usuario">
+	              			<form:form method="post" action="loginOk" modelAttribute="usuario">
 									<div class="textos">
 	                              		<div class="form-group col-lg-3">
 	                                  		Nombre de Usuario
-	                                 		<form:input path="nombreLogin" class="form-control" /><br>
+	                                 		<form:input path="nombre" class="form-control" /><br>
 										</div>
 	
 	                              		<div class="form-group col-lg-3">
@@ -36,6 +36,7 @@
 	                              		<div><a href="registro"> No estas registrado? Hace click aca </a></div>
 	                          		</div>
 	                      		</form:form>
+
 	               			</div>
 	          			</div>
 					</div>

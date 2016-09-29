@@ -25,12 +25,7 @@
     <div class="col-sm-10">
       <div class="panel panel-default">
         <div class="panel-body">
-          Nombre: Juan Manuel Perez<br>
-          Usuario: Tuco87<br>
-          Email: Anonym@gmail.com<br>
-          <br>
-          Especialistas Contratados: 24<br>
-          Balance de Cuenta: $240<br>
+          <h3>Bienvenido de vuelta ${usuario.nombre}!!</h3>
         </div>
       </div>      
     </div>

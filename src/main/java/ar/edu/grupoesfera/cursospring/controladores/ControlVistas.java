@@ -30,6 +30,14 @@ public class ControlVistas {
 			return new ModelAndView("confirmacionRegistro", modeloRegistroUsuario);
 	}
 
+	@RequestMapping(path="/loginOk", method = RequestMethod.POST)
+	public ModelAndView logearUsuario(@ModelAttribute("usuario") Usuario usuario){
+		ModelMap modeloLoginUsuario = new ModelMap();
+		modeloLoginUsuario.put("nombre", usuario.getNombre());
+		modeloLoginUsuario.put("password", usuario.getPassword());
+		return new ModelAndView("miCuenta", modeloLoginUsuario);
+}
+	
 	@RequestMapping("/publicacion")
 	public ModelAndView cargarPublicacion(){
 		ModelMap model = new ModelMap();
@@ -37,10 +45,11 @@ public class ControlVistas {
 		return new ModelAndView("publicacion", model);
 	}
 
-	@RequestMapping("/login")
-	public ModelAndView cargarLogin(){
+	@RequestMapping("/irLogin")
+	public ModelAndView mostrarLogin(){
 		ModelMap model = new ModelMap();
-		model.put("Usuario", new Usuario());
+		Usuario usuario = new Usuario();
+		model.put("usuario", usuario);
 		return new ModelAndView("login", model);
 	}
 	

@@ -1,11 +1,9 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
 public class Usuario {
-	private String nombre;	
-	
+	private String nombre;
 	private String apellido;
 	private String password;
-	
 	
 	public String getNombre() {
 		return nombre;
