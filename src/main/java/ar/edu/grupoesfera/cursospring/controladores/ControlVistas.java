@@ -12,17 +12,22 @@ import ar.edu.grupoesfera.cursospring.modelo.Usuario;
 @Controller
 public class ControlVistas {
 
-	@RequestMapping("/registro")
-	public ModelAndView cargarRegistro(){
+	@RequestMapping("/irRegistro")
+	public ModelAndView insertarUsuario(){
 		ModelMap model = new ModelMap();
-		model.put("usuario", new Usuario());
+		Usuario usuario = new Usuario();
+		model.put("usuario", usuario);
 		return new ModelAndView("registro", model);
 	}
 	
 
-	@RequestMapping(value="/registross", method=RequestMethod.POST)
-	public ModelAndView crearUsuario(@ModelAttribute Usuario usuario){
-	return null;		
+	@RequestMapping(path="/registroOk", method = RequestMethod.POST)
+		public ModelAndView agregarUsuario(@ModelAttribute("usuario") Usuario usuario){
+			ModelMap modeloRegistroUsuario = new ModelMap();
+			modeloRegistroUsuario.put("nombre", usuario.getNombre());
+			modeloRegistroUsuario.put("apellido", usuario.getApellido());
+			modeloRegistroUsuario.put("password", usuario.getPassword());
+			return new ModelAndView("confirmacionRegistro", modeloRegistroUsuario);
 	}
 
 	@RequestMapping("/publicacion")

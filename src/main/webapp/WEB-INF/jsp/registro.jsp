@@ -1,3 +1,4 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
 <head><%@ include file="../../includes/cabecera.jsp" %>	<!-- Cabecera con Meta, Titulos y Archivos Externos (Css) --></head>
@@ -10,6 +11,7 @@
 			<div class="panel panel-default">
 	  		<div class="panel-heading textoCentrado"><h3 class="panel-title">Datos del Registro</h3></div>
 	  		<div class="panel-body">
+	  			<!--  FORM VIEJO 
 	  			<form class="form-horizontal" role="form" method="post" action="" style="float:left">
 					<div class="row">
 					
@@ -92,6 +94,19 @@
 					    </div>
 	    			</div>
 				</form>
+				-->
+				
+				<form:form action="registroOk" method="POST" modelAttribute="usuario">
+					<label for="nombre">Nombre</label>
+					<form:input path="nombre" id="nombre" type="text" placeholder="Ingresar Nombre" />
+					
+					<label for="apellido">Apellido</label>
+					<form:input path="apellido" id="apellido" type="text" placeholder="Ingresar Apellido" />
+					
+					<label for="password">Password</label>
+					<form:input path="password" id="password" type="password" placeholder="Ingresar Password" />
+					<input type="submit" value="Enviar">
+				</form:form>
 	  		</div>
 	  	</div>
 	  </div>
