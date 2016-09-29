@@ -1,12 +1,17 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
+
 public class Usuario {
 	private String nombreLogin;
 	private String apellido;
 	private String password;
 	
-	public String getNombre() {
+
+	public String getNombreLogin() {
 		return nombreLogin;
+	}
+	public void setNombreLogin(String nombreLogin) {
+		this.nombreLogin = nombreLogin;
 	}
 	public void setNombre(String nombre) {
 		this.nombreLogin = nombre;
@@ -23,8 +28,6 @@ public class Usuario {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
 	
 }
 
