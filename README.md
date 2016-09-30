@@ -11,7 +11,7 @@ Trabajo Práctico Final para la cátedra Taller Web I de la Tecnicatura en Desar
 * Rivero, Ariel
 
 # Pasos para usar Git por Consola
-* git clone https://github.com/Juanmanuel245/SolucionesYA.git  --> Te descarga la ultima version del Proyecto
+* git clone   --> Te descarga la ultima version del Proyecto
 * git status --> Verificas que tengas la ultima version descargada
 * git add . --> Agrega todas las modificaciones que hagas
 * git commit -a -m "Titulo del Commit"  --> Le das un titulo a los cambios
