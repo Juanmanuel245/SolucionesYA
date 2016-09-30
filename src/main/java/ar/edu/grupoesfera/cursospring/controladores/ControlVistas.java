@@ -1,5 +1,7 @@
 package ar.edu.grupoesfera.cursospring.controladores;
 
+import javax.inject.Inject;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -8,15 +10,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.grupoesfera.cursospring.modelo.Usuario;
+import ar.edu.grupoesfera.cursospring.servicios.BusquedaEspecialista;
 
 @Controller
 public class ControlVistas {
-
+	@Inject
+	private BusquedaEspecialista servicioBusqueda;
+	
+	
 	@RequestMapping("/irRegistro")
 	public ModelAndView insertarUsuario(){
 		ModelMap model = new ModelMap();
 		Usuario usuario = new Usuario();
 		model.put("usuario", usuario);
+		servicioBusqueda.BuscarEspecialistaPorEspecialidad();
 		return new ModelAndView("registro", model);
 	}
 	
@@ -63,5 +70,16 @@ public class ControlVistas {
 	public ModelAndView cargarMiCuenta(){
 		ModelMap model = new ModelMap();
 		return new ModelAndView("miCuenta", model);
+	}
+	
+	@RequestMapping("/")
+	public ModelAndView cargarInicio(){
+		ModelMap model = new ModelMap();
+		return new ModelAndView("index", model);
+	}
+	
+	@RequestMapping("/inicio")
+	public ModelAndView goHome(){
+		return new ModelAndView("redirect:/");
 	}
 }

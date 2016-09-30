@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><%@ include file="includes/cabecera.jsp" %>	<!-- Cabecera con Meta, Titulos y Archivos Externos (Css) --></head>
+<head><%@ include file="../../includes/cabecera.jsp" %>	<!-- Cabecera con Meta, Titulos y Archivos Externos (Css) --></head>
 
 <body>
-<%@ include file="includes/menuPrincipal.jsp" %> <!-- MENU NAVEGACION -->
+<%@ include file="../../includes/menuPrincipal.jsp" %> <!-- MENU NAVEGACION -->
 
 
 <div class="container">
