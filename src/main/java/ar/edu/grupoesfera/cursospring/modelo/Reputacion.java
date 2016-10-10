@@ -1,19 +1,24 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
 public class Reputacion {
-	private Integer IdReputacion;
-	private Integer Puntuacion[];
+	private Integer idReputacion;
+	private Integer puntuacion[];
+	
+	
 	public Integer getIdReputacion() {
-		return IdReputacion;
+		return idReputacion;
 	}
 	public void setIdReputacion(Integer idReputacion) {
-		IdReputacion = idReputacion;
+		this.idReputacion = idReputacion;
 	}
 	public Integer[] getPuntuacion() {
-		return Puntuacion;
+		return puntuacion;
 	}
-	public void setPuntuacion(Integer puntuacion[]) {
-		Puntuacion = puntuacion;
+	public void setPuntuacion(Integer[] puntuacion) {
+		this.puntuacion = puntuacion;
 	}
+	
+	
+
 
 }
