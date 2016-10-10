@@ -1,7 +1,7 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
 public class Especialista {
-	private Integer IdEspecialista;
+	private Integer idEspecialista;
 	private Zona zona;
 	private Reputacion reputacion;
 	private Especialidad especialidad;
@@ -9,11 +9,12 @@ public class Especialista {
 	private String nombreEmpresa;
 	private String imagen;
 	private Galeria galeria;
+	
 	public Integer getIdEspecialista() {
-		return IdEspecialista;
+		return idEspecialista;
 	}
 	public void setIdEspecialista(Integer idEspecialista) {
-		IdEspecialista = idEspecialista;
+		this.idEspecialista = idEspecialista;
 	}
 	public Zona getZona() {
 		return zona;

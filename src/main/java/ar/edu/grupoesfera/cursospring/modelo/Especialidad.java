@@ -1,20 +1,20 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
 public class Especialidad {
-	private Integer IdEspecialidad;
-	private String NombreEspecialidad;
+	private Integer idEspecialidad;
+	private String nombreEspecialidad;
 	
 	public Integer getIdEspecialidad() {
-		return IdEspecialidad;
+		return idEspecialidad;
 	}
 	public void setIdEspecialidad(Integer idEspecialidad) {
-		IdEspecialidad = idEspecialidad;
+		this.idEspecialidad = idEspecialidad;
 	}
 	public String getNombreEspecialidad() {
-		return NombreEspecialidad;
+		return nombreEspecialidad;
 	}
 	public void setNombreEspecialidad(String nombreEspecialidad) {
-		NombreEspecialidad = nombreEspecialidad;
+		this.nombreEspecialidad = nombreEspecialidad;
 	}
 	
 	
