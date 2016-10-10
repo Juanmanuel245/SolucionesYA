@@ -1,17 +1,18 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
 public class Publicacion {
-	private Integer IdPublicacion;
+	private Integer idPublicacion;
 	private Especialista especialista;
 	private Zona zona;
 	private Especialidad especialidad;
 	private String contenido;
 	private Galeria galeria;
+	
 	public Integer getIdPublicacion() {
-		return IdPublicacion;
+		return idPublicacion;
 	}
 	public void setIdPublicacion(Integer idPublicacion) {
-		IdPublicacion = idPublicacion;
+		this.idPublicacion = idPublicacion;
 	}
 	public Especialista getEspecialista() {
 		return especialista;
@@ -43,6 +44,8 @@ public class Publicacion {
 	public void setGaleria(Galeria galeria) {
 		this.galeria = galeria;
 	}
+	
+	
 	
 	
 	

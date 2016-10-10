@@ -15,7 +15,7 @@
             <div class="panel-heading"><h3 class="panel-title">VENDEDORES DESTACADOS</h3></div>
             <div class="panel-body">
               <div class="col-lg-3 col-md-4 col-xs-6 thumb"><a class="thumbnail" href="#"><img class="img-responsive" src="images/emp1.jpg" alt=""></a></div>
-              <div class="col-lg-3 col-md-4 col-xs-6 thumb"><a class="thumbnail" href="publicacion"><img class="img-responsive" src="images/MateosMacias.jpg" alt=""></a></div>
+              <div class="col-lg-3 col-md-4 col-xs-6 thumb"><a class="thumbnail" href="publicacion/2"><img class="img-responsive" src="images/MateosMacias.jpg" alt=""></a></div>
               <div class="col-lg-3 col-md-4 col-xs-6 thumb"><a class="thumbnail" href="#"><img class="img-responsive" src="images/emp3.jpg" alt=""></a></div>
               <div class="col-lg-3 col-md-4 col-xs-6 thumb"><a class="thumbnail" href="#"><img class="img-responsive" src="images/emp4.jpg" alt=""></a></div>
               <div class="col-lg-3 col-md-4 col-xs-6 thumb"><a class="thumbnail" href="#"><img class="img-responsive" src="images/emp5.jpg" alt=""></a></div>

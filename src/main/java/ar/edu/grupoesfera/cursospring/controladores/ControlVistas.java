@@ -5,12 +5,15 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import ar.edu.grupoesfera.cursospring.modelo.Publicacion;
 import ar.edu.grupoesfera.cursospring.modelo.Usuario;
 import ar.edu.grupoesfera.cursospring.servicios.BusquedaEspecialista;
+import ar.edu.grupoesfera.cursospring.servicios.BusquedaPublicacion;
 
 @Controller
 public class ControlVistas {
@@ -45,10 +48,20 @@ public class ControlVistas {
 		return new ModelAndView("miCuenta", modeloLoginUsuario);
 }
 	
-	@RequestMapping("/publicacion")
-	public ModelAndView cargarPublicacion(){
+	@Inject
+	private BusquedaPublicacion servicioBusquedaPublicacion;
+	
+	@RequestMapping(value="/publicacion/{idPublicacion}", method = RequestMethod.GET)
+	public ModelAndView cargarPublicacion(@PathVariable Integer idPublicacion ){
+		Integer id = idPublicacion;
+		Publicacion publicacion = servicioBusquedaPublicacion.BuscarPublicacionPorId(id);
 		ModelMap model = new ModelMap();
-		model.put("Usuario", new Usuario());
+		model.put("id",publicacion.getIdPublicacion() );
+		model.put("especialista",publicacion.getEspecialista() );
+		model.put("zona",publicacion.getZona() );
+		model.put("especialidad",publicacion.getEspecialidad() );
+		model.put("contenido", publicacion.getContenido());
+		model.put("galeria",publicacion.getGaleria() );
 		return new ModelAndView("publicacion", model);
 	}
 
@@ -74,8 +87,7 @@ public class ControlVistas {
 	
 	@RequestMapping("/")
 	public ModelAndView cargarInicio(){
-		ModelMap model = new ModelMap();
-		return new ModelAndView("index", model);
+		return new ModelAndView("index");
 	}
 	
 	@RequestMapping("/inicio")
