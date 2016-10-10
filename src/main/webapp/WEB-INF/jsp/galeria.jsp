@@ -32,15 +32,15 @@
 				<div class="panel-body">
 					<div class="row">
 					  <div class="col-md-3">
-						  <img class="img-responsive" src="images/trabajos/BarandaEscalera.jpg" alt="Baranda de escalera" style="width: 100%; height: 300px">
+						  <img class="img-responsive" src="images/trabajos/barandaEscalera.jpg" alt="Baranda de escalera" style="width: 100%; height: 300px">
 							<h4 style="width: 20,2%" class="alert alert-success">Baranda para escalera de madera</h4>
 					  </div>
 					  <div class="col-md-3" >
-						  <img class="img-responsive" src="images/trabajos/BarreraPileta.jpg" alt="Valla para piscina" style="width: 100%; height: 300px">
+						  <img class="img-responsive" src="images/trabajos/barreraPileta.jpg" alt="Valla para piscina" style="width: 100%; height: 300px">
 							<h4 class="alert alert-success">Baranda para piscina</h4>
 					  </div>
 					  <div class="col-md-3">
-						  <img class="img-responsive" src="images/trabajos/EscaleraHierro.jpg" alt="Escalera de hierro tipo caracol" style="width: 100%; height: 300px" >
+						  <img class="img-responsive" src="images/trabajos/escaleraHierro.jpg" alt="Escalera de hierro tipo caracol" style="width: 100%; height: 300px" >
 							<h4 class="alert alert-success">Escalera caracol de hierro</h4>
 					  </div>
 					  <div class="col-md-3">
