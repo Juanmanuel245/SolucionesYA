@@ -33,7 +33,7 @@
 	                                   		<button type="submit" class="btn btn-success">Acceder</button>
 	                              		</div>
 	
-	                              		<div><a href="registro"> No estas registrado? Hace click aca </a></div>
+	                              		<div><a href="irRegistro"> No estas registrado? Hace click aca</a></div>
 	                          		</div>
 	                      		</form:form>
 
