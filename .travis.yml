@@ -1,1 +1,12 @@
-language: java
+language: scala
+scala:
+  - "2.10.3"
+jdk:
+  - oraclejdk7
+script:
+  - sbt $TASKS
+env:
+  - TASKS='test'
+notifications:
+  email:
+    - myemail@somehost.com
