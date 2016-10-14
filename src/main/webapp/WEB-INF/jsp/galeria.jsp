@@ -12,7 +12,7 @@
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<!--TITULO-->
-			   <div class="panel-heading"><center><h2 class="panel-title">Subir foto de trabajos realizados</h2></center></div>
+			   <div class="panel-heading"><h2 class="panel-title">Subir foto de trabajos realizados</h2></div>
 				<div class="panel-body">
 					<!--SECTOR DE CARGA DE IMAGENES-->
 					<div class="row">
