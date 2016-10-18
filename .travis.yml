@@ -1,16 +1,2 @@
 language: java
--scala:
--  - "2.10.3"
--jdk:
--  - oraclejdk7
--script:
--  - sbt $TASKS
--env:
--  - TASKS='test'
--notifications:
--  email:
--    - myemail@somehost.com
-
-Hola, a ver, espero que con esto falle!!!
-
-CUALQUIER MUGRE!!!!!
+jdk: oraclejdk8
