@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><%@ include file="../../includes/cabecera.jsp" %>	<!-- Cabecera con Meta, Titulos y Archivos Externos (Css) --></head>
+<head><%@ include file="includes/cabecera.jsp" %>	<!-- Cabecera con Meta, Titulos y Archivos Externos (Css) --></head>
 
 <body>
 
 <!-- MENU NAVEGACION -->
-<%@ include file="../../includes/menuPrincipal.jsp" %>
+<%@ include file="includes/menuPrincipal.jsp" %>
 <!-- FIN MENU NAVEGACION -->
 <div class="container" >
-  <div class="row" style="padding-top: 145px;">
+  <div class="row paddingMenuPrincipal">
 
     <div class="col-sm-2">
       <div class="list-group">
@@ -32,7 +32,7 @@
 
   </div>
 </div>
-<%@ include file="../../includes/pie.jsp" %><!-- PIE (Incluye los script de bootstrap) -->   s
+<%@ include file="includes/pie.jsp" %><!-- PIE (Incluye los script de bootstrap) -->   s
 </body>
 </html>
 

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><%@ include file="../../includes/cabecera.jsp" %>	<!-- Cabecera con Meta, Titulos y Archivos Externos (Css) --></head>
+<head><%@ include file="includes/cabecera.jsp" %>	<!-- Cabecera con Meta, Titulos y Archivos Externos (Css) --></head>
 <body>
 <!-- MENU NAVEGACION -->
-<%@ include file="../../includes/menuPrincipal.jsp" %>
+<%@ include file="includes/menuPrincipal.jsp" %>
 <!-- FIN MENU NAVEGACION -->
 
   <div class="col-sm-12" style="padding-top: 145px"> </div>
@@ -54,6 +54,6 @@
 		</div>
 	</div>
 </div>
-<%@ include file="../../includes/pie.jsp" %><!-- PIE (Incluye los script de bootstrap) -->   
+<%@ include file="includes/pie.jsp" %><!-- PIE (Incluye los script de bootstrap) -->   
   </body>
 </html>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><%@ include file="../../includes/cabecera.jsp" %>	<!-- Cabecera con Meta, Titulos y Archivos Externos (Css) --></head>
+<head><%@ include file="includes/cabecera.jsp" %>	<!-- Cabecera con Meta, Titulos y Archivos Externos (Css) --></head>
 
 <body>
-<%@ include file="../../includes/menuPrincipal.jsp" %><!-- MENU NAVEGACION -->
+<%@ include file="includes/menuPrincipal.jsp" %><!-- MENU NAVEGACION -->
 
 <div class="container" >
 
-  <div class="row" style="padding-top: 145px;">
+  <div class="row paddingMenuPrincipal">
      <!-- Informacion Basica sobre el especialista -->
      <div class="col-sm-1"></div>
         <div class="col-sm-10">
@@ -22,7 +22,7 @@
 					<button type="button" class="btn btn-default btn-xs btn-block">Reputacion</button>
 				</div>
                 <div class="col-sm-9">
-                  <div class="col-sm-12"><h3 class="textoCentrado">Mateos Macias Carpinteria</h3></div>
+                  <div class="col-sm-12"><h3 class="textoCentrado">${especialista.nombreEmpresa}</h3></div>
                   <div class="col-sm-12"><div class="alert alert-warning textoCentrado">El especialista fue contratado 208 veces, con una aprobacion del %80.</div></div>
                   <div class="col-sm-12"><button type="button" class="btn btn-success btn-lg btn-block">Contratar Especialista</button></div>
                 </div>
@@ -60,6 +60,6 @@
         <div class="col-sm-1"></div>
   </div>
   </div>
-<%@ include file="../../includes/pie.jsp" %><!-- PIE (Incluye los script de bootstrap) -->    
+<%@ include file="includes/pie.jsp" %><!-- PIE (Incluye los script de bootstrap) -->    
 </body>
 </html>

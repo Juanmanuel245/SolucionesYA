@@ -5,3 +5,7 @@ body {
 .textoCentrado{
 	text-align: center;
 }
+
+.paddingMenuPrincipal{
+	padding-top:145px;
+}

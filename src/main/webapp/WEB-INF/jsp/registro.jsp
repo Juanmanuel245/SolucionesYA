@@ -1,116 +1,53 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
-<head><%@ include file="../../includes/cabecera.jsp" %>	<!-- Cabecera con Meta, Titulos y Archivos Externos (Css) --></head>
-
-<div class="row">
+<head><%@ include file="includes/cabecera.jsp" %>	<!-- Cabecera con Meta, Titulos y Archivos Externos (Css) --></head>
+<body>
+<%@ include file="includes/menuPrincipal.jsp" %><!-- MENU NAVEGACION -->
+<div class="row paddingMenuPrincipal">
 	<div class="col-sm-1"></div>
 	
 	<div class="col-sm-10">
 		<div class="col-sm-12">
 			<div class="panel panel-default">
-	  		<div class="panel-heading textoCentrado"><h3 class="panel-title">Datos del Registro</h3></div>
-	  		<div class="panel-body">
-	  			<!--  FORM VIEJO 
-	  			<form class="form-horizontal" role="form" method="post" action="" style="float:left">
-					<div class="row">
-					
-						<div class="form-group">
-	        				<label class="control-label col-xs-3">Nombre:</label>
-	        				<div class="col-xs-5"><input type="text" class="form-control" placeholder="Nombre"></div>
-	    				</div>
-	    
-	    				<div class="form-group">
-	        				<label class="control-label col-xs-3">Apellido:</label>
-	        				<div class="col-xs-5"><input type="text" class="form-control" placeholder="Apellido"></div>
-	    				</div>
-	    				
-	   					<div class="form-group">
-	        				<label class="control-label col-xs-3">Email:</label>
-	        				<div class="col-xs-5"><input type="email" class="form-control" id="inputEmail" placeholder="Email"></div>
-	    				</div>
-	    				
-	    				<div class="form-group">
-	        			<label class="control-label col-xs-3">Password:</label>
-	        				<div class="col-xs-5"><input type="password" class="form-control" id="inputPassword" placeholder="Password"></div>
-	    				</div>
-	    
-	    				<div class="form-group">
-	        				<label class="control-label col-xs-3">Confirmar Password:</label>
-	        				<div class="col-xs-5"><input type="password" class="form-control" placeholder="Confirmar Password"></div>
-	    				</div>
-	   
-	    				<div class="form-group">
-	        				<label class="control-label col-xs-3" >Telefono:</label>
-	        				<div class="col-xs-5"><input type="tel" class="form-control" placeholder="Telefono"></div>
-	    				</div>
-	    				
-	    				<div class="form-group">
-	        				<label class="control-label col-xs-3">F. Nacimiento:</label>
-	        				<div class="col-xs-3"><input type="text" class="form-control letra_negra" placeholder="DD" name="fechaNacDia" pattern="[0-9]{1,2}" required></div>
-	       					<div class="col-xs-3"><input type="text" class="form-control letra_negra" placeholder="MM" name="fechaNacMes" pattern="[0-9]{1,2}" required></div>
-	        				<div class="col-xs-3"><input type="text" class="form-control letra_negra" placeholder="AAAA" name="fechaNacAnno" pattern="[0-9]{4,4}" required></div>
-	    				</div>
-   
-						<div class="form-group">
-	     					<label class="control-label col-xs-3">Pais:</label>
-	     					<div class="col-xs-5">
-	     						<select class="form-control" id="pais" name="pais" required><option class='letra_negra'  value="0">Seleccione un país</option></select>
-	     					</div>
-	 					</div>
-
-					   <div class="form-group">
-					     <label class="control-label col-xs-3">Provincia:</label>
-					     <div class="col-xs-5">
-					     	<select class="form-control" id="provincia" name="provincia" required><option class="form-control"  value="0">Seleccione una Provincia</option></select>
-					     </div>
-					  </div>
-
-					   <div class="form-group">
-					     <label class="control-label col-xs-3">Localidad:</label>
-					     <div class="col-xs-5">
-					     	<select class="form-control" id="pais" name="pais" required><option class='letra_negra'  value="0">Seleccione una Localidad</option></select>
-					     </div>
-					  </div>
-
-					    <div class="form-group">
-					     <label class="control-label col-xs-3">Calle:</label>
-					     <div class="col-xs-5">
-					     	<input type="text" class="form-control" name="calle" placeholder="Por Ejemplo: Av.Rivadavia" pattern="[A-zA-Z0-9./\s/][a-zA-ZÑÁÉÍÓÚáéíóú./\s/][a-zA-Zñáéíóú./\s/]{1,20}" required><br>
-					     </div>
-					   </div>
-
-					   <div class="form-group">
-					     <label class="control-label col-xs-3">Altura:</label>
-					     <div class="col-xs-5">
-					     	<input class="form-control" name="altura" type="text"  placeholder="Por Ejemplo: 224344" required>
-					     </div>
-					   </div>
-	   
-	    				<br>
-	    				
-					     <div class="form-group">
-					     	<div class="col-xs-offset-3 col-xs-3"><input type="submit" class="btn btn-success" value="Registrarse a SolucionesYa"></div>
-					    </div>
-	    			</div>
-				</form>
-				-->
-				
+	  		<div class="panel-heading textoCentrado"><h3 class="panel-title">Por favor, complete los siguientes datos de registro</h3></div>
+	  		<div class="panel-body">	
 				<form:form action="registroOk" method="POST" modelAttribute="usuario">
+			    		
 					<label for="nombre">Nombre</label>
-					<form:input path="nombre" id="nombre" type="text" placeholder="Ingresar Nombre" />
+					<form:input path="nombre" id="nombre" type="text" placeholder="Ingresar Nombre" class="form-control" />
 					
 					<label for="apellido">Apellido</label>
-					<form:input path="apellido" id="apellido" type="text" placeholder="Ingresar Apellido" />
+					<form:input path="apellido" id="apellido" type="text" placeholder="Ingresar Apellido" class="form-control" />
+					
+					<label for="apellido">Email</label>
+					<form:input path="email" id="email" type="text" placeholder="Ingresar Correo Electronico" class="form-control" />
 					
 					<label for="password">Password</label>
-					<form:input path="password" id="password" type="password" placeholder="Ingresar Password" />
-					<input type="submit" value="Enviar">
+					<form:input path="password" id="password" type="password" placeholder="Ingresar Password" class="form-control" />
+					
+					<%-- Como se pone la verificacion del password --%>
+					<label for="passwordDos">Confirmar Password</label>
+					<form:input path="password" id="passwordDos" type="text" placeholder="Vuelva a ingresar su password" class="form-control" />
+					
+					<label for="telefono">Telefono Celular</label>
+					<form:input path="telefono" id="telefono" type="text" placeholder="Ej: 1152688785" class="form-control" />
+					
+					<!--  FECHA DE NACIMIENTO -->
+					<%-- 
+					<label for="fechaNacimiento">Fecha de Nacimiento:</label>
+	        		<form:input path="diaNacimiento" type="text" class="form-control" placeholder="DD" name="fechaNacDia" pattern="[0-9]{1,2}" required />
+	       			<form:input path="mesNacimiento" type="text" class="form-control" placeholder="MM" name="fechaNacMes" pattern="[0-9]{1,2}" required />
+	        		<form:input path="AnnoNacimiento" type="text" class="form-control" placeholder="AAAA" name="fechaNacAnno" pattern="[0-9]{4,4}" required />
+	        		--%>
+					<br>
+					<input class="form-control btn btn-success" type="submit" value="Enviar">
 				</form:form>
 	  		</div>
 	  	</div>
 	  </div>
 	</div>
 </div>
-<%@ include file="../../includes/pie.jsp" %><!-- PIE (Incluye los script de bootstrap) -->   
+<%@ include file="includes/pie.jsp" %><!-- PIE (Incluye los script de bootstrap) -->   
+</body>
 </html>

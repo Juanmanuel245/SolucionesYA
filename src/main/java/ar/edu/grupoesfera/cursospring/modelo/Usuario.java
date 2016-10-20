@@ -5,7 +5,14 @@ public class Usuario {
 	private String apellido;
 	private String password;
 	private String email;
+	private Integer telefono;
 	
+	public Integer getTelefono() {
+		return telefono;
+	}
+	public void setTelefono(Integer telefono) {
+		this.telefono = telefono;
+	}
 	public String getNombre() {
 		return nombre;
 	}

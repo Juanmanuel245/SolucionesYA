@@ -42,10 +42,10 @@ public class ControlVistas {
 
 	@RequestMapping(path="/loginOk", method = RequestMethod.POST)
 	public ModelAndView logearUsuario(@ModelAttribute("usuario") Usuario usuario){
-		ModelMap modeloLoginUsuario = new ModelMap();
+//		ModelMap modeloLoginUsuario = new ModelMap();
 //		modeloLoginUsuario.put("nombre", usuario.getNombre());
 //		modeloLoginUsuario.put("password", usuario.getPassword());
-		return new ModelAndView("miCuenta", modeloLoginUsuario);
+		return new ModelAndView("miCuenta"/*,  modeloLoginUsuario */);
 }
 	
 	@Inject
