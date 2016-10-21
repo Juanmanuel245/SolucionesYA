@@ -1,10 +1,12 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
 public class Usuario {
+	private String usuario;
 	private String nombre;
 	private String apellido;
 	private String password;
 	private String email;
+	private String rol;
 	private Integer telefono;
 	
 	public Integer getTelefono() {
@@ -36,6 +38,18 @@ public class Usuario {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+	public String getRol() {
+		return rol;
+	}
+	public void setRol(String rol) {
+		this.rol = rol;
 	}
 	
 	
