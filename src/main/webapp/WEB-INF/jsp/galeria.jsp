@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><%@ include file="includes/cabecera.jsp" %>	<!-- Cabecera con Meta, Titulos y Archivos Externos (Css) --></head>
+<head><%@ include file="../../includes/cabecera.jsp" %>	<!-- Cabecera con Meta, Titulos y Archivos Externos (Css) --></head>
 <body>
 <!-- MENU NAVEGACION -->
-<%@ include file="includes/menuPrincipal.jsp" %>
+<%@ include file="../../includes/menuPrincipal.jsp" %>
 <!-- FIN MENU NAVEGACION -->
 
   <div class="col-sm-12" style="padding-top: 145px"> </div>
@@ -12,13 +12,13 @@
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<!--TITULO-->
-			   <div class="panel-heading"><center><h2 class="panel-title">Subir foto de trabajos realizados</h2></center></div>
+			   <div class="panel-heading"><h2 class="panel-title text-center">Subir foto de trabajos realizados</h2></div>
 				<div class="panel-body">
 					<!--SECTOR DE CARGA DE IMAGENES-->
 					<div class="row">
 					  <div class="col-sm-12">
 						<a style="background-color: #c2c2c2">
-							<div class="form-group"><a href="#" class="btn btn-success" role="button">
+							<div class="form-group text-center"><a href="inicio" class="btn btn-success" role="button">
 								<img class="img-rounded" src="images/camera.jpg" alt="">Subir imagen</a>
 							</div>
 						 </a>
@@ -28,7 +28,7 @@
 			</div>
 			<div class="panel panel-default">
 			<!--SECTOR DE IMAGENES-->
-			   <div class="panel-heading"><center><h2 class="panel-title">Imagenes archivadas</h2></center></div>
+			   <div class="panel-heading"><h2 class="panel-title text-center">Imagenes archivadas</h2></div>
 				<div class="panel-body">
 					<div class="row">
 					  <div class="col-md-3">
@@ -54,6 +54,6 @@
 		</div>
 	</div>
 </div>
-<%@ include file="includes/pie.jsp" %><!-- PIE (Incluye los script de bootstrap) -->   
+<%@ include file="../../includes/pie.jsp" %><!-- PIE (Incluye los script de bootstrap) -->   
   </body>
 </html>
