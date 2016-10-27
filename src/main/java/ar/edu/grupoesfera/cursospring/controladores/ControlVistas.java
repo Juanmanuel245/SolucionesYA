@@ -21,6 +21,8 @@ import ar.edu.grupoesfera.cursospring.servicios.PersonaService;
 public class ControlVistas {
 	@Inject
 	private BusquedaEspecialista servicioBusqueda;
+	@Inject
+	private PersonaService personaService;
 
 	@RequestMapping("/irRegistro")
 	public ModelAndView insertarUsuario() {
@@ -95,8 +97,6 @@ public class ControlVistas {
 		return new ModelAndView("redirect:/");
 	}
 
-	@Inject
-	private PersonaService personaService;
 
 	@RequestMapping(path = "/login", method = RequestMethod.POST)
 	public ModelAndView login(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
@@ -112,8 +112,7 @@ public class ControlVistas {
 		}
 	}
 
-	public void setPersonaService(PersonaService servicioMock) {
-		
-		
+	public void setPersonaService(PersonaService personaService) {
+		this.personaService = personaService;
 	}
 }
