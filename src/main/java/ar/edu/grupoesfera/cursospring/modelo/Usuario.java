@@ -1,12 +1,28 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Usuario {
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) // el @GeneratedValue sirve para hacerlo autoincremental y el @id para decir que va a ser el id el proximo valor
+	private Long id;
+	@Column
 	private String usuario;
+	@Column
 	private String nombre;
+	@Column
 	private String apellido;
+	@Column
 	private String password;
+	@Column
 	private String email;
+	@Column
 	private String rol;
+	@Column
 	private Integer telefono;
 	
 	public Integer getTelefono() {
@@ -50,6 +66,12 @@ public class Usuario {
 	}
 	public void setRol(String rol) {
 		this.rol = rol;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	

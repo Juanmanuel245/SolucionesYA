@@ -1,5 +1,8 @@
 package ar.edu.grupoesfera.cursospring.modelo;
+import org.hibernate.Session;
 import org.junit.Test;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.servlet.ModelAndView;
 import ar.edu.grupoesfera.cursospring.controladores.ControlVistas;
 import ar.edu.grupoesfera.cursospring.servicios.PersonaService;
@@ -12,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 // SE USA MOCK PARA HACER PRUEBAS UNITARIAS DE TEST QUE TIENEN DEPENDENCIAS
 
-public class PersonaTest {
+public class PersonaTest extends SpringTest {
 
 	@Test
 	public void loginConUsuarioYPasswordIncorrectoDeberiaLlevarAlLoginNuevamente(){
@@ -57,6 +60,17 @@ public class PersonaTest {
 		verify(sessionMock, times(1)).setAttribute("ROL", "ADMIN");
 	}
 
+	@Test
+	@Transactional
+	@Rollback
+	public void testDePersistencia(){
+		Usuario seba = new Usuario();
+		seba.setNombre("Sebastian");
+		Session s = getSession();
+		s.save(seba);
+		
+		assertThat(s.get(Usuario.class, seba.getId())).isNotNull();
+	}
 	
 	
 }
