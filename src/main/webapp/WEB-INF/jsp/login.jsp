@@ -18,7 +18,7 @@
 							<div class="container">
 								<div class="row">
 									<div class="box">
-										<form:form method="post" action="loginOk"
+										<form:form method="post" action="loginOk">
 											modelAttribute="usuario">
 											<div class="textos">
 												<div class="form-group col-lg-3">
