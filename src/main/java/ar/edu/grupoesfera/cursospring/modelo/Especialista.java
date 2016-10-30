@@ -1,100 +1,63 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
 public class Especialista {
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) 
-	private Long idEspecialista;
-	@Column
-	private Zona zonaEspecialista;
+	private Integer idEspecialista;
+	private Zona zona;
+	private Reputacion reputacion;
+	private Especialidad especialidad;
+	private String telefono;
+	private String nombreEmpresa;
+	private String imagen;
+	private Galeria galeria;
 	
-	@Column
-	private Reputacion reputacionEspecialista;
-	
-	@Column
-	private Especialidad especialidadEspecialista;
-	
-	@Column
-	private String telefonoEspecialista;
-	
-	@Column
-	private String nombreEmpresaEspecialista;
-	
-	@Column
-	private String logotipoEspecialista;
-	
-	@Column
-	private Galeria galeriaEspecialista;
-
-	public Long getIdEspecialista() {
+	public Integer getIdEspecialista() {
 		return idEspecialista;
 	}
-
-	public void setIdEspecialista(Long idEspecialista) {
+	public void setIdEspecialista(Integer idEspecialista) {
 		this.idEspecialista = idEspecialista;
 	}
-
-	public Zona getZonaEspecialista() {
-		return zonaEspecialista;
+	public Zona getZona() {
+		return zona;
 	}
-
-	public void setZonaEspecialista(Zona zonaEspecialista) {
-		this.zonaEspecialista = zonaEspecialista;
+	public void setZona(Zona zona) {
+		this.zona = zona;
 	}
-
-	public Reputacion getReputacionEspecialista() {
-		return reputacionEspecialista;
+	public Reputacion getReputacion() {
+		return reputacion;
 	}
-
-	public void setReputacionEspecialista(Reputacion reputacionEspecialista) {
-		this.reputacionEspecialista = reputacionEspecialista;
+	public void setReputacion(Reputacion reputacion) {
+		this.reputacion = reputacion;
 	}
-
-	public Especialidad getEspecialidadEspecialista() {
-		return especialidadEspecialista;
+	public Especialidad getEspecialidad() {
+		return especialidad;
 	}
-
-	public void setEspecialidadEspecialista(Especialidad especialidadEspecialista) {
-		this.especialidadEspecialista = especialidadEspecialista;
+	public void setEspecialidad(Especialidad especialidad) {
+		this.especialidad = especialidad;
 	}
-
-	public String getTelefonoEspecialista() {
-		return telefonoEspecialista;
+	public String getTelefono() {
+		return telefono;
 	}
-
-	public void setTelefonoEspecialista(String telefonoEspecialista) {
-		this.telefonoEspecialista = telefonoEspecialista;
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
-
-	public String getNombreEmpresaEspecialista() {
-		return nombreEmpresaEspecialista;
+	public String getNombreEmpresa() {
+		return nombreEmpresa;
 	}
-
-	public void setNombreEmpresaEspecialista(String nombreEmpresaEspecialista) {
-		this.nombreEmpresaEspecialista = nombreEmpresaEspecialista;
+	public void setNombreEmpresa(String nombreEmpresa) {
+		this.nombreEmpresa = nombreEmpresa;
 	}
-
-	public String getLogotipoEspecialista() {
-		return logotipoEspecialista;
+	public String getImagen() {
+		return imagen;
 	}
-
-	public void setLogotipoEspecialista(String logotipoEspecialista) {
-		this.logotipoEspecialista = logotipoEspecialista;
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
-
-	public Galeria getGaleriaEspecialista() {
-		return galeriaEspecialista;
+	public Galeria getGaleria() {
+		return galeria;
 	}
-
-	public void setGaleriaEspecialista(Galeria galeriaEspecialista) {
-		this.galeriaEspecialista = galeriaEspecialista;
+	public void setGaleria(Galeria galeria) {
+		this.galeria = galeria;
 	}
 	
-
 	
 }

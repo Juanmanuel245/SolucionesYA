@@ -8,96 +8,71 @@ import javax.persistence.Id;
 
 @Entity
 public class Usuario {
-	// el @GeneratedValue sirve para hacerlo autoincremental y el @id para decir que va a ser el id el proximo valor
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) 
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) // el @GeneratedValue sirve para hacerlo autoincremental y el @id para decir que va a ser el id el proximo valor
 	private Long id;
-	
 	@Column
-	private String usuarioNick;
-	
+	private String usuario;
 	@Column
-	private String nombreUsuario;
-	
+	private String nombre;
 	@Column
-	private String apellidoUsuario;
-	
+	private String apellido;
 	@Column
-	private String passwordUsuario;
-	
+	private String password;
 	@Column
-	private String emailUsuario;
-	
+	private String email;
 	@Column
-	private String rolUsuario;
-	
+	private String rol;
 	@Column
-	private Integer telefonoUsuario;
-
+	private Integer telefono;
+	
+	public Integer getTelefono() {
+		return telefono;
+	}
+	public void setTelefono(Integer telefono) {
+		this.telefono = telefono;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getApellido() {
+		return apellido;
+	}
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+	public String getRol() {
+		return rol;
+	}
+	public void setRol(String rol) {
+		this.rol = rol;
+	}
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getUsuarioNick() {
-		return usuarioNick;
-	}
-
-	public void setUsuarioNick(String usuarioNick) {
-		this.usuarioNick = usuarioNick;
-	}
-
-	public String getNombreUsuario() {
-		return nombreUsuario;
-	}
-
-	public void setNombreUsuario(String nombreUsuario) {
-		this.nombreUsuario = nombreUsuario;
-	}
-
-	public String getApellidoUsuario() {
-		return apellidoUsuario;
-	}
-
-	public void setApellidoUsuario(String apellidoUsuario) {
-		this.apellidoUsuario = apellidoUsuario;
-	}
-
-	public String getPasswordUsuario() {
-		return passwordUsuario;
-	}
-
-	public void setPasswordUsuario(String passwordUsuario) {
-		this.passwordUsuario = passwordUsuario;
-	}
-
-	public String getEmailUsuario() {
-		return emailUsuario;
-	}
-
-	public void setEmailUsuario(String emailUsuario) {
-		this.emailUsuario = emailUsuario;
-	}
-
-	public String getRolUsuario() {
-		return rolUsuario;
-	}
-
-	public void setRolUsuario(String rolUsuario) {
-		this.rolUsuario = rolUsuario;
-	}
-
-	public Integer getTelefonoUsuario() {
-		return telefonoUsuario;
-	}
-
-	public void setTelefonoUsuario(Integer telefonoUsuario) {
-		this.telefonoUsuario = telefonoUsuario;
-	}
-	
-
 	
 	
 	

@@ -1,82 +1,51 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
 public class Publicacion {
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) 
-	private Long idPublicacion;
+	private Integer idPublicacion;
+	private Especialista especialista;
+	private Zona zona;
+	private Especialidad especialidad;
+	private String contenido;
+	private Galeria galeria;
 	
-	@Column
-	private Especialista especialistaPublicacion;
-	
-	@Column
-	private Zona zonaPublicacion;
-	
-	@Column
-	private Especialidad especialidadPublicacion;
-	
-	@Column
-	private String contenidoPublicacion;
-	
-	@Column
-	private Galeria galeriaPublicacion;
-
-	public Long getIdPublicacion() {
+	public Integer getIdPublicacion() {
 		return idPublicacion;
 	}
-
-	public void setIdPublicacion(Long idPublicacion) {
+	public void setIdPublicacion(Integer idPublicacion) {
 		this.idPublicacion = idPublicacion;
 	}
-
-	public Especialista getEspecialistaPublicacion() {
-		return especialistaPublicacion;
+	public Especialista getEspecialista() {
+		return especialista;
 	}
-
-	public void setEspecialistaPublicacion(Especialista especialistaPublicacion) {
-		this.especialistaPublicacion = especialistaPublicacion;
+	public void setEspecialista(Especialista especialista) {
+		this.especialista = especialista;
 	}
-
-	public Zona getZonaPublicacion() {
-		return zonaPublicacion;
+	public Zona getZona() {
+		return zona;
 	}
-
-	public void setZonaPublicacion(Zona zonaPublicacion) {
-		this.zonaPublicacion = zonaPublicacion;
+	public void setZona(Zona zona) {
+		this.zona = zona;
 	}
-
-	public Especialidad getEspecialidadPublicacion() {
-		return especialidadPublicacion;
+	public Especialidad getEspecialidad() {
+		return especialidad;
 	}
-
-	public void setEspecialidadPublicacion(Especialidad especialidadPublicacion) {
-		this.especialidadPublicacion = especialidadPublicacion;
+	public void setEspecialidad(Especialidad especialidad) {
+		this.especialidad = especialidad;
 	}
-
-	public String getContenidoPublicacion() {
-		return contenidoPublicacion;
+	public String getContenido() {
+		return contenido;
 	}
-
-	public void setContenidoPublicacion(String contenidoPublicacion) {
-		this.contenidoPublicacion = contenidoPublicacion;
+	public void setContenido(String contenido) {
+		this.contenido = contenido;
 	}
-
-	public Galeria getGaleriaPublicacion() {
-		return galeriaPublicacion;
+	public Galeria getGaleria() {
+		return galeria;
 	}
-
-	public void setGaleriaPublicacion(Galeria galeriaPublicacion) {
-		this.galeriaPublicacion = galeriaPublicacion;
+	public void setGaleria(Galeria galeria) {
+		this.galeria = galeria;
 	}
-
-
 	
-
+	
 	
 	
 	

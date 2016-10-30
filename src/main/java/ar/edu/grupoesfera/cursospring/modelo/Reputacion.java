@@ -1,37 +1,22 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
 public class Reputacion {
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) 
-	private Long idReputacion;
+	private Integer idReputacion;
+	private Integer puntuacion[];
 	
-	@Column
-	private Integer puntuacionReputacion[];
-
-	public Long getIdReputacion() {
+	
+	public Integer getIdReputacion() {
 		return idReputacion;
 	}
-
-	public void setIdReputacion(Long idReputacion) {
+	public void setIdReputacion(Integer idReputacion) {
 		this.idReputacion = idReputacion;
 	}
-
-	public Integer[] getPuntuacionReputacion() {
-		return puntuacionReputacion;
+	public Integer[] getPuntuacion() {
+		return puntuacion;
 	}
-
-	public void setPuntuacionReputacion(Integer[] puntuacionReputacion) {
-		this.puntuacionReputacion = puntuacionReputacion;
+	public void setPuntuacion(Integer[] puntuacion) {
+		this.puntuacion = puntuacion;
 	}
-	
-	
-
 	
 	
 
