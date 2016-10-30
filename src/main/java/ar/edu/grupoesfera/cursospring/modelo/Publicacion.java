@@ -24,46 +24,59 @@ public class Publicacion {
 	private String contenidoPublicacion;
 	
 	@Column
-	private Galeria galeriaPublicaicon;
-	
+	private Galeria galeriaPublicacion;
+
 	public Long getIdPublicacion() {
 		return idPublicacion;
 	}
+
 	public void setIdPublicacion(Long idPublicacion) {
 		this.idPublicacion = idPublicacion;
 	}
-	public Especialista getEspecialista() {
+
+	public Especialista getEspecialistaPublicacion() {
 		return especialistaPublicacion;
 	}
-	public void setEspecialista(Especialista especialista) {
-		this.especialistaPublicacion = especialista;
+
+	public void setEspecialistaPublicacion(Especialista especialistaPublicacion) {
+		this.especialistaPublicacion = especialistaPublicacion;
 	}
-	public Zona getZona() {
+
+	public Zona getZonaPublicacion() {
 		return zonaPublicacion;
 	}
-	public void setZona(Zona zona) {
-		this.zonaPublicacion = zona;
+
+	public void setZonaPublicacion(Zona zonaPublicacion) {
+		this.zonaPublicacion = zonaPublicacion;
 	}
-	public Especialidad getEspecialidad() {
+
+	public Especialidad getEspecialidadPublicacion() {
 		return especialidadPublicacion;
 	}
-	public void setEspecialidad(Especialidad especialidad) {
-		this.especialidadPublicacion = especialidad;
+
+	public void setEspecialidadPublicacion(Especialidad especialidadPublicacion) {
+		this.especialidadPublicacion = especialidadPublicacion;
 	}
-	public String getContenido() {
+
+	public String getContenidoPublicacion() {
 		return contenidoPublicacion;
 	}
-	public void setContenido(String contenido) {
-		this.contenidoPublicacion = contenido;
+
+	public void setContenidoPublicacion(String contenidoPublicacion) {
+		this.contenidoPublicacion = contenidoPublicacion;
 	}
-	public Galeria getGaleria() {
-		return galeriaPublicaicon;
+
+	public Galeria getGaleriaPublicacion() {
+		return galeriaPublicacion;
 	}
-	public void setGaleria(Galeria galeria) {
-		this.galeriaPublicaicon = galeria;
+
+	public void setGaleriaPublicacion(Galeria galeriaPublicacion) {
+		this.galeriaPublicacion = galeriaPublicacion;
 	}
+
+
 	
-	
+
 	
 	
 	

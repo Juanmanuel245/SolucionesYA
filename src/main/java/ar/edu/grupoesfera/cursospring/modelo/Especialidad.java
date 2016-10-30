@@ -13,19 +13,24 @@ public class Especialidad {
 	
 	@Column
 	private String nombreEspecialidad;
-	
+
 	public Long getIdEspecialidad() {
 		return idEspecialidad;
 	}
+
 	public void setIdEspecialidad(Long idEspecialidad) {
 		this.idEspecialidad = idEspecialidad;
 	}
+
 	public String getNombreEspecialidad() {
 		return nombreEspecialidad;
 	}
+
 	public void setNombreEspecialidad(String nombreEspecialidad) {
 		this.nombreEspecialidad = nombreEspecialidad;
 	}
+	
+
 	
 	
 }

@@ -32,55 +32,72 @@ public class Usuario {
 	
 	@Column
 	private Integer telefonoUsuario;
-	
-	public Integer getTelefono() {
-		return telefonoUsuario;
-	}
-	public void setTelefono(Integer telefono) {
-		this.telefonoUsuario = telefono;
-	}
-	public String getNombre() {
-		return nombreUsuario;
-	}
-	public void setNombre(String nombre) {
-		this.nombreUsuario = nombre;
-	}
-	public String getApellido() {
-		return apellidoUsuario;
-	}
-	public void setApellido(String apellido) {
-		this.apellidoUsuario = apellido;
-	}
-	public String getPassword() {
-		return passwordUsuario;
-	}
-	public void setPassword(String password) {
-		this.passwordUsuario = password;
-	}
-	public String getEmail() {
-		return emailUsuario;
-	}
-	public void setEmail(String email) {
-		this.emailUsuario = email;
-	}
-	public String getUsuario() {
-		return usuarioNick;
-	}
-	public void setUsuario(String usuario) {
-		this.usuarioNick = usuario;
-	}
-	public String getRol() {
-		return rolUsuario;
-	}
-	public void setRol(String rol) {
-		this.rolUsuario = rol;
-	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public String getUsuarioNick() {
+		return usuarioNick;
+	}
+
+	public void setUsuarioNick(String usuarioNick) {
+		this.usuarioNick = usuarioNick;
+	}
+
+	public String getNombreUsuario() {
+		return nombreUsuario;
+	}
+
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
+	}
+
+	public String getApellidoUsuario() {
+		return apellidoUsuario;
+	}
+
+	public void setApellidoUsuario(String apellidoUsuario) {
+		this.apellidoUsuario = apellidoUsuario;
+	}
+
+	public String getPasswordUsuario() {
+		return passwordUsuario;
+	}
+
+	public void setPasswordUsuario(String passwordUsuario) {
+		this.passwordUsuario = passwordUsuario;
+	}
+
+	public String getEmailUsuario() {
+		return emailUsuario;
+	}
+
+	public void setEmailUsuario(String emailUsuario) {
+		this.emailUsuario = emailUsuario;
+	}
+
+	public String getRolUsuario() {
+		return rolUsuario;
+	}
+
+	public void setRolUsuario(String rolUsuario) {
+		this.rolUsuario = rolUsuario;
+	}
+
+	public Integer getTelefonoUsuario() {
+		return telefonoUsuario;
+	}
+
+	public void setTelefonoUsuario(Integer telefonoUsuario) {
+		this.telefonoUsuario = telefonoUsuario;
+	}
+	
+
 	
 	
 	

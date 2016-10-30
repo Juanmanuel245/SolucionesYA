@@ -13,19 +13,23 @@ public class Zona {
 	
 	@Column
 	private String nombreZona;
-	
+
 	public Long getIdZona() {
 		return idZona;
 	}
+
 	public void setIdZona(Long idZona) {
 		this.idZona = idZona;
 	}
-	public String getNombre() {
+
+	public String getNombreZona() {
 		return nombreZona;
 	}
-	public void setNombre(String nombre) {
-		this.nombreZona = nombre;
+
+	public void setNombreZona(String nombreZona) {
+		this.nombreZona = nombreZona;
 	}
+	
 	
 	
 

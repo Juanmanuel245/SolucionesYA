@@ -30,55 +30,71 @@ public class Especialista {
 	
 	@Column
 	private Galeria galeriaEspecialista;
-	
+
 	public Long getIdEspecialista() {
 		return idEspecialista;
 	}
+
 	public void setIdEspecialista(Long idEspecialista) {
 		this.idEspecialista = idEspecialista;
 	}
-	public Zona getZona() {
+
+	public Zona getZonaEspecialista() {
 		return zonaEspecialista;
 	}
-	public void setZona(Zona zona) {
-		this.zonaEspecialista = zona;
+
+	public void setZonaEspecialista(Zona zonaEspecialista) {
+		this.zonaEspecialista = zonaEspecialista;
 	}
-	public Reputacion getReputacion() {
+
+	public Reputacion getReputacionEspecialista() {
 		return reputacionEspecialista;
 	}
-	public void setReputacion(Reputacion reputacion) {
-		this.reputacionEspecialista = reputacion;
+
+	public void setReputacionEspecialista(Reputacion reputacionEspecialista) {
+		this.reputacionEspecialista = reputacionEspecialista;
 	}
-	public Especialidad getEspecialidad() {
+
+	public Especialidad getEspecialidadEspecialista() {
 		return especialidadEspecialista;
 	}
-	public void setEspecialidad(Especialidad especialidad) {
-		this.especialidadEspecialista = especialidad;
+
+	public void setEspecialidadEspecialista(Especialidad especialidadEspecialista) {
+		this.especialidadEspecialista = especialidadEspecialista;
 	}
-	public String getTelefono() {
+
+	public String getTelefonoEspecialista() {
 		return telefonoEspecialista;
 	}
-	public void setTelefono(String telefono) {
-		this.telefonoEspecialista = telefono;
+
+	public void setTelefonoEspecialista(String telefonoEspecialista) {
+		this.telefonoEspecialista = telefonoEspecialista;
 	}
-	public String getNombreEmpresa() {
+
+	public String getNombreEmpresaEspecialista() {
 		return nombreEmpresaEspecialista;
 	}
-	public void setNombreEmpresa(String nombreEmpresa) {
-		this.nombreEmpresaEspecialista = nombreEmpresa;
+
+	public void setNombreEmpresaEspecialista(String nombreEmpresaEspecialista) {
+		this.nombreEmpresaEspecialista = nombreEmpresaEspecialista;
 	}
-	public String getImagen() {
+
+	public String getLogotipoEspecialista() {
 		return logotipoEspecialista;
 	}
-	public void setImagen(String imagen) {
-		this.logotipoEspecialista = imagen;
+
+	public void setLogotipoEspecialista(String logotipoEspecialista) {
+		this.logotipoEspecialista = logotipoEspecialista;
 	}
-	public Galeria getGaleria() {
+
+	public Galeria getGaleriaEspecialista() {
 		return galeriaEspecialista;
 	}
-	public void setGaleria(Galeria galeria) {
-		this.galeriaEspecialista = galeria;
+
+	public void setGaleriaEspecialista(Galeria galeriaEspecialista) {
+		this.galeriaEspecialista = galeriaEspecialista;
 	}
 	
+
 	
 }

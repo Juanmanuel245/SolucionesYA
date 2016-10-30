@@ -43,7 +43,7 @@ public class PersonaTest extends SpringTest {
 		ControlVistas controlador = new ControlVistas();
 		
 		Usuario usuario = new Usuario();
-		usuario.setRol("ADMIN");
+		usuario.setRolUsuario("ADMIN");
 		
 		HttpServletRequest requestMock = mock(HttpServletRequest.class);
 		HttpSession sessionMock = mock(HttpSession.class);
@@ -65,7 +65,7 @@ public class PersonaTest extends SpringTest {
 	@Rollback
 	public void testDePersistencia(){
 		Usuario seba = new Usuario();
-		seba.setNombre("Sebastian");
+		seba.setNombreUsuario("Sebastian");
 		Session s = getSession();
 		s.save(seba);
 		

@@ -13,19 +13,23 @@ public class Galeria {
 	
 	@Column
 	private String imagenGaleria[];
-	
+
 	public Long getIdGaleria() {
 		return idGaleria;
 	}
+
 	public void setIdGaleria(Long idGaleria) {
 		this.idGaleria = idGaleria;
 	}
-	public String[] getImagen() {
+
+	public String[] getImagenGaleria() {
 		return imagenGaleria;
 	}
-	public void setImagen(String[] imagen) {
-		this.imagenGaleria = imagen;
+
+	public void setImagenGaleria(String[] imagenGaleria) {
+		this.imagenGaleria = imagenGaleria;
 	}
 	
+
 	
 }

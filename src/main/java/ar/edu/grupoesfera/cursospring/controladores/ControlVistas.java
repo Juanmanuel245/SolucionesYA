@@ -36,9 +36,9 @@ public class ControlVistas {
 	@RequestMapping(path = "/registroOk", method = RequestMethod.POST)
 	public ModelAndView agregarUsuario(@ModelAttribute("usuario") Usuario usuario) {
 		ModelMap modeloRegistroUsuario = new ModelMap();
-		modeloRegistroUsuario.put("nombre", usuario.getNombre());
-		modeloRegistroUsuario.put("apellido", usuario.getApellido());
-		modeloRegistroUsuario.put("password", usuario.getPassword());
+		modeloRegistroUsuario.put("nombre", usuario.getNombreUsuario());
+		modeloRegistroUsuario.put("apellido", usuario.getApellidoUsuario());
+		modeloRegistroUsuario.put("password", usuario.getPasswordUsuario());
 		return new ModelAndView("confirmacionRegistro", modeloRegistroUsuario);
 	}
 
@@ -59,11 +59,11 @@ public class ControlVistas {
 		Publicacion publicacion = servicioBusquedaPublicacion.BuscarPublicacionPorId(id);
 		ModelMap model = new ModelMap();
 		model.put("id", publicacion.getIdPublicacion());
-		model.put("especialista", publicacion.getEspecialista());
-		model.put("zona", publicacion.getZona());
-		model.put("especialidad", publicacion.getEspecialidad());
-		model.put("contenido", publicacion.getContenido());
-		model.put("galeria", publicacion.getGaleria());
+		model.put("especialista", publicacion.getEspecialistaPublicacion());
+		model.put("zona", publicacion.getZonaPublicacion());
+		model.put("especialidad", publicacion.getEspecialidadPublicacion());
+		model.put("contenido", publicacion.getContenidoPublicacion());
+		model.put("galeria", publicacion.getGaleriaPublicacion());
 		return new ModelAndView("publicacion", model);
 	}
 
@@ -101,9 +101,9 @@ public class ControlVistas {
 	@RequestMapping(path = "/login", method = RequestMethod.POST)
 	public ModelAndView login(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
 
-		Usuario usuarioValidado = personaService.validarUsuario(usuario.getUsuario(), usuario.getPassword());
+		Usuario usuarioValidado = personaService.validarUsuario(usuario.getUsuarioNick(), usuario.getPasswordUsuario());
 		if (usuarioValidado != null) {
-			request.getSession().setAttribute("ROL", usuarioValidado.getRol());
+			request.getSession().setAttribute("ROL", usuarioValidado.getRolUsuario());
 			return new ModelAndView("home");
 		} else {
 			ModelMap model = new ModelMap();
