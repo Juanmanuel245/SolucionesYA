@@ -1,17 +1,35 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Publicacion {
-	private Integer idPublicacion;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) 
+	private Long idPublicacion;
+	
+	@Column
 	private Especialista especialista;
+	
+	@Column
 	private Zona zona;
+	
+	@Column
 	private Especialidad especialidad;
+	
+	@Column
 	private String contenido;
+	
+	@Column
 	private Galeria galeria;
 	
-	public Integer getIdPublicacion() {
+	public Long getIdPublicacion() {
 		return idPublicacion;
 	}
-	public void setIdPublicacion(Integer idPublicacion) {
+	public void setIdPublicacion(Long idPublicacion) {
 		this.idPublicacion = idPublicacion;
 	}
 	public Especialista getEspecialista() {

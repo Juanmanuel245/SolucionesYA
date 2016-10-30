@@ -8,20 +8,28 @@ import javax.persistence.Id;
 
 @Entity
 public class Usuario {
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) // el @GeneratedValue sirve para hacerlo autoincremental y el @id para decir que va a ser el id el proximo valor
+	// el @GeneratedValue sirve para hacerlo autoincremental y el @id para decir que va a ser el id el proximo valor
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private Long id;
+	
 	@Column
 	private String usuario;
+	
 	@Column
 	private String nombre;
+	
 	@Column
 	private String apellido;
+	
 	@Column
 	private String password;
+	
 	@Column
 	private String email;
+	
 	@Column
 	private String rol;
+	
 	@Column
 	private Integer telefono;
 	

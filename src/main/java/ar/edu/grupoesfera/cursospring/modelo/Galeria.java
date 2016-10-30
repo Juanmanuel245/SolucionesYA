@@ -1,13 +1,23 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Galeria {
-	private Integer idGaleria;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) 
+	private Long idGaleria;
+	
+	@Column
 	private String imagen[];
 	
-	public Integer getIdGaleria() {
+	public Long getIdGaleria() {
 		return idGaleria;
 	}
-	public void setIdGaleria(Integer idGaleria) {
+	public void setIdGaleria(Long idGaleria) {
 		this.idGaleria = idGaleria;
 	}
 	public String[] getImagen() {
