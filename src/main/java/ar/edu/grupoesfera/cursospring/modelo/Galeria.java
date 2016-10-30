@@ -12,7 +12,7 @@ public class Galeria {
 	private Long idGaleria;
 	
 	@Column
-	private String imagen[];
+	private String imagenGaleria[];
 	
 	public Long getIdGaleria() {
 		return idGaleria;
@@ -21,10 +21,10 @@ public class Galeria {
 		this.idGaleria = idGaleria;
 	}
 	public String[] getImagen() {
-		return imagen;
+		return imagenGaleria;
 	}
 	public void setImagen(String[] imagen) {
-		this.imagen = imagen;
+		this.imagenGaleria = imagen;
 	}
 	
 	

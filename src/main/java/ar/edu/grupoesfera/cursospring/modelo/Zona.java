@@ -12,7 +12,7 @@ public class Zona {
 	private Long idZona;
 	
 	@Column
-	private String nombre;
+	private String nombreZona;
 	
 	public Long getIdZona() {
 		return idZona;
@@ -21,10 +21,10 @@ public class Zona {
 		this.idZona = idZona;
 	}
 	public String getNombre() {
-		return nombre;
+		return nombreZona;
 	}
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		this.nombreZona = nombre;
 	}
 	
 	

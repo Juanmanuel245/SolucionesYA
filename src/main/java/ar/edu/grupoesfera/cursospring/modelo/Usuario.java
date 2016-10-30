@@ -13,67 +13,67 @@ public class Usuario {
 	private Long id;
 	
 	@Column
-	private String usuario;
+	private String usuarioNick;
 	
 	@Column
-	private String nombre;
+	private String nombreUsuario;
 	
 	@Column
-	private String apellido;
+	private String apellidoUsuario;
 	
 	@Column
-	private String password;
+	private String passwordUsuario;
 	
 	@Column
-	private String email;
+	private String emailUsuario;
 	
 	@Column
-	private String rol;
+	private String rolUsuario;
 	
 	@Column
-	private Integer telefono;
+	private Integer telefonoUsuario;
 	
 	public Integer getTelefono() {
-		return telefono;
+		return telefonoUsuario;
 	}
 	public void setTelefono(Integer telefono) {
-		this.telefono = telefono;
+		this.telefonoUsuario = telefono;
 	}
 	public String getNombre() {
-		return nombre;
+		return nombreUsuario;
 	}
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		this.nombreUsuario = nombre;
 	}
 	public String getApellido() {
-		return apellido;
+		return apellidoUsuario;
 	}
 	public void setApellido(String apellido) {
-		this.apellido = apellido;
+		this.apellidoUsuario = apellido;
 	}
 	public String getPassword() {
-		return password;
+		return passwordUsuario;
 	}
 	public void setPassword(String password) {
-		this.password = password;
+		this.passwordUsuario = password;
 	}
 	public String getEmail() {
-		return email;
+		return emailUsuario;
 	}
 	public void setEmail(String email) {
-		this.email = email;
+		this.emailUsuario = email;
 	}
 	public String getUsuario() {
-		return usuario;
+		return usuarioNick;
 	}
 	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+		this.usuarioNick = usuario;
 	}
 	public String getRol() {
-		return rol;
+		return rolUsuario;
 	}
 	public void setRol(String rol) {
-		this.rol = rol;
+		this.rolUsuario = rol;
 	}
 	public Long getId() {
 		return id;

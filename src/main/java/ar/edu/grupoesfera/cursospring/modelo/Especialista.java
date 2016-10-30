@@ -11,25 +11,25 @@ public class Especialista {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private Long idEspecialista;
 	@Column
-	private Zona zona;
+	private Zona zonaEspecialista;
 	
 	@Column
-	private Reputacion reputacion;
+	private Reputacion reputacionEspecialista;
 	
 	@Column
-	private Especialidad especialidad;
+	private Especialidad especialidadEspecialista;
 	
 	@Column
-	private String telefono;
+	private String telefonoEspecialista;
 	
 	@Column
-	private String nombreEmpresa;
+	private String nombreEmpresaEspecialista;
 	
 	@Column
-	private String imagen;
+	private String logotipoEspecialista;
 	
 	@Column
-	private Galeria galeria;
+	private Galeria galeriaEspecialista;
 	
 	public Long getIdEspecialista() {
 		return idEspecialista;
@@ -38,46 +38,46 @@ public class Especialista {
 		this.idEspecialista = idEspecialista;
 	}
 	public Zona getZona() {
-		return zona;
+		return zonaEspecialista;
 	}
 	public void setZona(Zona zona) {
-		this.zona = zona;
+		this.zonaEspecialista = zona;
 	}
 	public Reputacion getReputacion() {
-		return reputacion;
+		return reputacionEspecialista;
 	}
 	public void setReputacion(Reputacion reputacion) {
-		this.reputacion = reputacion;
+		this.reputacionEspecialista = reputacion;
 	}
 	public Especialidad getEspecialidad() {
-		return especialidad;
+		return especialidadEspecialista;
 	}
 	public void setEspecialidad(Especialidad especialidad) {
-		this.especialidad = especialidad;
+		this.especialidadEspecialista = especialidad;
 	}
 	public String getTelefono() {
-		return telefono;
+		return telefonoEspecialista;
 	}
 	public void setTelefono(String telefono) {
-		this.telefono = telefono;
+		this.telefonoEspecialista = telefono;
 	}
 	public String getNombreEmpresa() {
-		return nombreEmpresa;
+		return nombreEmpresaEspecialista;
 	}
 	public void setNombreEmpresa(String nombreEmpresa) {
-		this.nombreEmpresa = nombreEmpresa;
+		this.nombreEmpresaEspecialista = nombreEmpresa;
 	}
 	public String getImagen() {
-		return imagen;
+		return logotipoEspecialista;
 	}
 	public void setImagen(String imagen) {
-		this.imagen = imagen;
+		this.logotipoEspecialista = imagen;
 	}
 	public Galeria getGaleria() {
-		return galeria;
+		return galeriaEspecialista;
 	}
 	public void setGaleria(Galeria galeria) {
-		this.galeria = galeria;
+		this.galeriaEspecialista = galeria;
 	}
 	
 	

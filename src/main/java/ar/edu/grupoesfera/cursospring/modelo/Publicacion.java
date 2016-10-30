@@ -12,19 +12,19 @@ public class Publicacion {
 	private Long idPublicacion;
 	
 	@Column
-	private Especialista especialista;
+	private Especialista especialistaPublicacion;
 	
 	@Column
-	private Zona zona;
+	private Zona zonaPublicacion;
 	
 	@Column
-	private Especialidad especialidad;
+	private Especialidad especialidadPublicacion;
 	
 	@Column
-	private String contenido;
+	private String contenidoPublicacion;
 	
 	@Column
-	private Galeria galeria;
+	private Galeria galeriaPublicaicon;
 	
 	public Long getIdPublicacion() {
 		return idPublicacion;
@@ -33,34 +33,34 @@ public class Publicacion {
 		this.idPublicacion = idPublicacion;
 	}
 	public Especialista getEspecialista() {
-		return especialista;
+		return especialistaPublicacion;
 	}
 	public void setEspecialista(Especialista especialista) {
-		this.especialista = especialista;
+		this.especialistaPublicacion = especialista;
 	}
 	public Zona getZona() {
-		return zona;
+		return zonaPublicacion;
 	}
 	public void setZona(Zona zona) {
-		this.zona = zona;
+		this.zonaPublicacion = zona;
 	}
 	public Especialidad getEspecialidad() {
-		return especialidad;
+		return especialidadPublicacion;
 	}
 	public void setEspecialidad(Especialidad especialidad) {
-		this.especialidad = especialidad;
+		this.especialidadPublicacion = especialidad;
 	}
 	public String getContenido() {
-		return contenido;
+		return contenidoPublicacion;
 	}
 	public void setContenido(String contenido) {
-		this.contenido = contenido;
+		this.contenidoPublicacion = contenido;
 	}
 	public Galeria getGaleria() {
-		return galeria;
+		return galeriaPublicaicon;
 	}
 	public void setGaleria(Galeria galeria) {
-		this.galeria = galeria;
+		this.galeriaPublicaicon = galeria;
 	}
 	
 	

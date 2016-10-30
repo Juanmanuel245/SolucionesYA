@@ -12,7 +12,7 @@ public class Reputacion {
 	private Long idReputacion;
 	
 	@Column
-	private Integer puntuacion[];
+	private Integer puntuacionReputacion[];
 	
 	
 	public Long getIdReputacion() {
@@ -22,10 +22,10 @@ public class Reputacion {
 		this.idReputacion = idReputacion;
 	}
 	public Integer[] getPuntuacion() {
-		return puntuacion;
+		return puntuacionReputacion;
 	}
 	public void setPuntuacion(Integer[] puntuacion) {
-		this.puntuacion = puntuacion;
+		this.puntuacionReputacion = puntuacion;
 	}
 	
 	
