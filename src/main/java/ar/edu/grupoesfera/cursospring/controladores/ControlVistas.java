@@ -15,6 +15,7 @@ import ar.edu.grupoesfera.cursospring.modelo.Publicacion;
 import ar.edu.grupoesfera.cursospring.modelo.Usuario;
 import ar.edu.grupoesfera.cursospring.servicios.BusquedaEspecialista;
 import ar.edu.grupoesfera.cursospring.servicios.BusquedaPublicacion;
+import ar.edu.grupoesfera.cursospring.servicios.ManejoHibernate;
 import ar.edu.grupoesfera.cursospring.servicios.PersonaService;
 
 @Controller
@@ -23,7 +24,24 @@ public class ControlVistas {
 	private BusquedaEspecialista servicioBusqueda;
 	@Inject
 	private PersonaService personaService;
+	@Inject
+	private ManejoHibernate servicioHibernate;
 
+	@RequestMapping(value = "/usuario/{id}", method = RequestMethod.GET)
+	public ModelAndView traerUsuario(@PathVariable Long id) {
+//		Integer id = id;
+		Usuario usuario = servicioHibernate.TraerUsuarios(id);
+		ModelMap model = new ModelMap();
+		model.put("nombre", usuario.getNombre());
+		model.put("apellido", usuario.getApellido());
+		model.put("email", usuario.getEmail());
+		model.put("telefono", usuario.getTelefono());
+		model.put("rol", usuario.getRol());
+		model.put("nick", usuario.getUsuario());
+		return new ModelAndView("usuario", model);
+	}
+	
+	
 	@RequestMapping("/irRegistro")
 	public ModelAndView insertarUsuario() {
 		ModelMap model = new ModelMap();
@@ -31,6 +49,12 @@ public class ControlVistas {
 		model.put("usuario", usuario);
 		servicioBusqueda.BuscarEspecialistaPorEspecialidad();
 		return new ModelAndView("registro", model);
+	}
+	
+	@RequestMapping("/generardatos")
+	public ModelAndView generarDatos() {	
+		servicioHibernate.GenerarUsuarios();
+		return new ModelAndView("redirect:/");
 	}
 
 	@RequestMapping(path = "/registroOk", method = RequestMethod.POST)

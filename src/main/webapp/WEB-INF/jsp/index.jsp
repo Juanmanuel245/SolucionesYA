@@ -48,7 +48,7 @@
 								src="images/emp7.jpg" alt=""></a>
 						</div>
 						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-							<a class="thumbnail" href="#"><img class="img-responsive"
+							<a class="thumbnail" href="usuario/1"><img class="img-responsive"
 								src="images/emp8.jpg" alt=""></a>
 						</div>
 					</div>
