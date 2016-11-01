@@ -45,13 +45,6 @@
 							<form:input path="telefono" id="telefono" type="text"
 								placeholder="Ej: 1152688785" class="form-control" />
 
-							<!--  FECHA DE NACIMIENTO -->
-							<%-- 
-					<label for="fechaNacimiento">Fecha de Nacimiento:</label>
-	        		<form:input path="diaNacimiento" type="text" class="form-control" placeholder="DD" name="fechaNacDia" pattern="[0-9]{1,2}" required />
-	       			<form:input path="mesNacimiento" type="text" class="form-control" placeholder="MM" name="fechaNacMes" pattern="[0-9]{1,2}" required />
-	        		<form:input path="AnnoNacimiento" type="text" class="form-control" placeholder="AAAA" name="fechaNacAnno" pattern="[0-9]{4,4}" required />
-	        		--%>
 							<br>
 							<input class="form-control btn btn-success" type="submit"
 								value="Enviar">

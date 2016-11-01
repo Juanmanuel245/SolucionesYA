@@ -32,7 +32,6 @@ public class ManejoHibernateImpl implements ManejoHibernate {
 		usuario1.setPassword("123456");
 		usuario1.setRol("user");
 		usuario1.setTelefono(1569241006);
-		usuario1.setUsuario("JuanManuel245");
 		
 		session.save(usuario1);
 		
@@ -44,7 +43,6 @@ public class ManejoHibernateImpl implements ManejoHibernate {
 		usuario2.setPassword("123456");
 		usuario2.setRol("esp");
 		usuario2.setTelefono(1539341064);
-		usuario2.setUsuario("Kuz024");
 		
 		session.save(usuario2);
 		return;
@@ -59,6 +57,32 @@ public class ManejoHibernateImpl implements ManejoHibernate {
 
 		return usuario;
 			
+	}
+	
+	@Override
+	public Usuario validarUsuario(String emailBuscado, String passwordBuscado) {
+		
+		if(emailBuscado == "juanmanuelcaffi@gmail.com" && passwordBuscado=="123456"){
+			
+			final Session session = sessionFactory.openSession();
+			
+			Usuario usuario = (Usuario)session.get(Usuario.class, 1);
+			
+			return usuario;
+		}
+		else{
+			return null;
+		}
+		
+	}
+
+	@Override
+	public void GenerarPublicaciones() {
+//		final Session session = sessionFactory.openSession();
+//		Publicacion pub1 = new Publicacion();
+//		pub1.setContenido("Contratame soy re pro");
+//		pub1.setZona("Ramos");
+		
 	}
 
 }

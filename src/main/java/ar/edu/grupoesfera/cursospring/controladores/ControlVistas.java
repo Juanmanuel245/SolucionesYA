@@ -16,14 +16,11 @@ import ar.edu.grupoesfera.cursospring.modelo.Usuario;
 import ar.edu.grupoesfera.cursospring.servicios.BusquedaEspecialista;
 import ar.edu.grupoesfera.cursospring.servicios.BusquedaPublicacion;
 import ar.edu.grupoesfera.cursospring.servicios.ManejoHibernate;
-import ar.edu.grupoesfera.cursospring.servicios.PersonaService;
 
 @Controller
 public class ControlVistas {
 	@Inject
 	private BusquedaEspecialista servicioBusqueda;
-	@Inject
-	private PersonaService personaService;
 	@Inject
 	private ManejoHibernate servicioHibernate;
 
@@ -37,7 +34,6 @@ public class ControlVistas {
 		model.put("email", usuario.getEmail());
 		model.put("telefono", usuario.getTelefono());
 		model.put("rol", usuario.getRol());
-		model.put("nick", usuario.getUsuario());
 		return new ModelAndView("usuario", model);
 	}
 	
@@ -64,14 +60,6 @@ public class ControlVistas {
 		modeloRegistroUsuario.put("apellido", usuario.getApellido());
 		modeloRegistroUsuario.put("password", usuario.getPassword());
 		return new ModelAndView("confirmacionRegistro", modeloRegistroUsuario);
-	}
-
-	@RequestMapping(path = "/loginOk", method = RequestMethod.POST)
-	public ModelAndView logearUsuario(@ModelAttribute("usuario") Usuario usuario) {
-		// ModelMap modeloLoginUsuario = new ModelMap();
-		// modeloLoginUsuario.put("nombre", usuario.getNombre());
-		// modeloLoginUsuario.put("password", usuario.getPassword());
-		return new ModelAndView("miCuenta"/* , modeloLoginUsuario */);
 	}
 
 	@Inject
@@ -122,10 +110,10 @@ public class ControlVistas {
 	}
 
 
-	@RequestMapping(path = "/login", method = RequestMethod.POST)
+	@RequestMapping(path = "/loginOk", method = RequestMethod.POST)
 	public ModelAndView login(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
 
-		Usuario usuarioValidado = personaService.validarUsuario(usuario.getUsuario(), usuario.getPassword());
+		Usuario usuarioValidado = servicioHibernate.validarUsuario(usuario.getEmail(), usuario.getPassword());
 		if (usuarioValidado != null) {
 			request.getSession().setAttribute("ROL", usuarioValidado.getRol());
 			return new ModelAndView("home");
@@ -135,8 +123,12 @@ public class ControlVistas {
 			return new ModelAndView("login", model);
 		}
 	}
+	
+	
+	
+	
 
-	public void setPersonaService(PersonaService personaService) {
-		this.personaService = personaService;
+	public void setPersonaService(ManejoHibernate servicioHibernate) {
+		this.servicioHibernate = servicioHibernate;
 	}
 }

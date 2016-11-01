@@ -5,7 +5,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.servlet.ModelAndView;
 import ar.edu.grupoesfera.cursospring.controladores.ControlVistas;
-import ar.edu.grupoesfera.cursospring.servicios.PersonaService;
+import ar.edu.grupoesfera.cursospring.servicios.ManejoHibernate;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -25,7 +25,7 @@ public class PersonaTest extends SpringTest {
 		Usuario usuario = new Usuario();
 		
 		HttpServletRequest requestMock = mock(HttpServletRequest.class);
-		PersonaService servicioMock = mock(PersonaService.class);
+		ManejoHibernate servicioMock = mock(ManejoHibernate.class);
 		when(servicioMock.validarUsuario(anyString(), anyString())).thenReturn(null);
 		
 		controlador.setPersonaService(servicioMock);
@@ -48,7 +48,7 @@ public class PersonaTest extends SpringTest {
 		HttpServletRequest requestMock = mock(HttpServletRequest.class);
 		HttpSession sessionMock = mock(HttpSession.class);
 		when(requestMock.getSession()).thenReturn(sessionMock);
-		PersonaService servicioMock = mock(PersonaService.class);
+		ManejoHibernate servicioMock = mock(ManejoHibernate.class);
 		
 		when(servicioMock.validarUsuario(anyString(), anyString())).thenReturn(usuario);
 		

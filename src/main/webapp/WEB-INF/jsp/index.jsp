@@ -24,7 +24,7 @@
 								src="images/emp1.jpg" alt=""></a>
 						</div>
 						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-							<a class="thumbnail" href="publicacion/2"><img
+							<a class="thumbnail" href="publicacion/1"><img
 								class="img-responsive" src="images/MateosMacias.jpg" alt=""></a>
 						</div>
 						<div class="col-lg-3 col-md-4 col-xs-6 thumb">

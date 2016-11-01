@@ -11,8 +11,6 @@ public class Usuario {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) // el @GeneratedValue sirve para hacerlo autoincremental y el @id para decir que va a ser el id el proximo valor
 	private Long id;
 	@Column
-	private String usuario;
-	@Column
 	private String nombre;
 	@Column
 	private String apellido;
@@ -54,12 +52,6 @@ public class Usuario {
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	public String getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
 	}
 	public String getRol() {
 		return rol;
