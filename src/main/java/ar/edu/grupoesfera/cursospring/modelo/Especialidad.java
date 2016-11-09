@@ -1,13 +1,20 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Especialidad {
-	private Integer idEspecialidad;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long idEspecialidad;
 	private String nombreEspecialidad;
 	
-	public Integer getIdEspecialidad() {
+	public Long getIdEspecialidad() {
 		return idEspecialidad;
 	}
-	public void setIdEspecialidad(Integer idEspecialidad) {
+	public void setIdEspecialidad(Long idEspecialidad) {
 		this.idEspecialidad = idEspecialidad;
 	}
 	public String getNombreEspecialidad() {

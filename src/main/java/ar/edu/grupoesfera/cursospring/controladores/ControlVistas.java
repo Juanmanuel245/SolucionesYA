@@ -32,7 +32,6 @@ public class ControlVistas {
 		model.put("nombre", usuario.getNombre());
 		model.put("apellido", usuario.getApellido());
 		model.put("email", usuario.getEmail());
-		model.put("telefono", usuario.getTelefono());
 		model.put("rol", usuario.getRol());
 		return new ModelAndView("usuario", model);
 	}

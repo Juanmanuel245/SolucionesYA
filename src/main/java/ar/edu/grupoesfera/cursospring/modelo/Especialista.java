@@ -1,21 +1,23 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
-public class Especialista {
-	private Integer idEspecialista;
+
+
+public class Especialista extends Usuario{
 	private Zona zona;
 	private Reputacion reputacion;
 	private Especialidad especialidad;
-	private String telefono;
 	private String nombreEmpresa;
 	private String imagen;
 	private Galeria galeria;
+	private Integer telefono;
 	
-	public Integer getIdEspecialista() {
-		return idEspecialista;
+	public Integer getTelefono() {
+		return telefono;
 	}
-	public void setIdEspecialista(Integer idEspecialista) {
-		this.idEspecialista = idEspecialista;
+	public void setTelefono(Integer telefono) {
+		this.telefono = telefono;
 	}
+
 	public Zona getZona() {
 		return zona;
 	}
@@ -33,12 +35,6 @@ public class Especialista {
 	}
 	public void setEspecialidad(Especialidad especialidad) {
 		this.especialidad = especialidad;
-	}
-	public String getTelefono() {
-		return telefono;
-	}
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
 	}
 	public String getNombreEmpresa() {
 		return nombreEmpresa;
@@ -58,6 +54,5 @@ public class Especialista {
 	public void setGaleria(Galeria galeria) {
 		this.galeria = galeria;
 	}
-	
 	
 }
