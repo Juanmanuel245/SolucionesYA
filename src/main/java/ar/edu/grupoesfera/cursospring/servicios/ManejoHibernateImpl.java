@@ -102,34 +102,43 @@ public class ManejoHibernateImpl implements ManejoHibernate {
 		esp1.setNombreEspecialidad("Plomero");
 		
 		Galeria gal1 = new Galeria();
+		session.save(gal1);
 		
 		Reputacion rep1 = new Reputacion();
 		
-		Zona zona1 = new Zona ();
+		session.save(rep1);
+		
+		Zona zona1 = new Zona();
 		zona1.setNombre("Ramos Mejia");
 		
+		session.save(zona1);
 		
-		Especialista especialista1 = new Especialista();
-		especialista1.setApellido("Gonzales");
-		especialista1.setEmail("ReparacionesGonzales@Gmail.com");
-		especialista1.setEspecialidad(esp1);
-		especialista1.setGaleria(gal1);
-		especialista1.setImagen("http//:");
-		especialista1.setNombre("Juan");
-		especialista1.setNombreEmpresa("Reparaciones Gonzales");
-		especialista1.setPassword("mexicano1");
-		especialista1.setRol("ESPECIALISTA");
-		especialista1.setTelefono(1556654445);
-		especialista1.setReputacion(rep1);
+		Especialista especialista2 = new Especialista();
+		especialista2.setApellido("Gonzales");
+		especialista2.setEmail("ReparacionesGonzales@Gmail.com");
+		especialista2.setEspecialidad(esp1);
+		especialista2.setGaleria(gal1);
+		especialista2.setImagen("http//:");
+		especialista2.setNombre("Juan");
+		especialista2.setNombreEmpresa("Reparaciones Gonzales");
+		especialista2.setPassword("mexicano1");
+		especialista2.setRol("ESPECIALISTA");
+		especialista2.setTelefono(1556654445);
+		especialista2.setReputacion(rep1);
 		
+		session.save(especialista2);
 		
 		Publicacion pub1 = new Publicacion();
 		pub1.setContenido("Contenido de la Publicacion");
-		pub1.setEspecialista(especialista1);
+		pub1.setEspecialista(especialista2);
 		pub1.setZona(zona1);
+	
 
 		session.save(pub1);
-		
+		return;
 	}
+
+
+	
 
 }

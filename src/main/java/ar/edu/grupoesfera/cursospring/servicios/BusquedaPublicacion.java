@@ -4,6 +4,6 @@ import ar.edu.grupoesfera.cursospring.modelo.Publicacion;
 
 public interface BusquedaPublicacion {
 	
-	Publicacion BuscarPublicacionPorId(Integer id);
+	Publicacion BuscarPublicacionPorId(Long id);
 
 }

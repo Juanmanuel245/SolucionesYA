@@ -16,7 +16,7 @@ public class Publicacion {
 	@ManyToOne @JoinColumn(name="ID_ESPECIALISTA")
 	private Especialista especialista;
 	
-	@ManyToOne @JoinColumn(name="ID_ZONA", nullable= false)
+	@ManyToOne @JoinColumn(name="ID_ZONA")
 	private Zona zona;
 	
 	private String contenido;

@@ -48,7 +48,8 @@ public class ControlVistas {
 	
 	@RequestMapping("/generardatos")
 	public ModelAndView generarDatos() {	
-		servicioHibernate.GenerarUsuarios();
+//		servicioHibernate.GenerarUsuarios();
+		servicioHibernate.GenerarPublicaciones();
 		return new ModelAndView("redirect:/");
 	}
 
@@ -65,12 +66,12 @@ public class ControlVistas {
 	private BusquedaPublicacion servicioBusquedaPublicacion;
 
 	@RequestMapping(value = "/publicacion/{idPublicacion}", method = RequestMethod.GET)
-	public ModelAndView cargarPublicacion(@PathVariable Integer idPublicacion) {
-		Integer id = idPublicacion;
+	public ModelAndView cargarPublicacion(@PathVariable Long idPublicacion) {
+		Long id = idPublicacion;
 		Publicacion publicacion = servicioBusquedaPublicacion.BuscarPublicacionPorId(id);
 		ModelMap model = new ModelMap();
 		model.put("id", publicacion.getIdPublicacion());
-		model.put("especialista", publicacion.getEspecialista());
+		model.put("especialistaNombreEmpresa", publicacion.getEspecialista().getNombreEmpresa());
 		model.put("zona", publicacion.getZona());
 		model.put("contenido", publicacion.getContenido());
 		return new ModelAndView("publicacion", model);
