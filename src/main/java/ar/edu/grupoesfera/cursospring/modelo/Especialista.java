@@ -1,26 +1,28 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
+
 import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
 
 @Entity
 public class Especialista extends Usuario{
 	
-	@Transient
-	private Zona zona;
-	
-	@Transient
+	@OneToOne @JoinColumn(name="ID_REPUTACION")
 	private Reputacion reputacion;
 	
-	@Transient
+	@ManyToOne @JoinColumn(name="ID_ESPECIALIDAD")
 	private Especialidad especialidad;
 	
 	private String nombreEmpresa;
 	
 	private String imagen;
 	
-	@Transient
+	@OneToOne @JoinColumn(name="ID_GALERIA")
 	private Galeria galeria;
+	
 	private Integer telefono;
 	
 	public Integer getTelefono() {
@@ -30,12 +32,6 @@ public class Especialista extends Usuario{
 		this.telefono = telefono;
 	}
 
-	public Zona getZona() {
-		return zona;
-	}
-	public void setZona(Zona zona) {
-		this.zona = zona;
-	}
 	public Reputacion getReputacion() {
 		return reputacion;
 	}

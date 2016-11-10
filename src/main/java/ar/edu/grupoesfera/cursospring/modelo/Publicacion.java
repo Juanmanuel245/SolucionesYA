@@ -2,7 +2,6 @@ package ar.edu.grupoesfera.cursospring.modelo;
 
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Transient;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,20 +13,14 @@ public class Publicacion {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idPublicacion;
 	
-//	@ManyToOne @JoinColumn(name="ID_ESPECIALISTA", nullable= false)
-	@Transient
+	@ManyToOne @JoinColumn(name="ID_ESPECIALISTA")
 	private Especialista especialista;
 	
 	@ManyToOne @JoinColumn(name="ID_ZONA", nullable= false)
 	private Zona zona;
-
-	@ManyToOne @JoinColumn(name="ID_ESPECIALIDAD", nullable= false)
-	private Especialidad especialidad;
 	
 	private String contenido;
-	
-	@ManyToOne @JoinColumn(name="ID_GALERIA", nullable= false)
-	private Galeria galeria;
+
 	
 	public Long getIdPublicacion() {
 		return idPublicacion;
@@ -47,28 +40,10 @@ public class Publicacion {
 	public void setZona(Zona zona) {
 		this.zona = zona;
 	}
-	public Especialidad getEspecialidad() {
-		return especialidad;
-	}
-	public void setEspecialidad(Especialidad especialidad) {
-		this.especialidad = especialidad;
-	}
 	public String getContenido() {
 		return contenido;
 	}
 	public void setContenido(String contenido) {
 		this.contenido = contenido;
 	}
-	public Galeria getGaleria() {
-		return galeria;
-	}
-	public void setGaleria(Galeria galeria) {
-		this.galeria = galeria;
-	}
-	
-	
-	
-	
-	
-	
 }

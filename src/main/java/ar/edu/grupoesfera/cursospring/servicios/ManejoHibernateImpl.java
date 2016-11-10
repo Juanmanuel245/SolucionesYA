@@ -40,15 +40,29 @@ public class ManejoHibernateImpl implements ManejoHibernate {
 		
 		session.save(usuario1);
 		
-		Usuario usuario2 = new Usuario();
+		Especialidad esp1 = new Especialidad();
+		esp1.setNombreEspecialidad("Plomero");
 		
-		usuario2.setNombre("Brian");
-		usuario2.setApellido("Kuz");
-		usuario2.setEmail("BrianKuz@Gmail.com");
-		usuario2.setPassword("123456");
-		usuario2.setRol("esp");
+		Galeria gal1 = new Galeria();
 		
-		session.save(usuario2);
+		Reputacion rep1 = new Reputacion();
+		
+		
+		Especialista especialista1 = new Especialista();
+		
+		especialista1.setApellido("Kuz");
+		especialista1.setEmail("Kuz@Gmail.com");
+		especialista1.setEspecialidad(esp1);
+		especialista1.setGaleria(gal1);
+		especialista1.setImagen("logo.png");
+		especialista1.setNombre("Brian");
+		especialista1.setNombreEmpresa("Reparaciones Kuz Kuz");
+		especialista1.setPassword("123456");
+		especialista1.setReputacion(rep1);
+		especialista1.setRol("ESP");
+		especialista1.setTelefono(1233444356);
+		
+		session.save(especialista1);
 		return;
 	}
 
@@ -107,14 +121,11 @@ public class ManejoHibernateImpl implements ManejoHibernate {
 		especialista1.setRol("ESPECIALISTA");
 		especialista1.setTelefono(1556654445);
 		especialista1.setReputacion(rep1);
-		especialista1.setZona(zona1);
 		
 		
 		Publicacion pub1 = new Publicacion();
 		pub1.setContenido("Contenido de la Publicacion");
-		pub1.setEspecialidad(esp1);
 		pub1.setEspecialista(especialista1);
-		pub1.setGaleria(gal1);
 		pub1.setZona(zona1);
 
 		session.save(pub1);

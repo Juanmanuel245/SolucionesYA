@@ -72,9 +72,7 @@ public class ControlVistas {
 		model.put("id", publicacion.getIdPublicacion());
 		model.put("especialista", publicacion.getEspecialista());
 		model.put("zona", publicacion.getZona());
-		model.put("especialidad", publicacion.getEspecialidad());
 		model.put("contenido", publicacion.getContenido());
-		model.put("galeria", publicacion.getGaleria());
 		return new ModelAndView("publicacion", model);
 	}
 
