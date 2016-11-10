@@ -23,8 +23,4 @@ public class Reputacion {
 	public void setPuntuacion(Integer puntuacion) {
 		this.puntuacion = puntuacion;
 	}
-	
-	
-
-
 }

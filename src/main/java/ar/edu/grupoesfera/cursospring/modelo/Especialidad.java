@@ -23,6 +23,4 @@ public class Especialidad {
 	public void setNombreEspecialidad(String nombreEspecialidad) {
 		this.nombreEspecialidad = nombreEspecialidad;
 	}
-	
-	
 }

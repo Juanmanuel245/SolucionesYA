@@ -1,13 +1,25 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
+import javax.persistence.Entity;
+import javax.persistence.Transient;
 
-
+@Entity
 public class Especialista extends Usuario{
+	
+	@Transient
 	private Zona zona;
+	
+	@Transient
 	private Reputacion reputacion;
+	
+	@Transient
 	private Especialidad especialidad;
+	
 	private String nombreEmpresa;
+	
 	private String imagen;
+	
+	@Transient
 	private Galeria galeria;
 	private Integer telefono;
 	
