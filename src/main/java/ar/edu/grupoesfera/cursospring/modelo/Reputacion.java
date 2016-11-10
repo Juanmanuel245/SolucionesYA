@@ -9,8 +9,7 @@ import javax.persistence.Id;
 public class Reputacion {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idReputacion;
-	private Integer puntuacion[];
-	
+	private Integer puntuacion;
 	
 	public Integer getIdReputacion() {
 		return idReputacion;
@@ -18,10 +17,10 @@ public class Reputacion {
 	public void setIdReputacion(Integer idReputacion) {
 		this.idReputacion = idReputacion;
 	}
-	public Integer[] getPuntuacion() {
+	public Integer getPuntuacion() {
 		return puntuacion;
 	}
-	public void setPuntuacion(Integer[] puntuacion) {
+	public void setPuntuacion(Integer puntuacion) {
 		this.puntuacion = puntuacion;
 	}
 	

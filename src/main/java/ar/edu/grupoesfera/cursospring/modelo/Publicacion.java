@@ -1,13 +1,13 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+//import javax.persistence.Entity;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
+//import javax.persistence.Id;
 
-@Entity
+//@Entity
 public class Publicacion {
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idPublicacion;
 	private Especialista especialista;
 	private Zona zona;
