@@ -21,33 +21,19 @@
 							modelAttribute="usuario">
 
 							<label for="nombre">Nombre</label>
-							<form:input path="nombre" id="nombre" type="text"
-								placeholder="Ingresar Nombre" class="form-control" />
+							<form:input path="nombre" id="nombre" type="text" pattern="{4-16}" placeholder="Ingresar Nombre (Minimo 4 Letras. Maximo 16)" class="form-control" />
 
 							<label for="apellido">Apellido</label>
-							<form:input path="apellido" id="apellido" type="text"
-								placeholder="Ingresar Apellido" class="form-control" />
+							<form:input path="apellido" id="apellido" type="text" pattern="{4-16}" placeholder="Ingresar Apellido (Minimo 4 Letras. Maximo 16)" class="form-control" />
 
 							<label for="apellido">Email</label>
-							<form:input path="email" id="email" type="text"
-								placeholder="Ingresar Correo Electronico" class="form-control" />
+							<form:input path="email" id="email" type="text"	placeholder="Ingresar Correo Electronico" class="form-control"/>
 
 							<label for="password">Password</label>
-							<form:input path="password" id="password" type="password"
-								placeholder="Ingresar Password" class="form-control" />
-
-							<%-- Como se pone la verificacion del password --%>
-							<label for="passwordDos">Confirmar Password</label>
-							<form:input path="password" id="passwordDos" type="text"
-								placeholder="Vuelva a ingresar su password" class="form-control" />
-
-							<label for="telefono">Telefono Celular</label>
-							<form:input path="telefono" id="telefono" type="text"
-								placeholder="Ej: 1152688785" class="form-control" />
+							<form:input path="password" name="psw1" id="password" type="password" pattern="{6-32}" placeholder="Ingresar Password (Minimo 6 digitos. Maximo 32)" class="form-control" />
 
 							<br>
-							<input class="form-control btn btn-success" type="submit"
-								value="Enviar">
+							<input class="form-control btn btn-success" type="submit" value="Enviar">
 						</form:form>
 					</div>
 				</div>
@@ -55,5 +41,6 @@
 		</div>
 	</div>
 	<%@ include file="includes/pie.jsp"%><!-- PIE (Incluye los script de bootstrap) -->
+	
 </body>
 </html>

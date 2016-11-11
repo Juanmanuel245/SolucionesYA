@@ -36,7 +36,6 @@ public class ManejoHibernateImpl implements ManejoHibernate {
 		usuario1.setApellido("Caffi");
 		usuario1.setEmail("JuanManuelCaffi@Gmail.com");
 		usuario1.setPassword("123456");
-		usuario1.setRol("user");
 		
 		session.save(usuario1);
 		
@@ -59,7 +58,6 @@ public class ManejoHibernateImpl implements ManejoHibernate {
 		especialista1.setNombreEmpresa("Reparaciones Kuz Kuz");
 		especialista1.setPassword("123456");
 		especialista1.setReputacion(rep1);
-		especialista1.setRol("ESP");
 		especialista1.setTelefono(1233444356);
 		
 		session.save(especialista1);
@@ -122,7 +120,6 @@ public class ManejoHibernateImpl implements ManejoHibernate {
 		especialista2.setNombre("Mateo");
 		especialista2.setNombreEmpresa("Mateos Macias SA");
 		especialista2.setPassword("mexicano1");
-		especialista2.setRol("ESPECIALISTA");
 		especialista2.setTelefono(1556654445);
 		especialista2.setReputacion(rep1);
 		

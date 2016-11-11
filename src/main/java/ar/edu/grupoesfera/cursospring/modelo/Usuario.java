@@ -13,7 +13,6 @@ public class Usuario {
 	private String apellido;
 	private String password;
 	private String email;
-	private String rol;
 
 	public String getNombre() {
 		return nombre;
@@ -38,12 +37,6 @@ public class Usuario {
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	public String getRol() {
-		return rol;
-	}
-	public void setRol(String rol) {
-		this.rol = rol;
 	}
 	public Long getId() {
 		return id;

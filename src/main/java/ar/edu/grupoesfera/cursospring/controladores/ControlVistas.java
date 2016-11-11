@@ -1,7 +1,10 @@
 package ar.edu.grupoesfera.cursospring.controladores;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,11 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import ar.edu.grupoesfera.cursospring.dao.ManejoUsuarios;
 import ar.edu.grupoesfera.cursospring.modelo.Publicacion;
 import ar.edu.grupoesfera.cursospring.modelo.Usuario;
 import ar.edu.grupoesfera.cursospring.servicios.BusquedaEspecialista;
 import ar.edu.grupoesfera.cursospring.servicios.BusquedaPublicacion;
 import ar.edu.grupoesfera.cursospring.servicios.ManejoHibernate;
+import ar.edu.grupoesfera.cursospring.servicios.ManejoValidacion;
 
 @Controller
 public class ControlVistas {
@@ -23,6 +28,10 @@ public class ControlVistas {
 	private BusquedaEspecialista servicioBusqueda;
 	@Inject
 	private ManejoHibernate servicioHibernate;
+	@Inject
+	private ManejoUsuarios servicioUsuarios;
+	@Inject
+	private ManejoValidacion servicioValidacion;
 
 	@RequestMapping(value = "/usuario/{id}", method = RequestMethod.GET)
 	public ModelAndView traerUsuario(@PathVariable Long id) {
@@ -32,7 +41,6 @@ public class ControlVistas {
 		model.put("nombre", usuario.getNombre());
 		model.put("apellido", usuario.getApellido());
 		model.put("email", usuario.getEmail());
-		model.put("rol", usuario.getRol());
 		return new ModelAndView("usuario", model);
 	}
 	
@@ -59,6 +67,8 @@ public class ControlVistas {
 		modeloRegistroUsuario.put("nombre", usuario.getNombre());
 		modeloRegistroUsuario.put("apellido", usuario.getApellido());
 		modeloRegistroUsuario.put("password", usuario.getPassword());
+		modeloRegistroUsuario.put("email", usuario.getEmail());
+		servicioUsuarios.RegistrarUsuario(usuario);
 		return new ModelAndView("confirmacionRegistro", modeloRegistroUsuario);
 	}
 
@@ -92,8 +102,13 @@ public class ControlVistas {
 	}
 
 	@RequestMapping("/miCuenta")
-	public ModelAndView cargarMiCuenta() {
+	public ModelAndView cargarMiCuenta(HttpServletRequest request) {
+		HttpSession session = request.getSession(true);
 		ModelMap model = new ModelMap();
+		model.put("id", session.getAttribute("id"));
+		model.put("nombre", session.getAttribute("nombre"));
+		model.put("apellido", session.getAttribute("apellido"));
+		model.put("email", session.getAttribute("email"));
 		return new ModelAndView("miCuenta", model);
 	}
 
@@ -111,10 +126,14 @@ public class ControlVistas {
 	@RequestMapping(path = "/loginOk", method = RequestMethod.POST)
 	public ModelAndView login(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
 
-		Usuario usuarioValidado = servicioHibernate.validarUsuario(usuario.getEmail(), usuario.getPassword());
-		if (usuarioValidado != null) {
-			request.getSession().setAttribute("ROL", usuarioValidado.getRol());
-			return new ModelAndView("home");
+		List<Usuario> usuariosValidos = servicioUsuarios.TraerUsuario(usuario);
+		if (servicioValidacion.ValidarLogin(usuariosValidos, usuario.getEmail(), usuario.getPassword())) {
+			HttpSession session = request.getSession(true);
+			session.setAttribute("id", usuario.getId());
+			session.setAttribute("nombre", usuario.getNombre());
+			session.setAttribute("apellido", usuario.getApellido());
+			session.setAttribute("email", usuario.getEmail());
+			return new ModelAndView("redirect:miCuenta");
 		} else {
 			ModelMap model = new ModelMap();
 			model.put("error", "usuario-invalido");

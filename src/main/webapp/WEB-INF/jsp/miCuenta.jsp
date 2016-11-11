@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head><%@ include file="includes/cabecera.jsp"%>
 <!-- Cabecera con Meta, Titulos y Archivos Externos (Css) -->
@@ -27,7 +28,7 @@
 			<div class="col-sm-10">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h3>Bienvenido de vuelta ${usuario.nombre}!!</h3>
+						<h3>Bienvenido de vuelta ${nombre}!!</h3>
 					</div>
 				</div>
 			</div>

@@ -43,7 +43,6 @@ public class PersonaTest extends SpringTest {
 		ControlVistas controlador = new ControlVistas();
 		
 		Usuario usuario = new Usuario();
-		usuario.setRol("ADMIN");
 		
 		HttpServletRequest requestMock = mock(HttpServletRequest.class);
 		HttpSession sessionMock = mock(HttpSession.class);
