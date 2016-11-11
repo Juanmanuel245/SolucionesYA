@@ -114,13 +114,13 @@ public class ManejoHibernateImpl implements ManejoHibernate {
 		session.save(zona1);
 		
 		Especialista especialista2 = new Especialista();
-		especialista2.setApellido("Gonzales");
-		especialista2.setEmail("ReparacionesGonzales@Gmail.com");
+		especialista2.setApellido("Macias");
+		especialista2.setEmail("MateoMacias@Gmail.com");
 		especialista2.setEspecialidad(esp1);
 		especialista2.setGaleria(gal1);
-		especialista2.setImagen("http//:");
-		especialista2.setNombre("Juan");
-		especialista2.setNombreEmpresa("Reparaciones Gonzales");
+		especialista2.setImagen("MateosMacias.jpg");
+		especialista2.setNombre("Mateo");
+		especialista2.setNombreEmpresa("Mateos Macias SA");
 		especialista2.setPassword("mexicano1");
 		especialista2.setRol("ESPECIALISTA");
 		especialista2.setTelefono(1556654445);

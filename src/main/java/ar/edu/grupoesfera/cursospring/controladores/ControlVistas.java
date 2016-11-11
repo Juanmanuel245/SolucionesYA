@@ -72,7 +72,7 @@ public class ControlVistas {
 		ModelMap model = new ModelMap();
 		model.put("id", publicacion.getIdPublicacion());
 		model.put("especialistaNombreEmpresa", publicacion.getEspecialista().getNombreEmpresa());
-		model.put("zona", publicacion.getZona());
+		model.put("zona", publicacion.getZona().getNombre());
 		model.put("contenido", publicacion.getContenido());
 		return new ModelAndView("publicacion", model);
 	}
