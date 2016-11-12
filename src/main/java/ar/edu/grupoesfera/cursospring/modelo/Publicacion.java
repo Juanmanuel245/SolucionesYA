@@ -14,36 +14,56 @@ public class Publicacion {
 	private Long idPublicacion;
 	
 	@ManyToOne @JoinColumn(name="ID_ESPECIALISTA")
-	private Especialista especialista;
+	private Usuario usuario;
 	
 	@ManyToOne @JoinColumn(name="ID_ZONA")
 	private Zona zona;
 	
 	private String contenido;
-
 	
+	@ManyToOne @JoinColumn(name="ID_ESPECIALIDAD")
+	private Especialidad especialidad;
+
 	public Long getIdPublicacion() {
 		return idPublicacion;
 	}
+
 	public void setIdPublicacion(Long idPublicacion) {
 		this.idPublicacion = idPublicacion;
 	}
-	public Especialista getEspecialista() {
-		return especialista;
+
+	public Usuario getUsuario() {
+		return usuario;
 	}
-	public void setEspecialista(Especialista especialista) {
-		this.especialista = especialista;
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
+
 	public Zona getZona() {
 		return zona;
 	}
+
 	public void setZona(Zona zona) {
 		this.zona = zona;
 	}
+
 	public String getContenido() {
 		return contenido;
 	}
+
 	public void setContenido(String contenido) {
 		this.contenido = contenido;
 	}
+
+	public Especialidad getEspecialidad() {
+		return especialidad;
+	}
+
+	public void setEspecialidad(Especialidad especialidad) {
+		this.especialidad = especialidad;
+	}
+
+	
+
 }

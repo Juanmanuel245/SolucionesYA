@@ -7,7 +7,7 @@
 	  <!-- <a href="irLogin" class="btn btn-default btn-xs btn-block">Entrar</a>
 	  <a href="irRegistro" class="btn btn-default btn-xs btn-block">Registrarse</a> -->
 	  <a href="miCuenta" class="btn btn-default btn-block btn-xs"><span class="glyphicon glyphicon-user"> Mi Cuenta</span></a>
-	  <a href="irRegistro" class="btn btn-success btn-block btn-xs"><span class="glyphicon glyphicon-edit"></span> Crear Publicacion</a></div>
+	  <a href="crearPublicacion" class="btn btn-success btn-block btn-xs"><span class="glyphicon glyphicon-edit"></span> Crear Publicacion</a></div>
   </div>
 
   <div class="col-sm-12" style="padding-bottom: 5px; padding-top:5px;">

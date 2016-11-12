@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import ar.edu.grupoesfera.cursospring.dao.ManejoUsuarios;
 import ar.edu.grupoesfera.cursospring.modelo.Publicacion;
 import ar.edu.grupoesfera.cursospring.modelo.Usuario;
+import ar.edu.grupoesfera.cursospring.modelo.Zona;
 import ar.edu.grupoesfera.cursospring.servicios.BusquedaEspecialista;
 import ar.edu.grupoesfera.cursospring.servicios.BusquedaPublicacion;
 import ar.edu.grupoesfera.cursospring.servicios.ManejoHibernate;
@@ -26,6 +27,8 @@ import ar.edu.grupoesfera.cursospring.servicios.ManejoValidacion;
 public class ControlVistas {
 	@Inject
 	private BusquedaEspecialista servicioBusqueda;
+	@Inject
+	private BusquedaPublicacion servicioPublicacion;
 	@Inject
 	private ManejoHibernate servicioHibernate;
 	@Inject
@@ -81,7 +84,7 @@ public class ControlVistas {
 		Publicacion publicacion = servicioBusquedaPublicacion.BuscarPublicacionPorId(id);
 		ModelMap model = new ModelMap();
 		model.put("id", publicacion.getIdPublicacion());
-		model.put("especialistaNombreEmpresa", publicacion.getEspecialista().getNombreEmpresa());
+		model.put("nombreEmpresa", publicacion.getUsuario().getNombreEmpresa());
 		model.put("zona", publicacion.getZona().getNombre());
 		model.put("contenido", publicacion.getContenido());
 		return new ModelAndView("publicacion", model);
@@ -93,6 +96,16 @@ public class ControlVistas {
 		Usuario usuario = new Usuario();
 		model.put("usuario", usuario);
 		return new ModelAndView("login", model);
+	}
+	
+	@RequestMapping("/crearPublicacion")
+	public ModelAndView crearPublicacion() {
+		List<Zona> zona = servicioPublicacion.BuscarZona();
+		ModelMap model = new ModelMap();
+		Publicacion pub = new Publicacion();
+		model.put("publicacion", pub);
+		model.put("zona", zona);
+		return new ModelAndView("crearPublicacion", model);
 	}
 
 	@RequestMapping("/galeria")
@@ -106,9 +119,6 @@ public class ControlVistas {
 		HttpSession session = request.getSession(true);
 		ModelMap model = new ModelMap();
 		model.put("id", session.getAttribute("id"));
-		model.put("nombre", session.getAttribute("nombre"));
-		model.put("apellido", session.getAttribute("apellido"));
-		model.put("email", session.getAttribute("email"));
 		return new ModelAndView("miCuenta", model);
 	}
 
@@ -130,9 +140,6 @@ public class ControlVistas {
 		if (servicioValidacion.ValidarLogin(usuariosValidos, usuario.getEmail(), usuario.getPassword())) {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("id", usuario.getId());
-			session.setAttribute("nombre", usuario.getNombre());
-			session.setAttribute("apellido", usuario.getApellido());
-			session.setAttribute("email", usuario.getEmail());
 			return new ModelAndView("redirect:miCuenta");
 		} else {
 			ModelMap model = new ModelMap();

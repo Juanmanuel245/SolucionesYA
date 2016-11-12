@@ -27,11 +27,7 @@ public class ManejoUsuariosImpl implements ManejoUsuarios {
 								.add(Restrictions.eq("password", usuario.getPassword()))
 								.list();
 		
-		return usuarios;
-		
-
-				
-						
+		return usuarios;				
 	}
 
 	@Override
