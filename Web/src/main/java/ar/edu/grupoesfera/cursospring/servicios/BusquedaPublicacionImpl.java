@@ -40,4 +40,22 @@ public class BusquedaPublicacionImpl implements BusquedaPublicacion{
 		return zonas;
 	}
 
+	@Override
+	public void BuscarPublicacionPorZona() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void BuscarPublicacionPorEspecialidad() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void BuscarPublicacionZonaYEspecialidad() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

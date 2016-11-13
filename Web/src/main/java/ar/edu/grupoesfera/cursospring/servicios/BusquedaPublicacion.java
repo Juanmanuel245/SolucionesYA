@@ -8,6 +8,9 @@ import ar.edu.grupoesfera.cursospring.modelo.Zona;
 public interface BusquedaPublicacion {
 	
 	Publicacion BuscarPublicacionPorId(Long id);
+	void BuscarPublicacionPorZona();
+	void BuscarPublicacionPorEspecialidad();
+	void BuscarPublicacionZonaYEspecialidad();
 	List<Zona> BuscarZona();
 
 }

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import ar.edu.grupoesfera.cursospring.modelo.Usuario;
 
 @Service
-public class ManejoUsuariosImpl implements ManejoUsuarios {
+public class UsuariosDaoImpl implements UsuariosDao {
 	
 	@Inject
     private SessionFactory sessionFactory;

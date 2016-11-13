@@ -4,7 +4,7 @@ import java.util.List;
 
 import ar.edu.grupoesfera.cursospring.modelo.Usuario;
 
-public interface ManejoUsuarios {
+public interface UsuariosDao {
 	
 	List<Usuario> TraerUsuario(Usuario usuario);
 	
