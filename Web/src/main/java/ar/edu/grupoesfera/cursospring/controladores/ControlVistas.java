@@ -60,7 +60,6 @@ public class ControlVistas {
 		ModelMap model = new ModelMap();
 		Usuario usuario = new Usuario();
 		model.put("usuario", usuario);
-		servicioBusqueda.BuscarEspecialistaPorEspecialidad();
 		return new ModelAndView("registro", model);
 	}
 	
@@ -110,14 +109,17 @@ public class ControlVistas {
 	}
 
 	@RequestMapping("/galeria")
-	public ModelAndView cargarGaleria() {
-		ModelMap model = new ModelMap();
-		return new ModelAndView("galeria", model);
+	public ModelAndView cargarGaleria(HttpServletRequest request) {
+		if(request.getSession().getAttribute("id") != null){
+			return new ModelAndView("galeria");
+		}
+		
+		return new ModelAndView("error");
 	}
 
 	@RequestMapping("/miCuenta")
 	public ModelAndView cargarMiCuenta(HttpServletRequest request) {
-		if(request.getSession().isNew()){
+		if(request.getSession().getAttribute("id") != null){
 		return new ModelAndView("miCuenta");
 		}
 		return new ModelAndView("error");	
