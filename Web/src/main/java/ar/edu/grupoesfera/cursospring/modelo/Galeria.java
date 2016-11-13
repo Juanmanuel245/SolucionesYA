@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Galeria {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idGaleria;
-	private String imagen[];
+	private String imagen;
 	
 	public Integer getIdGaleria() {
 		return idGaleria;
@@ -17,10 +17,10 @@ public class Galeria {
 	public void setIdGaleria(Integer idGaleria) {
 		this.idGaleria = idGaleria;
 	}
-	public String[] getImagen() {
+	public String getImagen() {
 		return imagen;
 	}
-	public void setImagen(String[] imagen) {
+	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
 	

@@ -138,8 +138,8 @@ public class ControlVistas {
 	public ModelAndView login(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
 
 		List<Usuario> usuariosValidos = servicioUsuarios.TraerUsuario(usuario);
-		Usuario usuarioValidado = usuariosValidos.get(0);
-		if (servicioValidacion.ValidarLogin(usuariosValidos, usuario.getEmail(), usuario.getPassword())) {
+		if ((usuariosValidos != null) && (servicioValidacion.ValidarLogin(usuariosValidos, usuario.getEmail(), usuario.getPassword()))) {
+			Usuario usuarioValidado = usuariosValidos.get(0);
 			request.getSession().setAttribute("id", usuarioValidado.getId());
 			request.getSession().setAttribute("nombre", usuarioValidado.getNombre());
 			return new ModelAndView("redirect:miCuenta");

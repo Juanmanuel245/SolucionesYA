@@ -15,12 +15,13 @@
 
 			<div class="col-sm-2">
 				<div class="list-group">
-					<a href="#" class="list-group-item active">Panel del Usuario</a> <a
-						href="#" class="list-group-item">Resumen</a> <a href="#"
-						class="list-group-item">Editar Cuenta</a> <a href="#"
-						class="list-group-item">Mis Especialistas</a> <a href="#"
-						class="list-group-item">Mis Opiniones</a> <a href="galeria"
-						class="list-group-item">Galeria de Trabajos</a>
+					<a href="#" class="list-group-item active">Panel del Usuario</a> 
+					<a href="#" class="list-group-item">Resumen</a>
+					<a href="#"	class="list-group-item">Editar Cuenta</a>
+					<a href="#"	class="list-group-item">Mis Especialistas</a>
+					<a href="#"	class="list-group-item">Mis Opiniones</a>
+					<a href="galeria"class="list-group-item">Galeria de Trabajos</a>
+					<a href="logout"class="list-group-item">Cerra Sesion</a>
 				</div>
 			</div>
 
@@ -28,7 +29,7 @@
 			<div class="col-sm-10">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h3>Hola {$nombre} :) !</h3>
+						<h3>Hola ${nombre} :) !</h3>
 					</div>
 				</div>
 			</div>
