@@ -117,10 +117,10 @@ public class ControlVistas {
 
 	@RequestMapping("/miCuenta")
 	public ModelAndView cargarMiCuenta(HttpServletRequest request) {
-		HttpSession session = request.getSession(true);
-		ModelMap model = new ModelMap();
-		model.put("id", session.getAttribute("id"));
-		return new ModelAndView("miCuenta", model);
+		if(request.getSession().isNew()){
+		return new ModelAndView("miCuenta");
+		}
+		return new ModelAndView("error");	
 	}
 
 	@RequestMapping("/")
