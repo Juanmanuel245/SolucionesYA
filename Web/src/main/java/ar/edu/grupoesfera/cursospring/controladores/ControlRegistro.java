@@ -29,6 +29,9 @@ public class ControlRegistro {
 	
 	@RequestMapping(path = "/registroOk", method = RequestMethod.POST)
 	public ModelAndView agregarUsuario(@ModelAttribute("usuario") Usuario usuario) {
+		usuario.setLogoEmpresa("images/sinLogo.jpg");
+		usuario.setNombreEmpresa("N/A");
+		usuario.setTelefono("N/A");
 		ModelMap modeloRegistroUsuario = new ModelMap();
 		modeloRegistroUsuario.put("nombre", usuario.getNombre());
 		modeloRegistroUsuario.put("apellido", usuario.getApellido());

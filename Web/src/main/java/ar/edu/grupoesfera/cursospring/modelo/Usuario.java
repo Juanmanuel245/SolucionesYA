@@ -18,6 +18,7 @@ public class Usuario {
 	private String telefono;
 	private String nombreEmpresa;
 	private String logoEmpresa;
+	private Integer vecesContratado;
 	
 	@OneToOne @JoinColumn(name="ID_REPUTACION")
 	private Reputacion reputacion;
@@ -105,8 +106,15 @@ public class Usuario {
 	public void setGaleria(Galeria galeria) {
 		this.galeria = galeria;
 	}
-	
 
+	public Integer getVecesContratado() {
+		return vecesContratado;
+	}
+
+	public void setVecesContratado(Integer vecesContratado) {
+		this.vecesContratado = vecesContratado;
+	}
+	
 
 }
 

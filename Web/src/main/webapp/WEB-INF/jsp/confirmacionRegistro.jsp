@@ -1,11 +1,11 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
-<head><%@ include file="includes/cabecera.jsp"%>
+<head><%@ include file="includes/cabecera.jsp" %>
 <!-- Cabecera con Meta, Titulos y Archivos Externos (Css) -->
 </head>
 <body>
-	<%@ include file="includes/menuPrincipal.jsp"%><!-- MENU NAVEGACION -->
+	<%@ include file="includes/menuPrincipal.jsp" %><!-- MENU NAVEGACION -->
 	<div class="row paddingMenuPrincipal">
 		<div class="col-sm-1"></div>
 

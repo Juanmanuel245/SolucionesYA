@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.grupoesfera.cursospring.modelo.Especialidad;
@@ -33,12 +33,12 @@ public class ControlPublicacion {
 	private CrearPublicacion servicioCrearPublicacion;
 
 	
-	@RequestMapping(value = "/publicacion/{idPublicacion}", method = RequestMethod.GET)
-	public ModelAndView cargarPublicacion(@PathVariable Long idPublicacion) {
-		Long id = idPublicacion;
+	@RequestMapping(value = "/publicacion", method = RequestMethod.GET)
+	public ModelAndView cargarPublicacion(@RequestParam(value= "id") Long id) {
 		Publicacion publicacion = servicioPublicacion.BuscarPublicacionPorId(id);
 		ModelMap model = new ModelMap();
-		model.put("id", publicacion.getIdPublicacion());
+		model.put("publicacion", publicacion.getIdPublicacion());
+		model.put("logoEmpresa", publicacion.getUsuario().getLogoEmpresa());
 		model.put("nombreEmpresa", publicacion.getUsuario().getNombreEmpresa());
 		model.put("zona", publicacion.getZona().getNombre());
 		model.put("contenido", publicacion.getContenido());
@@ -74,5 +74,17 @@ public class ControlPublicacion {
 		servicioCrearPublicacion.guardarPublicacion(publicacion, zona, especialidad);
 		return new ModelAndView("redirect:/");
 	}
-
+	
+	@RequestMapping(value = "/contratar", method = RequestMethod.GET)
+	public ModelAndView contratarUsuario(HttpServletRequest request, @RequestParam(value= "id") Long id) {
+		if(request.getSession().getAttribute("id") != null){
+			
+			// FALTA COMPLETAR TODO ACA
+			
+			return new ModelAndView("publicacion");
+		}
+		
+		
+		return new ModelAndView("error");
+	}
 }

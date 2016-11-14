@@ -8,3 +8,4 @@ SELECT * FROM Galeria;
 SELECT * FROM Reputacion;
 SELECT * FROM Zona;
 
+UPDATE usuario set logoEmpresa="images/emp3.jpg" WHERE id=1;
