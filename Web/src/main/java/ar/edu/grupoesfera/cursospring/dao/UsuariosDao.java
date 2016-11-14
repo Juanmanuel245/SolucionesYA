@@ -8,6 +8,8 @@ public interface UsuariosDao {
 	
 	List<Usuario> TraerUsuario(Usuario usuario);
 	
+	List<Usuario> TraerUsuarioPorId(Long id);
+	
 	void RegistrarUsuario(Usuario usuario);
 	
 

@@ -8,13 +8,14 @@ import javax.persistence.Id;
 @Entity
 public class Zona {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idZona;
+	private Long idZona;
 	private String nombre;
 	
-	public int getIdZona() {
+
+	public Long getIdZona() {
 		return idZona;
 	}
-	public void setIdZona(int idZona) {
+	public void setIdZona(Long idZona) {
 		this.idZona = idZona;
 	}
 	public String getNombre() {

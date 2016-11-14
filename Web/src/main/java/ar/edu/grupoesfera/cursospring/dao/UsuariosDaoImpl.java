@@ -40,4 +40,15 @@ public class UsuariosDaoImpl implements UsuariosDao {
 		
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+	public List<Usuario> TraerUsuarioPorId(Long id) {
+		final Session session = sessionFactory.openSession();
+		List usuarios = session.createCriteria(Usuario.class)
+								.add(Restrictions.eq("id", id))
+								.list();
+		
+		return usuarios;				
+	}
+
 }

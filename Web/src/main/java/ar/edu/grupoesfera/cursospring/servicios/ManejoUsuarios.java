@@ -8,5 +8,6 @@ public interface ManejoUsuarios {
 	
 	void RegistrarUsuario(Usuario usuario);
 	List<Usuario> TraerUsuario(Usuario usuario);
+	List<Usuario> TraerUsuarioPorId(Long id);
 
 }

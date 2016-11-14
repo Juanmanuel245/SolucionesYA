@@ -27,4 +27,9 @@ public class ManejoUsuariosImpl implements ManejoUsuarios{
 		return servicioUsuariosDao.TraerUsuario(usuario);
 	}
 
+	@Override
+	public List<Usuario> TraerUsuarioPorId(Long id) {
+		return servicioUsuariosDao.TraerUsuarioPorId(id);
+	}
+
 }

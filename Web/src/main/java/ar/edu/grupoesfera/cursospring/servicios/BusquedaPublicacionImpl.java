@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 
 import ar.edu.grupoesfera.cursospring.dao.ManejoCombos;
+import ar.edu.grupoesfera.cursospring.modelo.Especialidad;
 import ar.edu.grupoesfera.cursospring.modelo.Publicacion;
 import ar.edu.grupoesfera.cursospring.modelo.Zona;
 
@@ -56,6 +57,12 @@ public class BusquedaPublicacionImpl implements BusquedaPublicacion{
 	public void BuscarPublicacionZonaYEspecialidad() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<Especialidad> BuscarEspecialidad() {
+		List<Especialidad> especialidad = servicioCombos.TraerEspecialidades();
+		return especialidad;
 	}
 
 }

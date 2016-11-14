@@ -25,6 +25,7 @@ public class Usuario {
 	@OneToOne @JoinColumn(name="ID_GALERIA")
 	private Galeria galeria;
 
+
 	public Long getId() {
 		return id;
 	}

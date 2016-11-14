@@ -3,10 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head><%@ include file="includes/cabecera.jsp"%>
-<!-- Cabecera con Meta, Titulos y Archivos Externos (Css) -->
 </head>
 <body>
-	<%@ include file="includes/menuPrincipal.jsp"%><!-- MENU NAVEGACION -->
+	<%@ include file="includes/menuPrincipal.jsp"%>
 	<div class="row paddingMenuPrincipal">
 		<div class="col-sm-1"></div>
 
@@ -18,29 +17,72 @@
 							datos para ingresar</h3>
 					</div>
 					<div class="panel-body">
-										<form:form action="publicacionOk" method="POST" modelAttribute="publicacion">
-										
-			<!--  ZONA  -->
-			<select class="form-control" name="zona">
-				  <option value="0">Selecciona una Zona</option>
-				<c:forEach items="${zona}" var="zona">
-				<option value="${zona.nombre}">${zona.nombre}</option>
-				</c:forEach> 
+						<div class="row">
+							<div class="col-sm-12 text-center">
+								<h1>Tus Datos</h1>
+							</div>
+							<div class="col-sm-12">
+								<div class="col-sm-4"></div>
 
-			</select>											
-
-											
-											
-
-											<div class="form-group col-lg-12">
-												<button type="submit" class="btn btn-success">Acceder</button>
-											</div>
-										</form:form>
+								<div class="col-sm-5">
+									<div class="col-sm-6">
+										<img class="img-thumbnail" src="images/emp7.jpg" width="150"
+											height="150" alt="">
 									</div>
+
+									<div class="col-sm-6">
+										<label>Empresa: </label> <span class="label label-primary">${usuario.nombreEmpresa}</span><br>
+										<label>Nombre: </label> <span class="label label-primary">${usuario.nombre}</span><br>
+										<label>Apellido: </label> <span class="label label-primary">${usuario.apellido}</span><br>
+										<label>Email: </label> <span class="label label-primary">${usuario.email}</span><br>
+										<label>Telefono: </label> <span class="label label-primary">${usuario.telefono}</span><br>
+									</div>
+								</div>
+
+								<div class="col-sm-3"></div>
+
+							</div>
+						</div>
+
+						<form:form action="publicacionOk" modelAttribute="publicacionDTO"  method="POST">
+
+							 <!--  ZONA  -->
+							<form:select class="form-control" path="idZona" name="zona">
+								<option value="0">Selecciona una Zona</option>
+								<c:forEach items="${zona}" var="zona">
+									<form:option value="${zona.idZona}">${zona.nombre}</form:option>
+								</c:forEach>
+							</form:select>
+
+							<br>
+							<br>
+							<!--  ESPECIALIDAD  -->
+							<form:select class="form-control" path="idEspecialidad" name="especialidad">
+								<form:option value="0">Selecciona una Especialidad</form:option>
+								<c:forEach items="${especialidad}" var="especialidad">
+									<form:option value="${especialidad.idEspecialidad}">${especialidad.nombreEspecialidad}</form:option>
+								</c:forEach>
+							</form:select>
+							<br>
+							<br>
+
+							<!-- CAMPO DE CONTEIDO -->
+							<form:textarea class="form-control" path="contenido" rows="15"
+								placeholder="Agregar Informacion sobre tu publicacion. No puede contener datos de contacto"></form:textarea>
+
+
+							<br>
+							<br>
+							<div class="form-group col-lg-12">
+								<button type="submit" class="btn btn-success btn-lg btn-block">Crear
+									Publicacion</button>
+							</div>
+						</form:form>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<%@ include file="includes/pie.jsp"%><!-- PIE (Incluye los script de bootstrap) -->
+	<%@ include file="includes/pie.jsp"%>
 </body>
 </html>

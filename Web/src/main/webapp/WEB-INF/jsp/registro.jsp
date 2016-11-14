@@ -17,8 +17,7 @@
 							datos de registro</h3>
 					</div>
 					<div class="panel-body">
-						<form:form action="registroOk" method="POST"
-							modelAttribute="usuario">
+						<form:form action="registroOk" method="POST" modelAttribute="usuario">
 
 							<label for="nombre">Nombre</label>
 							<form:input path="nombre" id="nombre" type="text" pattern="{4-16}" placeholder="Ingresar Nombre (Minimo 4 Letras. Maximo 16)" class="form-control" />

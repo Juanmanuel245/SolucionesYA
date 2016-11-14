@@ -2,6 +2,7 @@ package ar.edu.grupoesfera.cursospring.servicios;
 
 import java.util.List;
 
+import ar.edu.grupoesfera.cursospring.modelo.Especialidad;
 import ar.edu.grupoesfera.cursospring.modelo.Publicacion;
 import ar.edu.grupoesfera.cursospring.modelo.Zona;
 
@@ -12,5 +13,6 @@ public interface BusquedaPublicacion {
 	void BuscarPublicacionPorEspecialidad();
 	void BuscarPublicacionZonaYEspecialidad();
 	List<Zona> BuscarZona();
+	List<Especialidad> BuscarEspecialidad();
 
 }

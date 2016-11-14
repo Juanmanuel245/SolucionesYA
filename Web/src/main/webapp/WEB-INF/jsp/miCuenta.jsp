@@ -13,20 +13,14 @@
 	<div class="container">
 		<div class="row paddingMenuPrincipal">
 
-			<div class="col-sm-2">
-				<div class="list-group">
-					<a href="#" class="list-group-item active">Panel del Usuario</a> 
-					<a href="#" class="list-group-item">Resumen</a>
-					<a href="#"	class="list-group-item">Editar Cuenta</a>
-					<a href="#"	class="list-group-item">Mis Especialistas</a>
-					<a href="#"	class="list-group-item">Mis Opiniones</a>
-					<a href="galeria"class="list-group-item">Galeria de Trabajos</a>
-					<a href="logout"class="list-group-item">Cerra Sesion</a>
-				</div>
+			<div class="col-sm-12">
+			 <div class="btn-group">
+			  <a href="#" class="btn btn-success">Resumen</a>
+			  <a href="#" class="btn btn-default">Editar Cuenta</a>
+			  <a href="#" class="btn btn-default">Mis Especialistas</a>
+			  <a href="#" class="btn btn-default">Galeria de Trabajos</a>
+			  <a href="#" class="btn btn-danger">Cerrar Sesion</a>
 			</div>
-
-
-			<div class="col-sm-10">
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<h3>Hola ${nombre} :) !</h3>
