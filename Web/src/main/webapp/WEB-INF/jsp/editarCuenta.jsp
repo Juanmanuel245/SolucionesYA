@@ -17,7 +17,7 @@
 			 <div class="btn-group">
 			  <a href="miCuenta" class="btn btn-success">Resumen</a>
 			  <a href="#" class="btn btn-default">Editar Cuenta</a>
-			  <a href="#" class="btn btn-default">Mis Especialistas</a>
+			  <a href="misEspecialistas" class="btn btn-default">Mis Especialistas</a>
 			  <a href="#" class="btn btn-default">Galeria de Trabajos</a>
 			  <a href="#" class="btn btn-danger">Cerrar Sesion</a>
 			</div>

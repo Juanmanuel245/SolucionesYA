@@ -57,5 +57,15 @@ public class ControlCuenta {
 		
 		return new ModelAndView("error");
 	}
+	
+	@RequestMapping("/misEspecialistas")
+	public ModelAndView misEspecialistas(HttpServletRequest request){
+		if(request.getSession().getAttribute("id") != null){
+			
+			return new ModelAndView("misEspecialistas");
+		}
+		
+		return new ModelAndView("error");
+	}
 
 }
