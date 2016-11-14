@@ -12,5 +12,7 @@ public interface UsuariosDao {
 	
 	void RegistrarUsuario(Usuario usuario);
 	
+	void ActualizarUsuario (Usuario usuario);
+	
 
 }

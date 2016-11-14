@@ -28,13 +28,6 @@ public class ControlVistas {
 		return new ModelAndView("error");
 	}
 
-	@RequestMapping("/miCuenta")
-	public ModelAndView cargarMiCuenta(HttpServletRequest request) {
-		if(request.getSession().getAttribute("id") != null){
-		return new ModelAndView("miCuenta");
-		}
-		return new ModelAndView("error");	
-	}
 
 }	
 

@@ -32,4 +32,13 @@ public class ManejoUsuariosImpl implements ManejoUsuarios{
 		return servicioUsuariosDao.TraerUsuarioPorId(id);
 	}
 
+	@Override
+	public void ActualizarUsuario(Usuario usuario) {
+
+		servicioUsuariosDao.ActualizarUsuario(usuario);
+		
+		return;
+		
+	}
+
 }

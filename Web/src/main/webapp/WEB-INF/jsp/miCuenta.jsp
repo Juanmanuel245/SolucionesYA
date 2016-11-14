@@ -16,7 +16,7 @@
 			<div class="col-sm-12">
 			 <div class="btn-group">
 			  <a href="#" class="btn btn-success">Resumen</a>
-			  <a href="#" class="btn btn-default">Editar Cuenta</a>
+			  <a href="editarCuenta" class="btn btn-default">Editar Cuenta</a>
 			  <a href="#" class="btn btn-default">Mis Especialistas</a>
 			  <a href="#" class="btn btn-default">Galeria de Trabajos</a>
 			  <a href="#" class="btn btn-danger">Cerrar Sesion</a>

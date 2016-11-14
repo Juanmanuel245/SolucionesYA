@@ -51,4 +51,12 @@ public class UsuariosDaoImpl implements UsuariosDao {
 		return usuarios;				
 	}
 
+	@Override
+	public void ActualizarUsuario(Usuario usuario) {
+		final Session session = sessionFactory.openSession();
+		session.update(usuario);
+		return;
+		
+	}
+
 }
