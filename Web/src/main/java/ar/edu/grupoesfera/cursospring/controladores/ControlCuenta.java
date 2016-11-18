@@ -50,7 +50,6 @@ public class ControlCuenta {
 		if(request.getSession().getAttribute("id") != null){
 			Long id = (Long) request.getSession().getAttribute("id");
 			usuario.setId(id);
-			System.out.println(usuario.getId());
 			servicioUsuarios.ActualizarUsuario(usuario);
 			return new ModelAndView("miCuenta");
 		}

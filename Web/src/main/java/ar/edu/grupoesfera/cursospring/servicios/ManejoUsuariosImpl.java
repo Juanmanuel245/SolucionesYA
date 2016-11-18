@@ -5,11 +5,12 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import ar.edu.grupoesfera.cursospring.dao.UsuariosDao;
 import ar.edu.grupoesfera.cursospring.modelo.Usuario;
 
-@Service
+@Service @Transactional
 public class ManejoUsuariosImpl implements ManejoUsuarios{
 	
 	@Inject 
@@ -35,9 +36,8 @@ public class ManejoUsuariosImpl implements ManejoUsuarios{
 	@Override
 	public void ActualizarUsuario(Usuario usuario) {
 
-		servicioUsuariosDao.ActualizarUsuario(usuario);
+		servicioUsuariosDao.actualizarUsuario(usuario);
 		
-		return;
 		
 	}
 

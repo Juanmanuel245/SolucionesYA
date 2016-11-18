@@ -9,10 +9,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import ar.edu.grupoesfera.cursospring.modelo.Usuario;
 
-@Service
+@Service @Transactional
 public class UsuariosDaoImpl implements UsuariosDao {
 	
 	@Inject
@@ -33,11 +34,7 @@ public class UsuariosDaoImpl implements UsuariosDao {
 	@Override
 	public void RegistrarUsuario(Usuario usuario) {
 		final Session session = sessionFactory.openSession();
-		
 		session.save(usuario);
-		
-		return;
-		
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -52,11 +49,11 @@ public class UsuariosDaoImpl implements UsuariosDao {
 	}
 
 	@Override
-	public void ActualizarUsuario(Usuario usuario) {
-		final Session session = sessionFactory.openSession();
+	public void actualizarUsuario(Usuario usuario) {
+		final Session session = sessionFactory.getCurrentSession();
+		System.out.println(usuario.getNombre());
+		System.out.println(usuario.getId());
 		session.update(usuario);
-		return;
-		
 	}
 
 }
