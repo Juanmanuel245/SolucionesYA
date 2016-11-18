@@ -6,6 +6,6 @@ import ar.edu.grupoesfera.cursospring.modelo.Usuario;
 
 public interface ManejoValidacion {
 	
-	Boolean ValidarLogin(List<Usuario> usuariosValidos, String email, String password);
+	Boolean validarLogin(List<Usuario> usuariosValidos, String email, String password);
 
 }

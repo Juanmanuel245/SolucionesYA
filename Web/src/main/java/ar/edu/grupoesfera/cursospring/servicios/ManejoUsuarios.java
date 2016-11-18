@@ -6,9 +6,9 @@ import ar.edu.grupoesfera.cursospring.modelo.Usuario;
 
 public interface ManejoUsuarios {
 	
-	void RegistrarUsuario(Usuario usuario);
-	void ActualizarUsuario(Usuario usuario);
-	List<Usuario> TraerUsuario(Usuario usuario);
-	List<Usuario> TraerUsuarioPorId(Long id);
+	void registrarUsuario(Usuario usuario);
+	void actualizarUsuario(Usuario usuario);
+	List<Usuario> traerUsuario(Usuario usuario);
+	List<Usuario> traerUsuarioPorId(Long id);
 
 }

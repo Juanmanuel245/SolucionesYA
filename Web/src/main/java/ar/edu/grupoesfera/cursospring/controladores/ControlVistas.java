@@ -21,7 +21,7 @@ public class ControlVistas {
 
 	@RequestMapping("/galeria")
 	public ModelAndView cargarGaleria(HttpServletRequest request) {
-		if(request.getSession().getAttribute("id") != null){
+		if(request.getSession().getAttribute("idSesion") != null){
 			return new ModelAndView("galeria");
 		}
 		

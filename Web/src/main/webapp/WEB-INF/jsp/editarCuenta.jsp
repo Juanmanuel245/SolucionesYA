@@ -1,4 +1,4 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html lang="es">
 <head><%@ include file="includes/cabecera.jsp"%>
@@ -18,8 +18,8 @@
 			  <a href="miCuenta" class="btn btn-success">Resumen</a>
 			  <a href="#" class="btn btn-default">Editar Cuenta</a>
 			  <a href="misEspecialistas" class="btn btn-default">Mis Especialistas</a>
-			  <a href="#" class="btn btn-default">Galeria de Trabajos</a>
-			  <a href="#" class="btn btn-danger">Cerrar Sesion</a>
+			  <a href="balance" class="btn btn-default">Balance</a>
+			  <a href="logout" class="btn btn-danger">Cerrar Sesion</a>
 			</div>
 				<div class="panel panel-default">
 					<div class="panel-body">

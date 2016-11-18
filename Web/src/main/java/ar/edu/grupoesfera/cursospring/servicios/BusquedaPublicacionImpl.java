@@ -24,7 +24,7 @@ public class BusquedaPublicacionImpl implements BusquedaPublicacion{
     private SessionFactory sessionFactory;
 
 	@Override
-	public Publicacion BuscarPublicacionPorId(Long id) {
+	public Publicacion buscarPublicacionPorId(Long id) {
 		
 		final Session session = sessionFactory.openSession();
 				
@@ -36,32 +36,32 @@ public class BusquedaPublicacionImpl implements BusquedaPublicacion{
 	}
 
 	@Override
-	public List<Zona> BuscarZona() {
-		List<Zona> zonas = servicioCombos.TraerZonas();
+	public List<Zona> buscarZona() {
+		List<Zona> zonas = servicioCombos.traerZonas();
 		return zonas;
 	}
 
 	@Override
-	public void BuscarPublicacionPorZona() {
+	public void buscarPublicacionPorZona() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void BuscarPublicacionPorEspecialidad() {
+	public void buscarPublicacionPorEspecialidad() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void BuscarPublicacionZonaYEspecialidad() {
+	public void buscarPublicacionZonaYEspecialidad() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<Especialidad> BuscarEspecialidad() {
-		List<Especialidad> especialidad = servicioCombos.TraerEspecialidades();
+	public List<Especialidad> buscarEspecialidad() {
+		List<Especialidad> especialidad = servicioCombos.traerEspecialidades();
 		return especialidad;
 	}
 

@@ -7,9 +7,9 @@ import ar.edu.grupoesfera.cursospring.modelo.Zona;
 
 public interface ManejoCombos {
 	
-	List<Zona> TraerZonas();
-	List<Especialidad> TraerEspecialidades();
-	List<Zona> TraerZonasPorId(Long id);
-	List<Especialidad> TraerEspecialidadPorId(Long id);
+	List<Zona> traerZonas();
+	List<Especialidad> traerEspecialidades();
+	List<Zona> traerZonasPorId(Long id);
+	List<Especialidad> traerEspecialidadPorId(Long id);
 
 }

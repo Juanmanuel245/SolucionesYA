@@ -6,11 +6,11 @@ import ar.edu.grupoesfera.cursospring.modelo.Usuario;
 
 public interface UsuariosDao {
 	
-	List<Usuario> TraerUsuario(Usuario usuario);
+	List<Usuario> traerUsuario(Usuario usuario);
 	
-	List<Usuario> TraerUsuarioPorId(Long id);
+	List<Usuario> traerUsuarioPorId(Long id);
 	
-	void RegistrarUsuario(Usuario usuario);
+	void registrarUsuario(Usuario usuario);
 	
 	void actualizarUsuario (Usuario usuario);
 	

@@ -19,7 +19,8 @@ public class Usuario {
 	private String nombreEmpresa;
 	private String logoEmpresa;
 	private Integer vecesContratado;
-	
+	private Integer balance;
+
 	@OneToOne @JoinColumn(name="ID_REPUTACION")
 	private Reputacion reputacion;
 	
@@ -115,6 +116,13 @@ public class Usuario {
 		this.vecesContratado = vecesContratado;
 	}
 	
+	public Integer getBalance() {
+		return balance;
+	}
+
+	public void setBalance(Integer balance) {
+		this.balance = balance;
+	}
 
 }
 

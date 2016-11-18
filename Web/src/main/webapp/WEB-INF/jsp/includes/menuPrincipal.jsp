@@ -7,7 +7,7 @@
   <div class="col-sm-2"> <br><br>
   
   <c:choose>
-    <c:when test="${id != null}">
+    <c:when test="${idSesion != null}">
       <a href="miCuenta" class="btn btn-default btn-block btn-xs"><span class="glyphicon glyphicon-user"> Mi Cuenta</span></a>
 	  <a href="crearPublicacion" class="btn btn-success btn-block btn-xs"><span class="glyphicon glyphicon-edit"></span> Crear Publicacion</a>
     </c:when>

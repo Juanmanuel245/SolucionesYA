@@ -20,7 +20,7 @@ public class ManejoCombosImpl implements ManejoCombos{
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public List<Zona> TraerZonas() {
+	public List<Zona> traerZonas() {
 		final Session session = sessionFactory.openSession();
 		List zonas = session.createCriteria(Zona.class)
 							.list();
@@ -29,7 +29,7 @@ public class ManejoCombosImpl implements ManejoCombos{
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public List<Especialidad> TraerEspecialidades() {
+	public List<Especialidad> traerEspecialidades() {
 		final Session session = sessionFactory.openSession();
 		List especialidad = session.createCriteria(Especialidad.class)
 							.list();
@@ -38,7 +38,7 @@ public class ManejoCombosImpl implements ManejoCombos{
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public List<Zona> TraerZonasPorId(Long id) {
+	public List<Zona> traerZonasPorId(Long id) {
 		final Session session = sessionFactory.openSession();
 		List zonas = session.createCriteria(Zona.class)
 									.add(Restrictions.eq("idZona", id))
@@ -49,7 +49,7 @@ public class ManejoCombosImpl implements ManejoCombos{
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public List<Especialidad> TraerEspecialidadPorId(Long id) {
+	public List<Especialidad> traerEspecialidadPorId(Long id) {
 		final Session session = sessionFactory.openSession();
 		List especialidades = session.createCriteria(Especialidad.class)
 									.add(Restrictions.eq("idEspecialidad", id))

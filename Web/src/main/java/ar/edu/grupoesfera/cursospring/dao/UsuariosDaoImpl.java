@@ -21,7 +21,7 @@ public class UsuariosDaoImpl implements UsuariosDao {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public List<Usuario> TraerUsuario(Usuario usuario) {
+	public List<Usuario> traerUsuario(Usuario usuario) {
 		final Session session = sessionFactory.openSession();
 		List usuarios = session.createCriteria(Usuario.class)
 								.add(Restrictions.eq("email", usuario.getEmail()))
@@ -32,14 +32,14 @@ public class UsuariosDaoImpl implements UsuariosDao {
 	}
 
 	@Override
-	public void RegistrarUsuario(Usuario usuario) {
+	public void registrarUsuario(Usuario usuario) {
 		final Session session = sessionFactory.openSession();
 		session.save(usuario);
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public List<Usuario> TraerUsuarioPorId(Long id) {
+	public List<Usuario> traerUsuarioPorId(Long id) {
 		final Session session = sessionFactory.openSession();
 		List usuarios = session.createCriteria(Usuario.class)
 								.add(Restrictions.eq("id", id))

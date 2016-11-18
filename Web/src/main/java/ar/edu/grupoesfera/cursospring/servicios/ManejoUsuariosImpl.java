@@ -17,24 +17,24 @@ public class ManejoUsuariosImpl implements ManejoUsuarios{
 	public UsuariosDao servicioUsuariosDao;	
 
 	@Override
-	public void RegistrarUsuario(Usuario usuario) {
+	public void registrarUsuario(Usuario usuario) {
 		
-		servicioUsuariosDao.RegistrarUsuario(usuario);
+		servicioUsuariosDao.registrarUsuario(usuario);
 		return;	
 	}
 
 	@Override
-	public List<Usuario> TraerUsuario(Usuario usuario) {
-		return servicioUsuariosDao.TraerUsuario(usuario);
+	public List<Usuario> traerUsuario(Usuario usuario) {
+		return servicioUsuariosDao.traerUsuario(usuario);
 	}
 
 	@Override
-	public List<Usuario> TraerUsuarioPorId(Long id) {
-		return servicioUsuariosDao.TraerUsuarioPorId(id);
+	public List<Usuario> traerUsuarioPorId(Long id) {
+		return servicioUsuariosDao.traerUsuarioPorId(id);
 	}
 
 	@Override
-	public void ActualizarUsuario(Usuario usuario) {
+	public void actualizarUsuario(Usuario usuario) {
 
 		servicioUsuariosDao.actualizarUsuario(usuario);
 		

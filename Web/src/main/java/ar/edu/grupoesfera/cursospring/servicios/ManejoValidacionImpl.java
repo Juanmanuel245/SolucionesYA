@@ -10,7 +10,7 @@ import ar.edu.grupoesfera.cursospring.modelo.Usuario;
 public class ManejoValidacionImpl implements ManejoValidacion{
 
 	@Override
-	public Boolean ValidarLogin(List<Usuario> list, String email, String password) {
+	public Boolean validarLogin(List<Usuario> list, String email, String password) {
 
 		for (Usuario usuario: list){	
 			if (usuario.getEmail().equals(email) && usuario.getPassword().equals(password)) {

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import ar.edu.grupoesfera.cursospring.modelo.Contratar;
 import ar.edu.grupoesfera.cursospring.modelo.Especialidad;
 import ar.edu.grupoesfera.cursospring.modelo.Publicacion;
 import ar.edu.grupoesfera.cursospring.modelo.PublicacionDTO;
@@ -32,25 +33,27 @@ public class ControlPublicacion {
 	@Inject
 	private CrearPublicacion servicioCrearPublicacion;
 
-	
-	@RequestMapping(value = "/publicacion", method = RequestMethod.GET)
-	public ModelAndView cargarPublicacion(@RequestParam(value= "id") Long id) {
-		Publicacion publicacion = servicioPublicacion.BuscarPublicacionPorId(id);
+	// POR ALGUNA RAZON EL MENUPRINCIPAL CONSIDERA QUE IDSESION ES IGUAL A NULLL PERO SI VERIFICAMOS EL ID LLEGA AL JSP PUBLICACION
+	@RequestMapping("/publicacion")
+	public ModelAndView cargarPublicacion(@RequestParam(value= "id") Long id, HttpServletRequest request) {
+		Publicacion publicacion = servicioPublicacion.buscarPublicacionPorId(id);
 		ModelMap model = new ModelMap();
 		model.put("publicacion", publicacion.getIdPublicacion());
 		model.put("logoEmpresa", publicacion.getUsuario().getLogoEmpresa());
 		model.put("nombreEmpresa", publicacion.getUsuario().getNombreEmpresa());
 		model.put("zona", publicacion.getZona().getNombre());
 		model.put("contenido", publicacion.getContenido());
+		model.put("idPublicador", publicacion.getUsuario().getId());
+		model.put("idSesion", request.getSession().getAttribute("idSesion"));
 		return new ModelAndView("publicacion", model);
 	}
 	
 	@RequestMapping("/crearPublicacion")
 	public ModelAndView crearPublicacion(HttpServletRequest request) {
-		List<Zona> zona = servicioPublicacion.BuscarZona();
-		List<Especialidad> especialidad = servicioPublicacion.BuscarEspecialidad();
-		Long id = (Long) request.getSession().getAttribute("id");
-		List<Usuario> user = servicioUsuarios.TraerUsuarioPorId(id);
+		List<Zona> zona = servicioPublicacion.buscarZona();
+		List<Especialidad> especialidad = servicioPublicacion.buscarEspecialidad();
+		Long id = (Long) request.getSession().getAttribute("idSesion");
+		List<Usuario> user = servicioUsuarios.traerUsuarioPorId(id);
 		Usuario usuario = user.get(0);
 		ModelMap model = new ModelMap();
 		PublicacionDTO pub = new PublicacionDTO();
@@ -67,21 +70,32 @@ public class ControlPublicacion {
 		List<Especialidad> especialidades = servicioCrearPublicacion.traerEspecialidadPorId(publicacion.getIdEspecialidad());
 		Zona zona = zonas.get(0);
 		Especialidad especialidad = especialidades.get(0);
-		Long id = (Long) request.getSession().getAttribute("id");
-		List<Usuario> user = servicioUsuarios.TraerUsuarioPorId(id);
+		Long id = (Long) request.getSession().getAttribute("idSesion");
+		List<Usuario> user = servicioUsuarios.traerUsuarioPorId(id);
 		Usuario usuario = user.get(0);
+		usuario.setBalance(usuario.getBalance() + 100);
+		servicioUsuarios.actualizarUsuario(usuario);
 		publicacion.setUsuario(usuario);
 		servicioCrearPublicacion.guardarPublicacion(publicacion, zona, especialidad);
 		return new ModelAndView("redirect:/");
 	}
 	
-	@RequestMapping(value = "/contratar", method = RequestMethod.GET)
-	public ModelAndView contratarUsuario(HttpServletRequest request, @RequestParam(value= "id") Long id) {
-		if(request.getSession().getAttribute("id") != null){
+	@RequestMapping("/contratar")
+	public ModelAndView contratarUsuario(HttpServletRequest request, 
+										 @RequestParam(value= "idp") Long idPublicacion, 
+										 @RequestParam(value= "idup") Long idUsuarioPublicador, 
+										 @RequestParam(value= "iduc") Long idUsuarioContratador) {
+		
+		if(request.getSession().getAttribute("idSesion") != null){
 			
-			// FALTA COMPLETAR TODO ACA
+			Contratar contratar = new Contratar();
+			contratar.setIdPublicacion(idPublicacion);
+			contratar.setIdUsuarioContratado(idUsuarioPublicador);
+			contratar.setIdUsuarioContratador(idUsuarioContratador);
 			
-			return new ModelAndView("publicacion");
+			servicioCrearPublicacion.guardarDatosContrato(contratar);
+			
+			return new ModelAndView("misEspecialistas");
 		}
 		
 		

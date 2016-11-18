@@ -93,7 +93,7 @@
 										        <p>¿Estas seguro que deseas contratar a este Usuario?</p>
 										      </div>
 										      <div class="modal-footer">										      
-												<a href="contratar?id=${publicacion}" type="button" class="btn btn-success"><span class="glyphicon glyphicon-ok" ></span> Contratar!</a>
+												<a href="contratar?idp=${publicacion}&&idup=${idPublicador}&&iduc=${idSesion}" type="button" class="btn btn-success"><span class="glyphicon glyphicon-ok" ></span> Contratar!</a>
 										        <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Mejor no</button>
 										      </div>
 										    </div>

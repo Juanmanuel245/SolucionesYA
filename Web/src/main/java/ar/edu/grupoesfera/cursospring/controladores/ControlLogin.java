@@ -36,11 +36,10 @@ public class ControlLogin {
 	@RequestMapping(path = "/loginOk", method = RequestMethod.POST)
 	public ModelAndView login(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
 
-		List<Usuario> usuariosValidos = servicioUsuarios.TraerUsuario(usuario);
-		if ((usuariosValidos != null) && (servicioValidacion.ValidarLogin(usuariosValidos, usuario.getEmail(), usuario.getPassword()))) {
+		List<Usuario> usuariosValidos = servicioUsuarios.traerUsuario(usuario);
+		if ((usuariosValidos != null) && (servicioValidacion.validarLogin(usuariosValidos, usuario.getEmail(), usuario.getPassword()))) {
 			Usuario usuarioValidado = usuariosValidos.get(0);
-			request.getSession().setAttribute("id", usuarioValidado.getId());
-			request.getSession().setAttribute("nombre", usuarioValidado.getNombre());
+			request.getSession().setAttribute("idSesion", usuarioValidado.getId());
 			return new ModelAndView("redirect:miCuenta");
 		} else {
 			ModelMap model = new ModelMap();

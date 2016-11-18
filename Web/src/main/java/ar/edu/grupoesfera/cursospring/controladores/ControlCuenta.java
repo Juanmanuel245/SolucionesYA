@@ -22,18 +22,36 @@ public class ControlCuenta {
 	
 	@RequestMapping("/miCuenta")
 	public ModelAndView cargarMiCuenta(HttpServletRequest request) {
-		if(request.getSession().getAttribute("id") != null){
-		return new ModelAndView("miCuenta");
+		if(request.getSession().getAttribute("idSesion") != null){
+			Long id = (Long) request.getSession().getAttribute("idSesion");
+			List<Usuario> listaUsuarios = servicioUsuarios.traerUsuarioPorId(id);
+			Usuario usuario = listaUsuarios.get(0);
+			ModelMap model = new ModelMap();
+			model.put("usuario", usuario);
+			return new ModelAndView("miCuenta", model);
+		}
+		return new ModelAndView("error");	
+	}
+	
+	@RequestMapping("/balance")
+	public ModelAndView cargarBalance(HttpServletRequest request) {
+		if(request.getSession().getAttribute("idSesion") != null){
+			Long id = (Long) request.getSession().getAttribute("idSesion");
+			List<Usuario> listaUsuarios = servicioUsuarios.traerUsuarioPorId(id);
+			Usuario usuario = listaUsuarios.get(0);
+			ModelMap model = new ModelMap();
+			model.put("usuario", usuario);
+			return new ModelAndView("balance", model);
 		}
 		return new ModelAndView("error");	
 	}
 	
 	@RequestMapping("/editarCuenta")
 	public ModelAndView editarCuenta(HttpServletRequest request){
-		if(request.getSession().getAttribute("id") != null){
+		if(request.getSession().getAttribute("idSesion") != null){
 			
-			Long id = (Long) request.getSession().getAttribute("id");
-			List<Usuario> listaUsuarios = servicioUsuarios.TraerUsuarioPorId(id);
+			Long id = (Long) request.getSession().getAttribute("idSesion");
+			List<Usuario> listaUsuarios = servicioUsuarios.traerUsuarioPorId(id);
 			Usuario usuario = listaUsuarios.get(0);
 			ModelMap model = new ModelMap();
 			model.put("usuario", usuario);
@@ -44,13 +62,12 @@ public class ControlCuenta {
 		return new ModelAndView("error");
 	}
 	
-	// NO FUNCIONA EL UPDATE
 	@RequestMapping("/edicionOk")
 	public ModelAndView edicionOk(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request){
-		if(request.getSession().getAttribute("id") != null){
-			Long id = (Long) request.getSession().getAttribute("id");
+		if(request.getSession().getAttribute("idSesion") != null){
+			Long id = (Long) request.getSession().getAttribute("idSesion");
 			usuario.setId(id);
-			servicioUsuarios.ActualizarUsuario(usuario);
+			servicioUsuarios.actualizarUsuario(usuario);
 			return new ModelAndView("miCuenta");
 		}
 		
@@ -59,7 +76,7 @@ public class ControlCuenta {
 	
 	@RequestMapping("/misEspecialistas")
 	public ModelAndView misEspecialistas(HttpServletRequest request){
-		if(request.getSession().getAttribute("id") != null){
+		if(request.getSession().getAttribute("idSesion") != null){
 			
 			return new ModelAndView("misEspecialistas");
 		}

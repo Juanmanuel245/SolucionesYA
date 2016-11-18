@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 
+import ar.edu.grupoesfera.cursospring.modelo.Contratar;
 import ar.edu.grupoesfera.cursospring.modelo.Especialidad;
 import ar.edu.grupoesfera.cursospring.modelo.Publicacion;
 import ar.edu.grupoesfera.cursospring.modelo.PublicacionDTO;
@@ -18,7 +19,7 @@ public class PublicacionDaoImpl implements PublicacionDao{
     private SessionFactory sessionFactory;
 
 	@Override
-	public void GuardarPublicacion(PublicacionDTO publicacion, Zona zona, Especialidad especialidad) {
+	public void guardarPublicacion(PublicacionDTO publicacion, Zona zona, Especialidad especialidad) {
 		final Session session = sessionFactory.openSession();
 		Publicacion pub = new Publicacion();
 		pub.setContenido(publicacion.getContenido());
@@ -29,6 +30,13 @@ public class PublicacionDaoImpl implements PublicacionDao{
 		session.save(pub);
 		
 		return;
+		
+	}
+
+	@Override
+	public void guardarDatosContrato(Contratar contratar) {
+		final Session session = sessionFactory.openSession();
+		session.save(contratar);
 		
 	}
 	

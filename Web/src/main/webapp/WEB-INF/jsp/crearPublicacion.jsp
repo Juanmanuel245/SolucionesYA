@@ -1,4 +1,4 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -43,7 +43,7 @@
 
 							</div>
 						</div>
-
+						<div class="alert alert-warning text-center">Recuerde que crear una publicacion tiene un costo unico de $100 que seran agregados a su cuenta</div> 	
 						<form:form action="publicacionOk" modelAttribute="publicacionDTO"  method="POST">
 
 							 <!--  ZONA  -->
@@ -83,6 +83,9 @@
 			</div>
 		</div>
 	</div>
+
+
 	<%@ include file="includes/pie.jsp"%>
+
 </body>
 </html>
