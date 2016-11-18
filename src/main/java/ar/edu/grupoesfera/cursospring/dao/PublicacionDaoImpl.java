@@ -52,6 +52,37 @@ public class PublicacionDaoImpl implements PublicacionDao{
 								.list();
 		return publicaciones;
 	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+	public List<Publicacion> traerPublicacion() {
+		final Session session = sessionFactory.openSession();
+		List publicaciones = session.createCriteria(Publicacion.class)
+									.list();
+		return publicaciones;	
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+	public List<Publicacion> traerPublicacionPorEspecialidad(Long id) {
+		final Session session = sessionFactory.openSession();
+		List publicaciones = session.createCriteria(Publicacion.class)
+									.add(Restrictions.eq("idZona", id))
+									.list();
+		return publicaciones;
+	}
+
+	@Override
+	public List<Publicacion> traerPublicacionPorZona(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Publicacion> traerPublicacionPorZonaYEspecialidad(Long idZona, Long idEsp) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 

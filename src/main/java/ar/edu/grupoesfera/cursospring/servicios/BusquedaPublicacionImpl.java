@@ -47,24 +47,6 @@ public class BusquedaPublicacionImpl implements BusquedaPublicacion{
 	}
 
 	@Override
-	public void buscarPublicacionPorZona() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void buscarPublicacionPorEspecialidad() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void buscarPublicacionZonaYEspecialidad() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public List<Especialidad> buscarEspecialidad() {
 		List<Especialidad> especialidad = servicioCombos.traerEspecialidades();
 		return especialidad;
@@ -73,6 +55,29 @@ public class BusquedaPublicacionImpl implements BusquedaPublicacion{
 	@Override
 	public List<Contratar> buscarPublicacionContratada(Long id) {
 		return servicioPublicacion.buscarPublicacionContratada(id) ;
+	}
+
+	@Override
+	public List<Publicacion> buscarPublicacion() {
+		return servicioPublicacion.traerPublicacion();
+	}
+
+	@Override
+	public List<Publicacion> buscarPublicacionPorZona(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Publicacion> buscarPublicacionPorEspecialidad(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Publicacion> buscarPublicacionZonaYEspecialidad(Long idZona, Long idEsp) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

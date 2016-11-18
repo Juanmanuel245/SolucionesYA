@@ -14,8 +14,9 @@ INSERT INTO Usuario (apellido, email, logoEmpresa, nombre, nombreEmpresa, passwo
 ("Caffi", "juanmanuelcaffi@gmail.com", "images/emp3.jpg", "Juan Manuel", "Caffi SA", "123456", "1159423002", 0, 0, 1, 3),
 ("Escobar", "nicolase@gmail.com", "images/sinLogo.jpg", "Nicolas", "Browser SRL", "123456", "1159423002", 0, 0, 1, 3);
 
-INSERT INTO Publicacion (contenido, ID_ESPECIALIDAD, ID_USUARIO, ID_ZONA) values
-("texto generado", 1, 2, 1);
+INSERT INTO Publicacion (contenido, cantidadContratos,  ID_ESPECIALIDAD, ID_USUARIO, ID_ZONA) values
+("texto generado", 0, 1, 2, 1),
+("texto generado", 0, 1, 1, 1);
 
 
 
