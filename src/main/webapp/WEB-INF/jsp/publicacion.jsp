@@ -23,17 +23,18 @@
 
 							<div class="col-sm-12">
 								<div class="col-sm-4">
-									<img src="${logoEmpresa}" class="img-thumbnail">
+									<img src="${logoEmpresa}" class="img-thumbnail"><br><br>
 									<button type="button" class="btn btn-default btn-xs btn-block"><b>Zona
 										de Trabajo:</b> ${zona}</button>
 									<button type="button" class="btn btn-default btn-xs btn-block"><b>Reputacion:</b> No disponible</button>
+									<button type="button" class="btn btn-default btn-xs btn-block"><b>Tipo de Especialista:</b> ${esp}</button>
 								</div>
 								<div class="col-sm-8">
 									<div class="col-sm-12">
 										<h3 class="textoCentrado">${nombreEmpresa}</h3>
 									</div>
 									<div class="col-sm-12">
-										<div class="alert alert-warning textoCentrado">El Usuario fue contratado 208 veces</div>
+										<div class="alert alert-warning textoCentrado">El Usuario fue contratado ${contratado} veces</div>
 									</div>
 									<div class="col-sm-12 text-center">
 										<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Contratar Especialista</button>
@@ -47,7 +48,8 @@
 					</div>
 				</div>
 
-				<!-- Galeria de Trabajos del Especialista -->
+				<!--  Galeria de Trabajos del Especialista -->
+				<!--
 				<div class="col-sm-12">
 					<div class="panel panel-default">
 						<div class="panel-heading">
@@ -57,7 +59,7 @@
 							EL USUARIO NO CUENTA CON UNA GALERIA
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 				<!-- Contenido extra de la publicacion del especialista -->
 				<div class="col-sm-12">
@@ -93,7 +95,7 @@
 										        <p>¿Estas seguro que deseas contratar a este Usuario?</p>
 										      </div>
 										      <div class="modal-footer">										      
-												<a href="contratar?idp=${publicacion}&&idup=${idPublicador}&&iduc=${idSesion}" type="button" class="btn btn-success"><span class="glyphicon glyphicon-ok" ></span> Contratar!</a>
+												<a href="contratar?idp=${publicacion}&&idup=${idPublicador}&&iduc=${idSesion}&&esp=${esp}" type="button" class="btn btn-success"><span class="glyphicon glyphicon-ok" ></span> Contratar!</a>
 										        <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Mejor no</button>
 										      </div>
 										    </div>

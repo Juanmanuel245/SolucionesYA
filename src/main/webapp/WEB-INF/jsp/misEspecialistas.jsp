@@ -24,18 +24,18 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<div class="list-group">
-						  <a href="#" class="list-group-item active">Especialistas Contratados</a>
+						  <a href="#" class="list-group-item active">Especialistas Contratados (Clic en la fila para ver la publicacion)</a>
 						  <c:choose >
 							  <c:when test="${contratados != null}">
 								  <c:forEach items="${contratados}" var="contratados">
-								   <a href="#" class="list-group-item text-center" >
+								   <a href="publicacion?idp=${contratados.idPublicacion}" class="list-group-item text-center" >
 									   <img src="${contratados.usuarioContratado.logoEmpresa}" width="100">
 									   <span class="label label-primary">Empresa: ${contratados.usuarioContratado.nombreEmpresa}</span>
-									   <span class="label label-info">Especialidad: ??</span>
+									   <span class="label label-info">Especialidad: ${contratados.nombreEspecialidad}</span>
 									   <span class="label label-primary">Titular: ${contratados.usuarioContratado.nombre} ${contratados.usuarioContratado.apellido}</span>
 									   <span class="label label-info">Email: ${contratados.usuarioContratado.email}</span>
 									   <span class="label label-primary">Telefono: ${contratados.usuarioContratado.telefono}</span>
-									   <a href="publicacion?idp=${contratados.idPublicacion}" class="btn btn-success">Ver Publicacion</a>
+									   
 								   </a>
 								  </c:forEach>
 							  </c:when>

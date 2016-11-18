@@ -26,7 +26,7 @@
 
 								<div class="col-sm-5">
 									<div class="col-sm-6">
-										<img class="img-thumbnail" src="images/emp7.jpg" width="150"
+										<img class="img-thumbnail" src="${usuario.logoEmpresa } " width="150"
 											height="150" alt="">
 									</div>
 

@@ -17,6 +17,7 @@ public class Contratar {
 	private Usuario usuarioContratado;
 	private Long idUsuarioContratador;
 	private Long idPublicacion;
+	private String nombreEspecialidad;
 	
 
 	public Long getIdContratar() {
@@ -42,6 +43,12 @@ public class Contratar {
 	}
 	public void setIdPublicacion(Long idPublicacion) {
 		this.idPublicacion = idPublicacion;
+	}
+	public String getNombreEspecialidad() {
+		return nombreEspecialidad;
+	}
+	public void setNombreEspecialidad(String nombreEspecialidad) {
+		this.nombreEspecialidad = nombreEspecialidad;
 	}
 	
 	

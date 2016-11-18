@@ -35,7 +35,7 @@ public class ControlPublicacion {
 
 	// POR ALGUNA RAZON EL MENUPRINCIPAL CONSIDERA QUE IDSESION ES IGUAL A NULLL PERO SI VERIFICAMOS EL ID LLEGA AL JSP PUBLICACION
 	@RequestMapping("/publicacion")
-	public ModelAndView cargarPublicacion(@RequestParam(value= "id") Long id, HttpServletRequest request) {
+	public ModelAndView cargarPublicacion(@RequestParam(value= "idp") Long id, HttpServletRequest request) {
 		Publicacion publicacion = servicioPublicacion.buscarPublicacionPorId(id);
 		ModelMap model = new ModelMap();
 		model.put("publicacion", publicacion.getIdPublicacion());
@@ -45,6 +45,8 @@ public class ControlPublicacion {
 		model.put("contenido", publicacion.getContenido());
 		model.put("idPublicador", publicacion.getUsuario().getId());
 		model.put("idSesion", request.getSession().getAttribute("idSesion"));
+		model.put("esp", publicacion.getEspecialidad().getNombreEspecialidad());
+		model.put("contratado", publicacion.getUsuario().getVecesContratado());
 		return new ModelAndView("publicacion", model);
 	}
 	
@@ -84,7 +86,8 @@ public class ControlPublicacion {
 	public ModelAndView contratarUsuario(HttpServletRequest request, 
 										 @RequestParam(value= "idp") Long idPublicacion, 
 										 @RequestParam(value= "idup") Long idUsuarioPublicador, 
-										 @RequestParam(value= "iduc") Long idUsuarioContratador) {
+										 @RequestParam(value= "iduc") Long idUsuarioContratador, 
+										 @RequestParam(value= "esp") String nombreEspecialidad) {
 		
 		if(request.getSession().getAttribute("idSesion") != null){
 			
@@ -96,6 +99,12 @@ public class ControlPublicacion {
 			contratar.setIdPublicacion(idPublicacion);
 			contratar.setUsuarioContratado(usuarioContratado);
 			contratar.setIdUsuarioContratador(idUsuarioContratador);
+			contratar.setNombreEspecialidad(nombreEspecialidad);
+			
+			List<Usuario> user = servicioUsuarios.traerUsuarioPorId(idUsuarioPublicador);
+			Usuario usuario = user.get(0);
+			usuario.setVecesContratado(usuario.getVecesContratado() + 1);
+			servicioUsuarios.actualizarUsuario(usuario);
 			
 			servicioCrearPublicacion.guardarDatosContrato(contratar);
 			
