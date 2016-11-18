@@ -1,5 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-
 <html lang="es">
 <head><%@ include file="includes/cabecera.jsp"%>
 <!-- Cabecera con Meta, Titulos y Archivos Externos (Css) -->
@@ -24,18 +24,27 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<div class="list-group">
-						  <a href="#" class="list-group-item active">
-						    Especialistas Contratados
-						  </a>
-						   <a href="#" class="list-group-item text-center" >
+						  <a href="#" class="list-group-item active">Especialistas Contratados</a>
+						  <c:choose >
+							  <c:when test="${contratados != null}">
+								  <c:forEach items="${contratados}" var="contratados">
+								   <a href="#" class="list-group-item text-center" >
+									   <img src="${contratados.usuarioContratado.logoEmpresa}" width="100">
+									   <span class="label label-primary">Empresa: ${contratados.usuarioContratado.nombreEmpresa}</span>
+									   <span class="label label-info">Especialidad: ??</span>
+									   <span class="label label-primary">Titular: ${contratados.usuarioContratado.nombre} ${contratados.usuarioContratado.apellido}</span>
+									   <span class="label label-info">Email: ${contratados.usuarioContratado.email}</span>
+									   <span class="label label-primary">Telefono: ${contratados.usuarioContratado.telefono}</span>
+									   <a href="publicacion?idp=${contratados.idPublicacion}" class="btn btn-success">Ver Publicacion</a>
+								   </a>
+								  </c:forEach>
+							  </c:when>
+							  
+							  <c:otherwise>
+							  	<div class="text-center" >No haz contratado a ningun especialista </div>
+							  </c:otherwise>
+						  </c:choose>
 
-						   <img src="images/emp3.jpg" width="100">
-						   <span class="label label-primary">Empresa: Logon Sistemas</span>
-						   <span class="label label-info">Especialidad: Plomero</span>
-						   <span class="label label-primary">Titular: Juan Manuel Caffi</span>
-						   <span class="label label-info">Email: JuanManuelCaffi@Gmail.com</span>
-						   <span class="label label-primary">Telefono: 116924006</span>
-						   </a>
 						</div>
 					</div>
 				</div>

@@ -1,9 +1,12 @@
 package ar.edu.grupoesfera.cursospring.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Service;
 
 import ar.edu.grupoesfera.cursospring.modelo.Contratar;
@@ -38,6 +41,16 @@ public class PublicacionDaoImpl implements PublicacionDao{
 		final Session session = sessionFactory.openSession();
 		session.save(contratar);
 		
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+	public List<Contratar> buscarPublicacionContratada(Long id) {
+		final Session session = sessionFactory.openSession();
+		List publicaciones = session.createCriteria(Contratar.class)
+								.add(Restrictions.eq("idUsuarioContratador", id))
+								.list();
+		return publicaciones;
 	}
 	
 	

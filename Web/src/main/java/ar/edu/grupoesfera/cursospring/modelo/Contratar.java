@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Contratar {
@@ -11,21 +13,23 @@ public class Contratar {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idContratar;
 	
-	private Long idUsuarioContratado;
+	@ManyToOne @JoinColumn(name="ID_USUARIO_CONTRATADO")
+	private Usuario usuarioContratado;
 	private Long idUsuarioContratador;
 	private Long idPublicacion;
 	
+
 	public Long getIdContratar() {
 		return idContratar;
 	}
 	public void setIdContratar(Long idContratar) {
 		this.idContratar = idContratar;
 	}
-	public Long getIdUsuarioContratado() {
-		return idUsuarioContratado;
+	public Usuario getUsuarioContratado() {
+		return usuarioContratado;
 	}
-	public void setIdUsuarioContratado(Long idUsuarioContratado) {
-		this.idUsuarioContratado = idUsuarioContratado;
+	public void setUsuarioContratado(Usuario usuarioContratado) {
+		this.usuarioContratado = usuarioContratado;
 	}
 	public Long getIdUsuarioContratador() {
 		return idUsuarioContratador;
@@ -39,4 +43,6 @@ public class Contratar {
 	public void setIdPublicacion(Long idPublicacion) {
 		this.idPublicacion = idPublicacion;
 	}
+	
+	
 }

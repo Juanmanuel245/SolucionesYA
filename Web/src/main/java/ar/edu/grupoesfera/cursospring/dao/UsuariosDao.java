@@ -13,6 +13,6 @@ public interface UsuariosDao {
 	void registrarUsuario(Usuario usuario);
 	
 	void actualizarUsuario (Usuario usuario);
-	
+
 
 }

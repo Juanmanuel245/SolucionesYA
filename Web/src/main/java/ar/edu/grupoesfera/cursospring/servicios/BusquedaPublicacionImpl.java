@@ -9,6 +9,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 
 import ar.edu.grupoesfera.cursospring.dao.ManejoCombos;
+import ar.edu.grupoesfera.cursospring.dao.PublicacionDao;
+import ar.edu.grupoesfera.cursospring.modelo.Contratar;
 import ar.edu.grupoesfera.cursospring.modelo.Especialidad;
 import ar.edu.grupoesfera.cursospring.modelo.Publicacion;
 import ar.edu.grupoesfera.cursospring.modelo.Zona;
@@ -19,6 +21,9 @@ public class BusquedaPublicacionImpl implements BusquedaPublicacion{
 	
 	@Inject
 	private ManejoCombos servicioCombos;
+	
+	@Inject
+	private PublicacionDao servicioPublicacion;
 	
 	@Inject
     private SessionFactory sessionFactory;
@@ -63,6 +68,11 @@ public class BusquedaPublicacionImpl implements BusquedaPublicacion{
 	public List<Especialidad> buscarEspecialidad() {
 		List<Especialidad> especialidad = servicioCombos.traerEspecialidades();
 		return especialidad;
+	}
+
+	@Override
+	public List<Contratar> buscarPublicacionContratada(Long id) {
+		return servicioPublicacion.buscarPublicacionContratada(id) ;
 	}
 
 }

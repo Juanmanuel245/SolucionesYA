@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import ar.edu.grupoesfera.cursospring.modelo.Contratar;
 import ar.edu.grupoesfera.cursospring.modelo.Usuario;
+import ar.edu.grupoesfera.cursospring.servicios.BusquedaPublicacion;
 import ar.edu.grupoesfera.cursospring.servicios.ManejoUsuarios;
 
 @Controller
@@ -19,6 +21,9 @@ public class ControlCuenta {
 	
 	@Inject
 	private ManejoUsuarios servicioUsuarios;
+	
+	@Inject
+	private BusquedaPublicacion servicioPublicacion;
 	
 	@RequestMapping("/miCuenta")
 	public ModelAndView cargarMiCuenta(HttpServletRequest request) {
@@ -78,7 +83,12 @@ public class ControlCuenta {
 	public ModelAndView misEspecialistas(HttpServletRequest request){
 		if(request.getSession().getAttribute("idSesion") != null){
 			
-			return new ModelAndView("misEspecialistas");
+			// Traigo una lista de las publicaciones contratadas pro el usuario
+			Long idUsuario = (Long) request.getSession().getAttribute("idSesion");
+			List<Contratar> contratados = servicioPublicacion.buscarPublicacionContratada(idUsuario);
+			ModelMap model = new ModelMap();
+			model.put("contratados", contratados);	
+			return new ModelAndView("misEspecialistas", model);
 		}
 		
 		return new ModelAndView("error");

@@ -10,5 +10,4 @@ public interface ManejoUsuarios {
 	void actualizarUsuario(Usuario usuario);
 	List<Usuario> traerUsuario(Usuario usuario);
 	List<Usuario> traerUsuarioPorId(Long id);
-
 }

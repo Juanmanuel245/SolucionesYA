@@ -88,14 +88,18 @@ public class ControlPublicacion {
 		
 		if(request.getSession().getAttribute("idSesion") != null){
 			
+			List<Usuario> listaUsuarioContratado = servicioUsuarios.traerUsuarioPorId(idUsuarioPublicador);
+			Usuario usuarioContratado = new Usuario();
+			usuarioContratado = listaUsuarioContratado.get(0);
+			
 			Contratar contratar = new Contratar();
 			contratar.setIdPublicacion(idPublicacion);
-			contratar.setIdUsuarioContratado(idUsuarioPublicador);
+			contratar.setUsuarioContratado(usuarioContratado);
 			contratar.setIdUsuarioContratador(idUsuarioContratador);
 			
 			servicioCrearPublicacion.guardarDatosContrato(contratar);
 			
-			return new ModelAndView("misEspecialistas");
+			return new ModelAndView("redirect:misEspecialistas");
 		}
 		
 		
