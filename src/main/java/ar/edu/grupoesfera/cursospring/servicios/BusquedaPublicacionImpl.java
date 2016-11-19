@@ -64,20 +64,22 @@ public class BusquedaPublicacionImpl implements BusquedaPublicacion{
 
 	@Override
 	public List<Publicacion> buscarPublicacionPorZona(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return servicioPublicacion.traerPublicacionPorZona(id) ;
 	}
 
 	@Override
 	public List<Publicacion> buscarPublicacionPorEspecialidad(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return servicioPublicacion.traerPublicacionPorEspecialidad(id);
 	}
 
 	@Override
 	public List<Publicacion> buscarPublicacionZonaYEspecialidad(Long idZona, Long idEsp) {
-		// TODO Auto-generated method stub
-		return null;
+		return servicioPublicacion.traerPublicacionPorZonaYEspecialidad(idZona, idEsp);
+	}
+
+	@Override
+	public List<Zona> buscarZonaporId(Long id) {
+		return servicioPublicacion.buscarZonaPorId(id);
 	}
 
 }

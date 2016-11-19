@@ -9,3 +9,20 @@ body {
 .paddingMenuPrincipal{
 	padding-top:125px;
 }
+
+.listar{
+	background: white;
+	border-top-style: solid;
+  	border-right-style: solid;
+  	border-bottom-style: solid;
+  	border-left-style: solid;
+
+}
+
+.paddingBotonVer{
+	padding-top:65px;
+}
+
+.paddingLogoListar{
+	padding-top:23px;
+}

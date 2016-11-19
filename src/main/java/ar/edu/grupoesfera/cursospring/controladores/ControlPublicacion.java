@@ -120,22 +120,18 @@ public class ControlPublicacion {
 		List<Publicacion> listaPublicacion = null;
 		
 		if(pub.getIdEspecialidad() == 0 && pub.getIdZona() == 0){
-			System.out.println("LLEGUE ACA");
 			listaPublicacion = servicioPublicacion.buscarPublicacion();
 		}
 		
 		if(pub.getIdEspecialidad() > 0 && pub.getIdZona() == 0){
-			System.out.println("LLEGUE ACA 2");
 			listaPublicacion = servicioPublicacion.buscarPublicacionPorEspecialidad(pub.getIdEspecialidad());
 		}
 		
 		if(pub.getIdEspecialidad() == 0 && pub.getIdZona() > 0){
-			System.out.println("LLEGUE ACA 3");
 			listaPublicacion = servicioPublicacion.buscarPublicacionPorZona(pub.getIdZona());
 		}
 		
 		if(pub.getIdEspecialidad() > 0 && pub.getIdZona() > 0){
-			System.out.println("LLEGUE ACA 4");
 			listaPublicacion = servicioPublicacion.buscarPublicacionZonaYEspecialidad(pub.getIdZona(), pub.getIdEspecialidad());
 		}
 		

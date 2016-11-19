@@ -67,23 +67,40 @@ public class PublicacionDaoImpl implements PublicacionDao{
 	public List<Publicacion> traerPublicacionPorEspecialidad(Long id) {
 		final Session session = sessionFactory.openSession();
 		List publicaciones = session.createCriteria(Publicacion.class)
-									.add(Restrictions.eq("idZona", id))
+									.add(Restrictions.eq("especialidad.idEspecialidad", id))
 									.list();
 		return publicaciones;
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public List<Publicacion> traerPublicacionPorZona(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		final Session session = sessionFactory.openSession();
+		List publicaciones = session.createCriteria(Publicacion.class)
+									.add(Restrictions.eq("zona.idZona", id))
+									.list();
+		return publicaciones;
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public List<Publicacion> traerPublicacionPorZonaYEspecialidad(Long idZona, Long idEsp) {
-		// TODO Auto-generated method stub
-		return null;
+		final Session session = sessionFactory.openSession();
+		List publicaciones = session.createCriteria(Publicacion.class)
+									.add(Restrictions.eq("zona.idZona", idZona))
+									.add(Restrictions.eq("especialidad.idEspecialidad", idEsp))
+									.list();
+		return publicaciones;
 	}
-	
-	
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+	public List<Zona> buscarZonaPorId(Long id) {
+			final Session session = sessionFactory.openSession();
+			List zona = session.createCriteria(Zona.class)
+										.add(Restrictions.eq("idZona", id))
+										.list();
+			return zona;
+	}
 
 }

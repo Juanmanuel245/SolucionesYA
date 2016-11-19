@@ -17,5 +17,6 @@ public interface PublicacionDao {
 	List<Publicacion> traerPublicacionPorEspecialidad(Long id);
 	List<Publicacion> traerPublicacionPorZona(Long id);
 	List<Publicacion> traerPublicacionPorZonaYEspecialidad(Long idZona, Long idEsp);
+	List<Zona> buscarZonaPorId(Long id);
 
 }
