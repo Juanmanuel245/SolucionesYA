@@ -4,8 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Usuario {
@@ -21,13 +19,7 @@ public class Usuario {
 	private Integer vecesContratado;
 	private Integer balance;
 
-	@OneToOne @JoinColumn(name="ID_REPUTACION")
-	private Reputacion reputacion;
 	
-	@OneToOne @JoinColumn(name="ID_GALERIA")
-	private Galeria galeria;
-
-
 	public Long getId() {
 		return id;
 	}
@@ -90,22 +82,6 @@ public class Usuario {
 
 	public void setLogoEmpresa(String logoEmpresa) {
 		this.logoEmpresa = logoEmpresa;
-	}
-
-	public Reputacion getReputacion() {
-		return reputacion;
-	}
-
-	public void setReputacion(Reputacion reputacion) {
-		this.reputacion = reputacion;
-	}
-
-	public Galeria getGaleria() {
-		return galeria;
-	}
-
-	public void setGaleria(Galeria galeria) {
-		this.galeria = galeria;
 	}
 
 	public Integer getVecesContratado() {

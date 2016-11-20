@@ -14,6 +14,7 @@ public interface PublicacionDao {
 	void guardarDatosContrato (Contratar contratar);
 	List<Contratar> buscarPublicacionContratada(Long id);
 	List<Publicacion> traerPublicacion();
+	List<Publicacion> traerPublicacionDestacada();
 	List<Publicacion> traerPublicacionPorId(Long id);
 	List<Publicacion> traerPublicacionPorEspecialidad(Long id);
 	List<Publicacion> traerPublicacionPorZona(Long id);

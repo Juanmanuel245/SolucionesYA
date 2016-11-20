@@ -58,8 +58,7 @@ public class ControlPublicacion {
 	public ModelAndView crearPublicacion(HttpServletRequest request) {
 		List<Zona> zona = servicioPublicacion.buscarZona();
 		List<Especialidad> especialidad = servicioPublicacion.buscarEspecialidad();
-		Long id = (Long) request.getSession().getAttribute("idSesion");
-		List<Usuario> user = servicioUsuarios.traerUsuarioPorId(id);
+		List<Usuario> user = servicioUsuarios.traerUsuarioPorId((Long) request.getSession().getAttribute("idSesion"));
 		Usuario usuario = user.get(0);
 		ModelMap model = new ModelMap();
 		PublicacionDTO pub = new PublicacionDTO();
@@ -72,15 +71,25 @@ public class ControlPublicacion {
 	
 	@RequestMapping(value = "/publicacionOk", method = RequestMethod.POST)
 	public ModelAndView agregarPublicacion(@ModelAttribute("publicacion") PublicacionDTO publicacion, HttpServletRequest request) {
+		// TRAIGO UNA LISTA DE LAS ZONAS
 		List<Zona> zonas = servicioCrearPublicacion.traerZonaPorId(publicacion.getIdZona());
+		// TRAIGO UNA LISTA CON LAS ESPECIALIDADES
 		List<Especialidad> especialidades = servicioCrearPublicacion.traerEspecialidadPorId(publicacion.getIdEspecialidad());
+		
 		Zona zona = zonas.get(0);
 		Especialidad especialidad = especialidades.get(0);
-		Long id = (Long) request.getSession().getAttribute("idSesion");
-		List<Usuario> user = servicioUsuarios.traerUsuarioPorId(id);
+		
+		List<Usuario> user = servicioUsuarios.traerUsuarioPorId((Long) request.getSession().getAttribute("idSesion"));
 		Usuario usuario = user.get(0);
 		usuario.setBalance(usuario.getBalance() + 100);
+		
+		// DATOS DE PRUEBA
+			if(publicacion.isDestacado()){
+				usuario.setBalance(usuario.getBalance() + 50);
+			}
+		
 		servicioUsuarios.actualizarUsuario(usuario);
+		
 		publicacion.setUsuario(usuario);
 		servicioCrearPublicacion.guardarPublicacion(publicacion, zona, especialidad);
 		return new ModelAndView("redirect:/");

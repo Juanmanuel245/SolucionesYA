@@ -9,6 +9,8 @@ public class PublicacionDTO {
 	private Long idZona;
 	
 	private String contenido;
+	
+	private boolean destacado;
 
 	private Long idEspecialidad;
 
@@ -50,6 +52,14 @@ public class PublicacionDTO {
 
 	public void setIdEspecialidad(Long idEspecialidad) {
 		this.idEspecialidad = idEspecialidad;
+	}
+
+	public boolean isDestacado() {
+		return destacado;
+	}
+
+	public void setDestacado(boolean destacado) {
+		this.destacado = destacado;
 	}
 
 	

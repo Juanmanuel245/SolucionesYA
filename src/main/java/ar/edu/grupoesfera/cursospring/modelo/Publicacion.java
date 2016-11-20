@@ -21,6 +21,8 @@ public class Publicacion {
 	
 	private String contenido;
 	
+	private boolean destacado;
+	
 	private Integer visitas;
 	
 	@ManyToOne @JoinColumn(name="ID_ESPECIALIDAD")
@@ -73,9 +75,17 @@ public class Publicacion {
 	public void setVisitas(Integer visitas) {
 		this.visitas = visitas;
 	}
-	
-	
 
+	public boolean isDestacado() {
+		return destacado;
+	}
+
+	public void setDestacado(boolean destacado) {
+		this.destacado = destacado;
+	}
+	
+	
+	
 	
 
 }

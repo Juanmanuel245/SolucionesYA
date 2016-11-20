@@ -48,19 +48,6 @@
 					</div>
 				</div>
 
-				<!--  Galeria de Trabajos del Especialista -->
-				<!--
-				<div class="col-sm-12">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">Galeria de Trabajos</h3>
-						</div>
-						<div class="panel-body">
-							EL USUARIO NO CUENTA CON UNA GALERIA
-						</div>
-					</div>
-				</div> -->
-
 				<!-- Contenido extra de la publicacion del especialista -->
 				<div class="col-sm-12">
 					<div class="panel panel-default">

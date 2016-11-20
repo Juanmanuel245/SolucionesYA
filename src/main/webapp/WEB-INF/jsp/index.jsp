@@ -59,38 +59,23 @@
 						<h3 class="panel-title">VENDEDORES DESTACADOS</h3>
 					</div>
 					<div class="panel-body">
-						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-							<a class="thumbnail" href="#"><img class="img-responsive"
-								src="images/emp1.jpg" alt=""></a>
-						</div>
-						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-							<a class="thumbnail" href="publicacion?idp=1"><img
-								class="img-responsive" src="images/MateosMacias.jpg" alt=""></a>
-						</div>
-						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-							<a class="thumbnail" href="#"><img class="img-responsive"
-								src="images/emp3.jpg" alt=""></a>
-						</div>
-						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-							<a class="thumbnail" href="#"><img class="img-responsive"
-								src="images/emp4.jpg" alt=""></a>
-						</div>
-						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-							<a class="thumbnail" href="#"><img class="img-responsive"
-								src="images/emp5.jpg" alt=""></a>
-						</div>
-						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-							<a class="thumbnail" href="#"><img class="img-responsive"
-								src="images/emp6.jpg" alt=""></a>
-						</div>
-						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-							<a class="thumbnail" href="#"><img class="img-responsive"
-								src="images/emp7.jpg" alt=""></a>
-						</div>
-						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-							<a class="thumbnail" href="usuario/1"><img
-								class="img-responsive" src="images/emp8.jpg" alt=""></a>
-						</div>
+						<c:choose>
+							<c:when test="${valido}">
+							
+								<c:forEach items="${destacadas}" var="pub">
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="publicacion?idp=${pub.idPublicacion}"><img class="img-thumbnail" src="${pub.usuario.logoEmpresa}" height="170px" width="170px"></a>
+									</div>
+								</c:forEach>
+							</c:when>
+							
+							<c:otherwise>
+								No hay publicaciones destacadas
+							</c:otherwise>
+						
+						</c:choose>
+
+						
 					</div>
 				</div>
 			</div>

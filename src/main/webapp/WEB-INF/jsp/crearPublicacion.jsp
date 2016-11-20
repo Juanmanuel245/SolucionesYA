@@ -69,7 +69,13 @@
 							<!-- CAMPO DE CONTEIDO -->
 							<form:textarea class="form-control" path="contenido" rows="15"
 								placeholder="Agregar Informacion sobre tu publicacion. No puede contener datos de contacto"></form:textarea>
-
+							
+							<div class="checkbox">
+							  <label>
+							    <form:checkbox path="destacado" />
+							    Hacer que mi publicacion aparezca en los Destacados (Costo Adicional $50 Pesos)
+							  </label>
+							</div>
 
 							<br>
 							<br>

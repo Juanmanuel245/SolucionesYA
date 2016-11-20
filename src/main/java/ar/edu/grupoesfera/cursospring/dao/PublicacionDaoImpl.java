@@ -32,6 +32,7 @@ public class PublicacionDaoImpl implements PublicacionDao{
 		pub.setUsuario(publicacion.getUsuario());
 		pub.setZona(zona);
 		pub.setVisitas(0);
+		pub.setDestacado(publicacion.isDestacado());
 		session.save(pub);
 		
 		return;
@@ -130,6 +131,16 @@ public class PublicacionDaoImpl implements PublicacionDao{
 		List publicaciones = session.createCriteria(Publicacion.class)
 								.add(Restrictions.eq("idPublicacion", id))
 								.list();
+		return publicaciones;
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+	public List<Publicacion> traerPublicacionDestacada() {
+		final Session session = sessionFactory.openSession();
+		List publicaciones = session.createCriteria(Publicacion.class)
+									.add(Restrictions.eq("destacado", true))
+									.list();
 		return publicaciones;
 	}
 		

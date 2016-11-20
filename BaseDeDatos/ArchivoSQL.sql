@@ -9,4 +9,4 @@ SELECT * FROM Reputacion;
 SELECT * FROM Zona;
 SELECT * FROM Contratar;
 
-UPDATE usuario set logoEmpresa="images/emp3.jpg" WHERE id=1;
+UPDATE usuario set logoEmpresa="images/emp2.jpg" WHERE id=2;

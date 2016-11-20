@@ -84,4 +84,9 @@ public class BusquedaPublicacionImpl implements BusquedaPublicacion{
 		servicioPublicacion.actualizarVisitas(pub);
 	}
 
+	@Override
+	public List<Publicacion> buscarPublicacionDestacada() {
+		return servicioPublicacion.traerPublicacionDestacada();
+	}
+
 }
