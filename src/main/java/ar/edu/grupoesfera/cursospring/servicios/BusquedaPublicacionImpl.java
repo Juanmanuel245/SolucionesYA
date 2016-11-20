@@ -4,9 +4,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import ar.edu.grupoesfera.cursospring.dao.ManejoCombos;
 import ar.edu.grupoesfera.cursospring.dao.PublicacionDao;
@@ -16,7 +15,7 @@ import ar.edu.grupoesfera.cursospring.modelo.Publicacion;
 import ar.edu.grupoesfera.cursospring.modelo.Zona;
 
 
-@Service
+@Service @Transactional
 public class BusquedaPublicacionImpl implements BusquedaPublicacion{
 	
 	@Inject
@@ -24,18 +23,11 @@ public class BusquedaPublicacionImpl implements BusquedaPublicacion{
 	
 	@Inject
 	private PublicacionDao servicioPublicacion;
-	
-	@Inject
-    private SessionFactory sessionFactory;
 
 	@Override
-	public Publicacion buscarPublicacionPorId(Long id) {
+	public List<Publicacion> buscarPublicacionPorId(Long id) {
 		
-		final Session session = sessionFactory.openSession();
-				
-		Publicacion pub1 = (Publicacion)session.get(Publicacion.class, id);
-				
-		return pub1;
+		return servicioPublicacion.traerPublicacionPorId(id);
 			
 
 	}
@@ -85,6 +77,11 @@ public class BusquedaPublicacionImpl implements BusquedaPublicacion{
 	@Override
 	public List<Publicacion> buscarPublicacionPorUsuario(Long id) {
 		return servicioPublicacion.traerPublicacionPorUsuario(id) ;
+	}
+
+	@Override
+	public void actualizarVisitas(Publicacion pub) {
+		servicioPublicacion.actualizarVisitas(pub);
 	}
 
 }

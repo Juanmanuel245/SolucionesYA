@@ -14,10 +14,12 @@ public interface PublicacionDao {
 	void guardarDatosContrato (Contratar contratar);
 	List<Contratar> buscarPublicacionContratada(Long id);
 	List<Publicacion> traerPublicacion();
+	List<Publicacion> traerPublicacionPorId(Long id);
 	List<Publicacion> traerPublicacionPorEspecialidad(Long id);
 	List<Publicacion> traerPublicacionPorZona(Long id);
 	List<Publicacion> traerPublicacionPorZonaYEspecialidad(Long idZona, Long idEsp);
 	List<Publicacion> traerPublicacionPorUsuario(Long id);
 	List<Zona> buscarZonaPorId(Long id);
+	void actualizarVisitas(Publicacion pub);
 
 }

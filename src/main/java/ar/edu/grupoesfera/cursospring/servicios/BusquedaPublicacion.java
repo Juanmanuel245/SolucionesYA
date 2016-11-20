@@ -9,7 +9,7 @@ import ar.edu.grupoesfera.cursospring.modelo.Zona;
 
 public interface BusquedaPublicacion {
 	
-	Publicacion buscarPublicacionPorId(Long id);
+	List<Publicacion> buscarPublicacionPorId(Long id);
 	List<Publicacion> buscarPublicacionPorZona(Long id);
 	List<Publicacion> buscarPublicacionPorUsuario(Long id);
 	List<Publicacion> buscarPublicacion();
@@ -19,5 +19,6 @@ public interface BusquedaPublicacion {
 	List<Especialidad> buscarEspecialidad();
 	List<Contratar> buscarPublicacionContratada(Long id);
 	List<Zona> buscarZonaporId(Long id);
+	void actualizarVisitas(Publicacion pub);
 
 }

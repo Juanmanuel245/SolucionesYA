@@ -1,4 +1,3 @@
-USE solucionesya
 INSERT INTO zona (nombre) values
 ("Capital Federal"), ("Ramos Mejia"), ("Moron"), ("Moreno");
 
@@ -17,7 +16,7 @@ INSERT INTO Usuario (apellido, email, logoEmpresa, nombre, nombreEmpresa, passwo
 ("KUZ", "briankuz@gmail.com", "images/emp4.jpg", "Brian", "KUZ SRL", "123456", "1159423002", 0, 0, 1, 3);
 
 
-INSERT INTO Publicacion (contenido, cantidadContratos,  ID_ESPECIALIDAD, ID_USUARIO, ID_ZONA) values
+INSERT INTO Publicacion (contenido, visitas,  ID_ESPECIALIDAD, ID_USUARIO, ID_ZONA) values
 ("texto generado", 0, 1, 2, 1),
 ("texto generado", 0, 1, 1, 1);
 

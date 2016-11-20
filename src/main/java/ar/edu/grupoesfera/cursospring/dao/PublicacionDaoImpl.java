@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import ar.edu.grupoesfera.cursospring.modelo.Contratar;
 import ar.edu.grupoesfera.cursospring.modelo.Especialidad;
@@ -15,7 +16,7 @@ import ar.edu.grupoesfera.cursospring.modelo.Publicacion;
 import ar.edu.grupoesfera.cursospring.modelo.PublicacionDTO;
 import ar.edu.grupoesfera.cursospring.modelo.Zona;
 
-@Service
+@Service @Transactional
 public class PublicacionDaoImpl implements PublicacionDao{
 	
 	@Inject
@@ -30,6 +31,7 @@ public class PublicacionDaoImpl implements PublicacionDao{
 		pub.setIdPublicacion(publicacion.getIdPublicacion());
 		pub.setUsuario(publicacion.getUsuario());
 		pub.setZona(zona);
+		pub.setVisitas(0);
 		session.save(pub);
 		
 		return;
@@ -113,4 +115,22 @@ public class PublicacionDaoImpl implements PublicacionDao{
 		return publicaciones;
 	}
 
-}
+	@Override
+	public void actualizarVisitas(Publicacion pub) {
+		final Session session = sessionFactory.getCurrentSession();
+		System.out.println("LLEGA HASTA EL ACTUALIZARVISITAS");
+		pub.setVisitas(pub.getVisitas() + 1);
+		session.update(pub);
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+	public List<Publicacion> traerPublicacionPorId(Long id) {
+		final Session session = sessionFactory.openSession();
+		List publicaciones = session.createCriteria(Publicacion.class)
+								.add(Restrictions.eq("idPublicacion", id))
+								.list();
+		return publicaciones;
+	}
+		
+	}

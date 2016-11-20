@@ -36,7 +36,7 @@
 				 					
 				 					<div class="col-sm-12">
 				 						<div class="col-sm-6"><div class="alert alert-success">Contratado: ${pub.usuario.vecesContratado} veces</div></div>
-				 						<div class="col-sm-6"><div class="alert alert-success">Visitas: ${pub.usuario.vecesContratado}</div></div>
+				 						<div class="col-sm-6"><div class="alert alert-success">Visitas: ${pub.visitas}</div></div>
 				 					</div> 				
 				 				</div>
 				 				<div class="col-sm-2 paddingBotonVer"><a href="publicacion?idp=${pub.idPublicacion }" type="button" class="btn btn-success btn-lg btn-block">Ver</a></div>

@@ -21,6 +21,8 @@ public class Publicacion {
 	
 	private String contenido;
 	
+	private Integer visitas;
+	
 	@ManyToOne @JoinColumn(name="ID_ESPECIALIDAD")
 	private Especialidad especialidad;
 
@@ -63,6 +65,16 @@ public class Publicacion {
 	public void setEspecialidad(Especialidad especialidad) {
 		this.especialidad = especialidad;
 	}
+
+	public Integer getVisitas() {
+		return visitas;
+	}
+
+	public void setVisitas(Integer visitas) {
+		this.visitas = visitas;
+	}
+	
+	
 
 	
 

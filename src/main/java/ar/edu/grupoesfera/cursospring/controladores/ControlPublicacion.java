@@ -36,7 +36,11 @@ public class ControlPublicacion {
 	// POR ALGUNA RAZON EL MENUPRINCIPAL CONSIDERA QUE IDSESION ES IGUAL A NULLL PERO SI VERIFICAMOS EL ID LLEGA AL JSP PUBLICACION
 	@RequestMapping("/publicacion")
 	public ModelAndView cargarPublicacion(@RequestParam(value= "idp") Long id, HttpServletRequest request) {
-		Publicacion publicacion = servicioPublicacion.buscarPublicacionPorId(id);
+		
+		List<Publicacion> listaPublicacion = servicioPublicacion.buscarPublicacionPorId(id);
+		Publicacion publicacion = listaPublicacion.get(0);
+		System.out.println("TRAE LA PUBLICACION");
+		servicioPublicacion.actualizarVisitas(publicacion);
 		ModelMap model = new ModelMap();
 		model.put("publicacion", publicacion.getIdPublicacion());
 		model.put("logoEmpresa", publicacion.getUsuario().getLogoEmpresa());
