@@ -82,4 +82,9 @@ public class BusquedaPublicacionImpl implements BusquedaPublicacion{
 		return servicioPublicacion.buscarZonaPorId(id);
 	}
 
+	@Override
+	public List<Publicacion> buscarPublicacionPorUsuario(Long id) {
+		return servicioPublicacion.traerPublicacionPorUsuario(id) ;
+	}
+
 }

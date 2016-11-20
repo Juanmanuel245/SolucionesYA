@@ -11,6 +11,7 @@ public interface BusquedaPublicacion {
 	
 	Publicacion buscarPublicacionPorId(Long id);
 	List<Publicacion> buscarPublicacionPorZona(Long id);
+	List<Publicacion> buscarPublicacionPorUsuario(Long id);
 	List<Publicacion> buscarPublicacion();
 	List<Publicacion> buscarPublicacionPorEspecialidad(Long id);
 	List<Publicacion> buscarPublicacionZonaYEspecialidad(Long idZona, Long idEsp);

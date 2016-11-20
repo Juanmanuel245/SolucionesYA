@@ -20,7 +20,7 @@
 			 					<span class="label label-success">Zona de trabajo: ${pub.zona.nombre}</span>	<br><br>		
 			 					<div class="col-sm-12"><div class="alert alert-success">Este usuario fue contratado: ${pub.usuario.vecesContratado} veces</div><br></div> 				
 			 				</div>
-			 				<div class="col-sm-2 paddingBotonVer"><button type="button" class="btn btn-success btn-lg btn-block">Ver</button></div>
+			 				<div class="col-sm-2 paddingBotonVer"><a href="publicacion?idp=${pub.idPublicacion }" type="button" class="btn btn-success btn-lg btn-block">Ver</a></div>
 			 				
 			 			</div>
 			 		<div class="col-sm-12"><br></div>
@@ -28,13 +28,6 @@
 		</div>
 	</div>
 </body>
-
-
-
-
-
-
-</ul>
 
 
 

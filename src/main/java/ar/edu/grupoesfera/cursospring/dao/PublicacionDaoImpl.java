@@ -103,4 +103,14 @@ public class PublicacionDaoImpl implements PublicacionDao{
 			return zona;
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+	public List<Publicacion> traerPublicacionPorUsuario(Long id) {
+		final Session session = sessionFactory.openSession();
+		List publicaciones = session.createCriteria(Publicacion.class)
+									.add(Restrictions.eq("usuario.id", id))
+									.list();
+		return publicaciones;
+	}
+
 }

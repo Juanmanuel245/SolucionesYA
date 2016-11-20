@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.grupoesfera.cursospring.modelo.Contratar;
+import ar.edu.grupoesfera.cursospring.modelo.Publicacion;
 import ar.edu.grupoesfera.cursospring.modelo.Usuario;
 import ar.edu.grupoesfera.cursospring.servicios.BusquedaPublicacion;
 import ar.edu.grupoesfera.cursospring.servicios.ManejoUsuarios;
@@ -28,11 +29,22 @@ public class ControlCuenta {
 	@RequestMapping("/miCuenta")
 	public ModelAndView cargarMiCuenta(HttpServletRequest request) {
 		if(request.getSession().getAttribute("idSesion") != null){
+			
 			Long id = (Long) request.getSession().getAttribute("idSesion");
 			List<Usuario> listaUsuarios = servicioUsuarios.traerUsuarioPorId(id);
 			Usuario usuario = listaUsuarios.get(0);
+			
+			List<Publicacion> listaPublicaciones = servicioPublicacion.buscarPublicacionPorUsuario((Long) request.getSession().getAttribute("idSesion"));
+			boolean pubValida=true;
+			
+			if(listaPublicaciones.isEmpty()){
+				pubValida = false;
+			}
+
 			ModelMap model = new ModelMap();
 			model.put("usuario", usuario);
+			model.put("publicaciones", listaPublicaciones);
+			model.put("valido", pubValida);
 			return new ModelAndView("miCuenta", model);
 		}
 		return new ModelAndView("error");	
