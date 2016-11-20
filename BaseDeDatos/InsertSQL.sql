@@ -12,16 +12,16 @@ INSERT INTO zona (nombre) values
                  ("Caballito");
 
 INSERT INTO Especialidad	(nombreEspecialidad) values
-							1("Plomero"),
-							2("Electricista"),
-							3("Gasista"),
-							4("Albañil"),
-							5("Techista"),
-							6("Jardinero"),
-							7("Tecnico Informatico"),
-							8("Tecnico aire acondicionado"),
-                            9("Carpintero"),
-							10("Mecanico");
+							("Plomero"),
+							("Electricista"),
+							("Gasista"),
+							("Albañil"),
+							("Techista"),
+							("Jardinero"),
+							("Tecnico Informatico"),
+							("Tecnico aire acondicionado"),
+                            ("Carpintero"),
+							("Mecanico");
 
 INSERT INTO Usuario (nombre			,apellido	,password,email	 					 ,telefono		,nombreEmpresa			,logoEmpresa	  	 ,vecesContratado  	,balance) values
 					("Juan Manuel"	,"Caffi"	,"123456","juanmanuelcaffi@gmail.com", "1135887899"	,"Caffi SA"				,"images/emp1.jpg"	 ,0					,0),

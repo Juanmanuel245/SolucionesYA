@@ -152,4 +152,15 @@ public class ControlPublicacion {
 		model.put("publicaciones", listaPublicacion);
 		return new ModelAndView("listar", model);
 	}
+	
+	@RequestMapping("/listarDestacados")
+	public ModelAndView listarDestacados() {
+		
+		List<Publicacion> listaPublicacion = servicioPublicacion.buscarPublicacionDestacada();
+	
+				
+		ModelMap model = new ModelMap();
+		model.put("publicaciones", listaPublicacion);
+		return new ModelAndView("destacados", model);
+	}
 }
