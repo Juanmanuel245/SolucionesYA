@@ -6,7 +6,7 @@
 
 
 <body>
-	<%@ include file="/includes/menuPrincipal.jsp" %><!-- MENU NAVEGACION -->
+	<%@ include file="includes/menuPrincipal.jsp" %><!-- MENU NAVEGACION -->
 
 	<div class="container">
 

@@ -30,8 +30,7 @@ public class ControlCuenta {
 	public ModelAndView cargarMiCuenta(HttpServletRequest request) {
 		if(request.getSession().getAttribute("idSesion") != null){
 			
-			Long id = (Long) request.getSession().getAttribute("idSesion");
-			List<Usuario> listaUsuarios = servicioUsuarios.traerUsuarioPorId(id);
+			List<Usuario> listaUsuarios = servicioUsuarios.traerUsuarioPorId((Long) request.getSession().getAttribute("idSesion"));
 			Usuario usuario = listaUsuarios.get(0);
 			
 			List<Publicacion> listaPublicaciones = servicioPublicacion.buscarPublicacionPorUsuario((Long) request.getSession().getAttribute("idSesion"));
@@ -82,8 +81,17 @@ public class ControlCuenta {
 	@RequestMapping("/edicionOk")
 	public ModelAndView edicionOk(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request){
 		if(request.getSession().getAttribute("idSesion") != null){
-			Long id = (Long) request.getSession().getAttribute("idSesion");
-			usuario.setId(id);
+			
+			List<Usuario> listaUsuarios = servicioUsuarios.traerUsuarioPorId((Long) request.getSession().getAttribute("idSesion"));
+			Usuario usuarioViejo = listaUsuarios.get(0);
+			
+			usuario.setId(usuarioViejo.getId());
+			usuario.setBalance(usuarioViejo.getBalance());
+			usuario.setVecesContratado(usuarioViejo.getVecesContratado());
+			
+			System.out.println(usuario.getLogoEmpresa());
+			System.out.println(usuario.getBalance());
+			System.out.println(usuario.getVecesContratado());
 			servicioUsuarios.actualizarUsuario(usuario);
 			return new ModelAndView("miCuenta");
 		}

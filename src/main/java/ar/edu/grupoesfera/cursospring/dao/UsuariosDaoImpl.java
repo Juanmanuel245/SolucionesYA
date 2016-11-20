@@ -51,8 +51,6 @@ public class UsuariosDaoImpl implements UsuariosDao {
 	@Override
 	public void actualizarUsuario(Usuario usuario) {
 		final Session session = sessionFactory.getCurrentSession();
-		System.out.println(usuario.getNombre());
-		System.out.println(usuario.getId());
 		session.update(usuario);
 	}
 
