@@ -83,7 +83,6 @@ public class ControlPublicacion {
 		Usuario usuario = user.get(0);
 		usuario.setBalance(usuario.getBalance() + 100);
 		
-		// DATOS DE PRUEBA
 			if(publicacion.isDestacado()){
 				usuario.setBalance(usuario.getBalance() + 50);
 			}

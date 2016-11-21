@@ -88,10 +88,6 @@ public class ControlCuenta {
 			usuario.setId(usuarioViejo.getId());
 			usuario.setBalance(usuarioViejo.getBalance());
 			usuario.setVecesContratado(usuarioViejo.getVecesContratado());
-			
-			System.out.println(usuario.getLogoEmpresa());
-			System.out.println(usuario.getBalance());
-			System.out.println(usuario.getVecesContratado());
 			servicioUsuarios.actualizarUsuario(usuario);
 			return new ModelAndView("miCuenta");
 		}

@@ -35,8 +35,6 @@ public class PublicacionDaoImpl implements PublicacionDao{
 		pub.setDestacado(publicacion.isDestacado());
 		session.save(pub);
 		
-		return;
-		
 	}
 
 	@Override
