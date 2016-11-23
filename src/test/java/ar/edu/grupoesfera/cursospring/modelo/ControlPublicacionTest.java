@@ -50,14 +50,16 @@ public class ControlPublicacionTest extends SpringTest{
 		CrearPublicacion servicioPublicacionMock = mock(CrearPublicacion.class);
 		ManejoUsuarios servicioUsuarioMock = mock(ManejoUsuarios.class);
 		
-		Long idMock = 1L;
 		Long idPublicacion = 1L;
 		Long idUsuarioPublicador= 2L;
 		Long idUsuarioContratador= 3L;
 		String nombreEspecialidad = "Plomero";
 		
 		Usuario u = new Usuario();
+		u.setId(2L);
 		u.setApellido("Pepe");
+		u.setVecesContratado(0);
+		
 		List<Usuario> mockedList = new ArrayList<>();
 		mockedList.add(u);		
 		
@@ -66,8 +68,8 @@ public class ControlPublicacionTest extends SpringTest{
 		controlador.setServicioCrearPublicacion(servicioPublicacionMock);
 		
 		when(requestMock.getSession()).thenReturn(sessionMock);
-		when(servicioUsuarioMock.traerUsuarioPorId(idMock)).thenReturn(mockedList);
-		
+		when(sessionMock.getAttribute("idSesion")).thenReturn(u.getId());
+		when(servicioUsuarioMock.traerUsuarioPorId(u.getId())).thenReturn(mockedList);
 		
 		// EJECUCION
 		
@@ -76,6 +78,31 @@ public class ControlPublicacionTest extends SpringTest{
 		// VERIFICACION
 
 		assertThat(model.getViewName()).isEqualTo("redirect:misEspecialistas");
+
+	}
+	
+	@Test
+	public void contratarSinEstarLogeadoTeDevuelveError() {
+		
+		// preparacion
+		ControlPublicacion controlador = new ControlPublicacion();
+		HttpServletRequest requestMock = mock(HttpServletRequest.class);
+		HttpSession sessionMock = mock(HttpSession.class);
+		
+		Long idPublicacion = 1L;
+		Long idUsuarioPublicador= 2L;
+		Long idUsuarioContratador= 3L;
+		String nombreEspecialidad = "Plomero";
+				
+		when(requestMock.getSession()).thenReturn(sessionMock);
+		when(sessionMock.getAttribute("idSession")).thenReturn(null);
+		
+		
+		// EJECUCION
+		ModelAndView model = controlador.contratarUsuario(requestMock, idPublicacion, idUsuarioPublicador, idUsuarioContratador, nombreEspecialidad);
+		
+		// VERIFICACION
+		assertThat(model.getViewName()).isEqualTo("error");
 
 	}
 	
