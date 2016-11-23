@@ -55,5 +55,13 @@ public class ControlLogin {
 		
 		return new ModelAndView("redirect:/");
 	}
+	
+	public void setPersonaTestValidacion(ManejoValidacion servicioValidacion) {
+		this.servicioValidacion = servicioValidacion;
+	}
+	
+	public void setServicioUsuario(ManejoUsuarios servicioUsuarioMock) {
+		this.servicioUsuarios = servicioUsuarioMock;
+	}
 
 }

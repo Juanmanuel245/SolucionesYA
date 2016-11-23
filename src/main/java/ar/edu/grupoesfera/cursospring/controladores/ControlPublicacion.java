@@ -28,6 +28,7 @@ public class ControlPublicacion {
 	
 	@Inject
 	private BusquedaPublicacion servicioPublicacion;
+
 	@Inject
 	private ManejoUsuarios servicioUsuarios;
 	@Inject
@@ -39,7 +40,6 @@ public class ControlPublicacion {
 		
 		List<Publicacion> listaPublicacion = servicioPublicacion.buscarPublicacionPorId(id);
 		Publicacion publicacion = listaPublicacion.get(0);
-		System.out.println("TRAE LA PUBLICACION");
 		servicioPublicacion.actualizarVisitas(publicacion);
 		ModelMap model = new ModelMap();
 		model.put("publicacion", publicacion.getIdPublicacion());
@@ -112,11 +112,9 @@ public class ControlPublicacion {
 			contratar.setUsuarioContratado(usuarioContratado);
 			contratar.setIdUsuarioContratador(idUsuarioContratador);
 			contratar.setNombreEspecialidad(nombreEspecialidad);
-			
-			List<Usuario> user = servicioUsuarios.traerUsuarioPorId(idUsuarioPublicador);
-			Usuario usuario = user.get(0);
-			usuario.setVecesContratado(usuario.getVecesContratado() + 1);
-			servicioUsuarios.actualizarUsuario(usuario);
+		
+			usuarioContratado.setVecesContratado(usuarioContratado.getVecesContratado() + 1);
+			servicioUsuarios.actualizarUsuario(usuarioContratado);
 			
 			servicioCrearPublicacion.guardarDatosContrato(contratar);
 			
@@ -124,7 +122,9 @@ public class ControlPublicacion {
 		}
 		
 		
-		return new ModelAndView("error");
+		ModelMap model = new ModelMap();
+		model.put("mensaje", "Error, Necesitas estar logeado para poder ingresar a este sitio");
+		return new ModelAndView("error", model);
 	}
 	
 	@RequestMapping(value = "/listarPublicaciones", method = RequestMethod.POST)
@@ -162,4 +162,20 @@ public class ControlPublicacion {
 		model.put("publicaciones", listaPublicacion);
 		return new ModelAndView("destacados", model);
 	}
+	
+	
+	public void setServicioPublicacion(BusquedaPublicacion servicioPublicacion) {
+		this.servicioPublicacion = servicioPublicacion;
+	}
+
+	public void setServicioUsuarios(ManejoUsuarios servicioUsuarios) {
+		this.servicioUsuarios = servicioUsuarios;
+	}
+
+	public void setServicioCrearPublicacion(CrearPublicacion servicioCrearPublicacion) {
+		this.servicioCrearPublicacion = servicioCrearPublicacion;
+	}
+	
+	
+	
 }

@@ -16,7 +16,7 @@
 						<h3 class="panel-title">ERROR!</h3>
 					</div>
 					<div class="panel-body">
-						Error! Necesitas estar logeado para poder ingresar a este sitio.
+						${mensaje}
 
 					</div>
 				</div>

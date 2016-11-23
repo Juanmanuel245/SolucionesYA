@@ -46,7 +46,9 @@ public class ControlCuenta {
 			model.put("valido", pubValida);
 			return new ModelAndView("miCuenta", model);
 		}
-		return new ModelAndView("error");	
+		ModelMap model = new ModelMap();
+		model.put("mensaje", "Error, Necesitas estar logeado para poder ingresar a este sitio");
+		return new ModelAndView("error", model);	
 	}
 	
 	@RequestMapping("/balance")
@@ -59,7 +61,9 @@ public class ControlCuenta {
 			model.put("usuario", usuario);
 			return new ModelAndView("balance", model);
 		}
-		return new ModelAndView("error");	
+		ModelMap model = new ModelMap();
+		model.put("mensaje", "Error, Necesitas estar logeado para poder ingresar a este sitio");
+		return new ModelAndView("error", model);	
 	}
 	
 	@RequestMapping("/editarCuenta")
@@ -75,7 +79,9 @@ public class ControlCuenta {
 			return new ModelAndView("editarCuenta", model);
 		}
 		
-		return new ModelAndView("error");
+		ModelMap model = new ModelMap();
+		model.put("mensaje", "Error, Necesitas estar logeado para poder ingresar a este sitio");
+		return new ModelAndView("error", model);
 	}
 	
 	@RequestMapping("/edicionOk")
@@ -92,7 +98,9 @@ public class ControlCuenta {
 			return new ModelAndView("miCuenta");
 		}
 		
-		return new ModelAndView("error");
+		ModelMap model = new ModelMap();
+		model.put("mensaje", "Error, Necesitas estar logeado para poder ingresar a este sitio");
+		return new ModelAndView("error", model);
 	}
 	
 	@RequestMapping("/misEspecialistas")
@@ -107,7 +115,9 @@ public class ControlCuenta {
 			return new ModelAndView("misEspecialistas", model);
 		}
 		
-		return new ModelAndView("error");
+		ModelMap model = new ModelMap();
+		model.put("mensaje", "Error, Necesitas estar logeado para poder ingresar a este sitio");
+		return new ModelAndView("error", model);
 	}
 	
 

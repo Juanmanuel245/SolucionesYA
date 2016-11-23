@@ -34,11 +34,13 @@ public class ControlRegistro {
 		usuario.setTelefono("N/A");
 		usuario.setBalance(0);
 		usuario.setVecesContratado(0);
+		
 		ModelMap modeloRegistroUsuario = new ModelMap();
 		modeloRegistroUsuario.put("nombre", usuario.getNombre());
 		modeloRegistroUsuario.put("apellido", usuario.getApellido());
 		modeloRegistroUsuario.put("password", usuario.getPassword());
 		modeloRegistroUsuario.put("email", usuario.getEmail());
+		
 		servicioUsuarios.registrarUsuario(usuario);
 		return new ModelAndView("confirmacionRegistro", modeloRegistroUsuario);
 	}

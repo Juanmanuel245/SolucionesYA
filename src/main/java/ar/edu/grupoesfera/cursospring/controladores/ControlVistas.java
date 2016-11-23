@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -46,11 +45,7 @@ public class ControlVistas {
 				listaAcotada.add((limite), objeto);	
 			}
 			limite++;
-		}
-		
-
-	
-		
+		}	
 	
 		ModelMap model = new ModelMap();
 		PublicacionDTO publicacion = new PublicacionDTO();
@@ -67,19 +62,6 @@ public class ControlVistas {
 		return new ModelAndView("redirect:/");
 	}
 
-	@RequestMapping("/galeria")
-	public ModelAndView cargarGaleria(HttpServletRequest request) {
-		if(request.getSession().getAttribute("idSesion") != null){
-			return new ModelAndView("galeria");
-		}
-		
-		return new ModelAndView("error");
-	}
-
-
-}	
-
-//	public void setPersonaService(ManejoHibernate servicioHibernate) {
-//		this.servicioHibernate = servicioHibernate;
-//	}
-//}
+	
+	
+}
