@@ -1,12 +1,7 @@
 package ar.edu.grupoesfera.cursospring.modelo;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
+import static org.mockito.Mockito.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -167,29 +162,29 @@ public class ControlPublicacionTest extends SpringTest{
 	public void listarPublicacionesConEspecialidadDistintoDeCeroYZonaDistintoDeCeroBuscaPorEspecialidadYZona(){ // ZONA !=0 | ESPECIALIDAD !=0
 		
 
-	// PREPARACION
-	Publicacion p = new Publicacion();
-	p.setContenido("ALGO");
-	List<Publicacion> lista = new LinkedList<Publicacion>();
-	lista.add(p);
-
-	BusquedaPublicacion busquedaPublicacionMock = mock(BusquedaPublicacion.class);
-	when(busquedaPublicacionMock.buscarPublicacion()).thenReturn(lista);
-
-	ControlPublicacion controlador = new ControlPublicacion();
-	controlador.setServicioPublicacion(busquedaPublicacionMock);
-
-	PublicacionDTO pub = new PublicacionDTO();
-	pub.setIdZona(5L);
-	pub.setIdEspecialidad(10L);
-
-	// ejecucion
-	ModelAndView modelAndView = controlador.listarPublicaciones(pub);
-
-	// verificacion
-	verify(busquedaPublicacionMock, never()).buscarPublicacion();
-	verify(busquedaPublicacionMock, never()).buscarPublicacionPorEspecialidad(pub.getIdEspecialidad());
-	verify(busquedaPublicacionMock, times(1)).buscarPublicacionZonaYEspecialidad(pub.getIdZona(), pub.getIdEspecialidad());
+		// PREPARACION
+		Publicacion p = new Publicacion();
+		p.setContenido("ALGO");
+		List<Publicacion> lista = new LinkedList<Publicacion>();
+		lista.add(p);
+	
+		BusquedaPublicacion busquedaPublicacionMock = mock(BusquedaPublicacion.class);
+		when(busquedaPublicacionMock.buscarPublicacionZonaYEspecialidad(anyLong(), anyLong())).thenReturn(lista);
+	
+		ControlPublicacion controlador = new ControlPublicacion();
+		controlador.setServicioPublicacion(busquedaPublicacionMock);
+	
+		PublicacionDTO pub = new PublicacionDTO();
+		pub.setIdZona(5L);
+		pub.setIdEspecialidad(10L);
+	
+		// ejecucion
+		ModelAndView modelAndView = controlador.listarPublicaciones(pub);
+	
+		// verificacion
+		verify(busquedaPublicacionMock, never()).buscarPublicacion();
+		verify(busquedaPublicacionMock, never()).buscarPublicacionPorEspecialidad(pub.getIdEspecialidad());
+		verify(busquedaPublicacionMock, times(1)).buscarPublicacionZonaYEspecialidad(pub.getIdZona(), pub.getIdEspecialidad());
 	}
 	
 	@SuppressWarnings("unused")
@@ -197,30 +192,30 @@ public class ControlPublicacionTest extends SpringTest{
 	public void listarPublicacionesConEspecialidadCeroYZonaDistintoDeCeroBuscaPorZona(){ // ZONA !=0 | ESPECIALIDAD 0
 		
 
-	// PREPARACION
-	Publicacion p = new Publicacion();
-	p.setContenido("ALGO");
-	List<Publicacion> lista = new LinkedList<Publicacion>();
-	lista.add(p);
-
-	BusquedaPublicacion busquedaPublicacionMock = mock(BusquedaPublicacion.class);
-	when(busquedaPublicacionMock.buscarPublicacion()).thenReturn(lista);
-
-	ControlPublicacion controlador = new ControlPublicacion();
-	controlador.setServicioPublicacion(busquedaPublicacionMock);
-
-	PublicacionDTO pub = new PublicacionDTO();
-	pub.setIdZona(5L);
-	pub.setIdEspecialidad(0L);
-
-	// ejecucion
-	ModelAndView modelAndView = controlador.listarPublicaciones(pub);
-
-	// verificacion
-	verify(busquedaPublicacionMock, never()).buscarPublicacion();
-	verify(busquedaPublicacionMock, never()).buscarPublicacionPorEspecialidad(pub.getIdEspecialidad());
-	verify(busquedaPublicacionMock, never()).buscarPublicacionZonaYEspecialidad(pub.getIdZona(), pub.getIdEspecialidad());
-	verify(busquedaPublicacionMock, times(1)).buscarPublicacionPorZona(pub.getIdZona());
+		// PREPARACION
+		Publicacion p = new Publicacion();
+		p.setContenido("ALGO");
+		List<Publicacion> lista = new LinkedList<Publicacion>();
+		lista.add(p);
+	
+		BusquedaPublicacion busquedaPublicacionMock = mock(BusquedaPublicacion.class);
+		when(busquedaPublicacionMock.buscarPublicacion()).thenReturn(lista);
+	
+		ControlPublicacion controlador = new ControlPublicacion();
+		controlador.setServicioPublicacion(busquedaPublicacionMock);
+	
+		PublicacionDTO pub = new PublicacionDTO();
+		pub.setIdZona(5L);
+		pub.setIdEspecialidad(0L);
+	
+		// ejecucion
+		ModelAndView modelAndView = controlador.listarPublicaciones(pub);
+	
+		// verificacion
+		verify(busquedaPublicacionMock, never()).buscarPublicacion();
+		verify(busquedaPublicacionMock, never()).buscarPublicacionPorEspecialidad(pub.getIdEspecialidad());
+		verify(busquedaPublicacionMock, never()).buscarPublicacionZonaYEspecialidad(pub.getIdZona(), pub.getIdEspecialidad());
+		verify(busquedaPublicacionMock, times(1)).buscarPublicacionPorZona(pub.getIdZona());
 	}
 
 
