@@ -182,7 +182,7 @@ public class ControlPublicacionTest extends SpringTest{
 		ModelAndView modelAndView = controlador.listarPublicaciones(pub);
 	
 		// verificacion
-		verify(busquedaPublicacionMock, never()).buscarPublicacion();
+		verify(busquedaPublicacionMock, times(1)).buscarPublicacion();
 		verify(busquedaPublicacionMock, never()).buscarPublicacionPorEspecialidad(pub.getIdEspecialidad());
 		verify(busquedaPublicacionMock, times(1)).buscarPublicacionZonaYEspecialidad(pub.getIdZona(), pub.getIdEspecialidad());
 	}
